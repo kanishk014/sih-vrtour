@@ -39,7 +39,7 @@ const SingleProperty = () => {
     }
   }, [success, dispatch]);
 
-  const activities = propertyDetails?.activities;
+  const activities = propertyDetails?.activities;  
 
   return (
     <div>
@@ -259,7 +259,7 @@ const SingleProperty = () => {
                       <div class='overview-area ameniting-box'>
                         <h3 class='item-title'>Features {'&'} Activites</h3>
                         <div class='row'>
-                          {activities.map((item, i) => {
+                          {activities.map((item) => {
                             return (
                               <div class='col-lg-4 ameniting-list'>
                                 <i class='fas fa-check-circle'></i>
