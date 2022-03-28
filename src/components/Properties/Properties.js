@@ -492,7 +492,13 @@ const Properties = () => {
                                     />
 
                                     <div class='item-category-box1'>
+<<<<<<< HEAD
                                       <div class='item-category'>Visit</div>
+=======
+                                      <div class='item-category'>
+                                        {currEle.type}
+                                      </div>
+>>>>>>> 613a063ed8c199eed12423605b1ca9d5673240d6
                                     </div>
                                     <div class='rent-price'>
                                       <div class='item-price'>
