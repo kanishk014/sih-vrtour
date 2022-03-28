@@ -38,6 +38,8 @@ const SingleProperty = () => {
       dispatch(fetchUserData(propertyDetails?.userId));
     }
   }, [success, dispatch]);
+
+  const activities = propertyDetails?.activities;
   // console.log(propertyDetails);
   return (
     <div>
@@ -302,7 +304,11 @@ const SingleProperty = () => {
                         <h3 class='item-title'>Map Location</h3>
                         <div class='item-map'>
                           <iframe
-                            src='https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14604.942936504207!2d90.42287424999999!3d23.774618500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1640231732625!5m2!1sen!2sbd'
+                            src={
+                              propertyDetails?.map_location
+                                ? propertyDetails.map_location
+                                : 'https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d14604.942936504207!2d90.42287424999999!3d23.774618500000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sbd!4v1640231732625!5m2!1sen!2sbd'
+                            }
                             width='731'
                             height='349'
                             title='map'
