@@ -93,9 +93,15 @@ const SingleProperty = () => {
                         <div class="item-categoery">Temple</div>
                       </div>
                     </div>
-                    {/* <div class="col-lg-6 col-md-12">
-                      <div class="single-list-price">$12,500</div>
-                    </div> */}
+                    <div class="col-lg-6 col-md-12">
+                      <div class="single-list-price">
+                      <div class="heading-button">
+                <Link to="/singlelisting" class="heading-btn item-btn2">
+                  Book Ticket
+                </Link>
+              </div>
+                      </div>
+                    </div>
                   </div>
                   <div class="row align-items-center">
                     <div class="col-lg-8 col-md-12">
@@ -126,8 +132,8 @@ const SingleProperty = () => {
                   </div>
                 </div>
 
-                <div class="row">
-                  <div class="col-lg-8">
+                <div className="row">
+                  <div className="col-lg-12">
                     <div id="panorama">
                       <iframe
                         width="745"
@@ -145,8 +151,13 @@ const SingleProperty = () => {
                         }
                       ></iframe>
                     </div>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <div class="col-lg-8">
                     <div class="single-listing-box1">
-                    <div class="overview-area single-details-box table-responsive">
+                      <div class="overview-area single-details-box table-responsive">
                         <h3 class="item-title">Overview</h3>
                         <table class="table-box1">
                           <tbody>
@@ -168,9 +179,7 @@ const SingleProperty = () => {
                             </tr>
                             <tr>
                               <td class="item-bold">Timings</td>
-                              <td>
-                                {propertyDetails?.timings}
-                              </td>
+                              <td>{propertyDetails?.timings}</td>
                               <td class="item-bold">Aarti Time</td>
                               <td>{propertyDetails?.aartiTime}</td>
                             </tr>
@@ -244,12 +253,10 @@ const SingleProperty = () => {
                           orci fringilla, sed pretium lectus viverra.
                           Pellentesque habitant morbi tristique senectus et
                           netus et malesuada fames ac turpis egestas.
-                          {
-                            propertyDetails?.famous
-                          }
-                        </p>                        
+                          {propertyDetails?.famous}
+                        </p>
                       </div>
-                      
+
                       <div class="overview-area ameniting-box">
                         <h3 class="item-title">Features {"&"} Activites</h3>
                         <div class="row">
@@ -960,186 +967,7 @@ const SingleProperty = () => {
                         </form>
                       </div>
                     )}
-                    <div class="widget widget-listing-box1">
-                      <h3 class="widget-subtitle">Latest Listing</h3>
-                      <div class="item-img">
-                        <Link to="/singlelisting">
-                          <img
-                            src="img/blog/widget1.jpg"
-                            alt="widget"
-                            width="540"
-                            height="360"
-                          />
-                        </Link>
-                        <div class="item-category-box1">
-                          <div class="item-category">For Rent</div>
-                        </div>
-                      </div>
-                      <div class="widget-content">
-                        <div class="item-category10">
-                          <Link to="/singlelisting">Villa</Link>
-                        </div>
-                        <h4 class="item-title">
-                          <Link to="/singlelisting">
-                            Modern Villa for House Highland Ave Los Angeles
-                          </Link>
-                        </h4>
-                        <div class="location-area">
-                          <i class="flaticon-maps-and-flags"></i>2150 S Jones
-                          Blvd, USA
-                        </div>
-                        <div class="item-price">
-                          $11,000<span>/mo</span>
-                        </div>
-                      </div>
-                      <div class="widget-listing">
-                        <div class="item-img">
-                          <Link to="/singlelisting">
-                            <img
-                              src="img/blog/widget2.jpg"
-                              alt="widget"
-                              width="120"
-                              height="102"
-                            />
-                          </Link>
-                        </div>
-                        <div class="item-content">
-                          <h5 class="item-title">
-                            <Link to="/singlelisting">
-                              House Highland Ave Los Angeles
-                            </Link>
-                          </h5>
-                          <div class="location-area">
-                            <i class="flaticon-maps-and-flags"></i>California
-                          </div>
-                          <div class="item-price">
-                            $3,000<span>/mo</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="widget-listing">
-                        <div class="item-img">
-                          <Link to="/singlelisting">
-                            <img
-                              src="img/blog/widget3.jpg"
-                              alt="widget"
-                              width="120"
-                              height="102"
-                            />
-                          </Link>
-                        </div>
-                        <div class="item-content">
-                          <h5 class="item-title">
-                            <Link to="/singlelisting">
-                              House Highland Ave Los Angeles
-                            </Link>
-                          </h5>
-                          <div class="location-area">
-                            <i class="flaticon-maps-and-flags"></i>California
-                          </div>
-                          <div class="item-price">
-                            $1,200<span>/mo</span>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="widget-listing no-brd">
-                        <div class="item-img">
-                          <Link to="/singlelisting">
-                            <img
-                              src="img/blog/widget4.jpg"
-                              alt="widget"
-                              width="120"
-                              height="102"
-                            />
-                          </Link>
-                        </div>
-                        <div class="item-content">
-                          <h5 class="item-title">
-                            <Link to="/singlelisting">
-                              House Highland Ave Los Angeles
-                            </Link>
-                          </h5>
-                          <div class="location-area">
-                            <i class="flaticon-maps-and-flags"></i>California
-                          </div>
-                          <div class="item-price">
-                            $1,900<span>/mo</span>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="widget widget-contact-box widget-price-range">
-                      <h3 class="widget-subtitle">Mortgage Calculator</h3>
-                      <p>
-                        Dorem ipsum dolor sit amet, consectetur adipisc ing
-                        elit. Nunc posuere.
-                      </p>
-                      <form class="contact-box">
-                        <div class="row">
-                          <div class="form-group col-lg-12">
-                            <label class="item-loan">Loan Amount :</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="fname"
-                              placeholder="$00.00"
-                              data-error="First Name is required"
-                              required
-                            />
-                          </div>
-                          <div class="form-group col-lg-12">
-                            <label class="item-loan">Down Payment :</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="phone"
-                              placeholder="$00.00"
-                              data-error="Phone is required"
-                              required
-                            />
-                          </div>
-                          <div class="form-group col-lg-12">
-                            <label class="item-loan">Years :</label>
-                            <input
-                              type="text"
-                              class="form-control"
-                              name="phone"
-                              placeholder="12 Years"
-                              data-error="Phone is required"
-                              required
-                            />
-                          </div>
-                        </div>
-                      </form>
 
-                      <div class="price-range-wrapper">
-                        <div class="price-filter-wrap d-flex align-items-center">
-                          <div class="price-range-select">
-                            <div class="price-range range-title">
-                              Interest Rate in:
-                            </div>
-                            <div class="price-range" id="price-range-min"></div>
-                            <div class="price-range">:</div>
-                            <div class="price-range" id="price-range-max"></div>
-                          </div>
-                        </div>
-                        <div
-                          id="price-range-filter"
-                          class="price-range-filter"
-                        ></div>
-                      </div>
-
-                      <ul class="wid-contact-button">
-                        <li>
-                          <Link to="/singlelisting">Calculate</Link>
-                        </li>
-                        <li>
-                          <Link to="/singlelisting">
-                            <i class="fas fa-sync-alt"></i>Reset Form
-                          </Link>
-                        </li>
-                      </ul>
-                    </div>
                     <div class="widget widget-post">
                       <div class="item-img">
                         <img src="img/blog/widget5.jpg" alt="widget" />
