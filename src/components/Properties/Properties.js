@@ -187,7 +187,7 @@ const Properties = () => {
                                 ></div>
                                 <div class='price-filter-wrap d-flex align-items-center'>
                                   <div class='price-range-select'>
-                                    <div class='price-range range-title'>$</div>
+                                    <div class='price-range range-title'>₹</div>
                                     <div
                                       class='price-range'
                                       id='price-range-min-4'
@@ -230,32 +230,15 @@ const Properties = () => {
                               class='col-lg-4 col-md-6 py-1 pr-30 pl-0'
                               style={{ width: '100%' }}
                             >
-                              {/* <!-- Form Property Status --> */}
-                              <div class='form-group bed'>
-                                <label class='item-bedrooms'>Bedrooms</label>
-                                <div
-                                  class='nice-select form-control wide'
-                                  tabIndex='0'
-                                >
-                                  <span class='current'>Any</span>
-                                  <ul class='list'>
-                                    <li data-value='1' class='option selected '>
-                                      For Sale
-                                    </li>
-                                    <li data-value='2' class='option'>
-                                      For Rent
-                                    </li>
-                                  </ul>
-                                </div>
-                                {/* <!--/ End Form Property Status --> */}
-                              </div>
                               <div
                                 class='col-lg-4 col-md-6 py-1 pr-30 pl-0 '
                                 style={{ width: '100%' }}
                               >
                                 {/* <!-- Form Bedrooms --> */}
                                 <div class='form-group bath'>
-                                  <label class='item-bath'>Bathrooms</label>
+                                  <label class='item-bath'>
+                                    Number of Visitors
+                                  </label>
                                   <div
                                     class='nice-select form-control wide'
                                     tabIndex='0'
@@ -279,39 +262,10 @@ const Properties = () => {
                                 </div>
                                 {/* <!--/ End Form Bedrooms --> */}
                               </div>
-                              <div
-                                class='col-lg-4 col-md-6 py-1 pl-0 pr-0'
-                                style={{ width: '100%' }}
-                              >
-                                {/* <!-- Form Bathrooms --> */}
-                                <div class='form-group garage'>
-                                  <label class='item-garage'>Garage</label>
-                                  <div
-                                    class='nice-select form-control wide'
-                                    tabIndex='0'
-                                  >
-                                    <span class='current'>Any</span>
-                                    <ul class='list'>
-                                      <li
-                                        data-value='1'
-                                        class='option selected'
-                                      >
-                                        1
-                                      </li>
-                                      <li data-value='2' class='option'>
-                                        2
-                                      </li>
-                                      <li data-value='3' class='option'>
-                                        3
-                                      </li>
-                                    </ul>
-                                  </div>
-                                </div>
-                                {/* <!--/ End Form Bathrooms --> */}
-                              </div>
+
                               {/* <!-- Price Fields --> */}
-                              <div class='main-search-field-2 col-12'>
-                                {/* <!-- Area Range --> */}
+                              {/* <div class='main-search-field-2 col-12'>
+                                
                                 <div
                                   class='row'
                                   style={{
@@ -379,7 +333,7 @@ const Properties = () => {
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                               {/* <!-- row --> */}
                               <div class='row'>
                                 <div class='col-lg-12 col-md-12 col-sm-12 mt-3'>
@@ -396,7 +350,7 @@ const Properties = () => {
                                         htmlFor='a-1'
                                         class='checkbox-custom-label'
                                       >
-                                        Air Condition
+                                        Timings
                                       </label>
                                     </li>
                                     <li>
@@ -410,7 +364,7 @@ const Properties = () => {
                                         htmlFor='a-2'
                                         class='checkbox-custom-label'
                                       >
-                                        Bedding
+                                        Aarti Time
                                       </label>
                                     </li>
                                     <li>
@@ -424,7 +378,7 @@ const Properties = () => {
                                         htmlFor='a-3'
                                         class='checkbox-custom-label'
                                       >
-                                        Heating
+                                        Tour Time
                                       </label>
                                     </li>
                                     <li>
@@ -438,7 +392,7 @@ const Properties = () => {
                                         htmlFor='a-4'
                                         class='checkbox-custom-label'
                                       >
-                                        Internet
+                                        Land Area
                                       </label>
                                     </li>
                                     <li>
@@ -452,7 +406,7 @@ const Properties = () => {
                                         htmlFor='a-5'
                                         class='checkbox-custom-label'
                                       >
-                                        Microwave
+                                        Year Build
                                       </label>
                                     </li>
                                     <li>
@@ -466,49 +420,7 @@ const Properties = () => {
                                         htmlFor='a-6'
                                         class='checkbox-custom-label'
                                       >
-                                        Smoking Allow
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <input
-                                        id='a-7'
-                                        class='checkbox-custom'
-                                        name='a-7'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-7'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Terrace
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <input
-                                        id='a-8'
-                                        class='checkbox-custom'
-                                        name='a-8'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-8'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Balcony
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <input
-                                        id='a-9'
-                                        class='checkbox-custom'
-                                        name='a-9'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-9'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Balcony
+                                        Parking
                                       </label>
                                     </li>
                                   </ul>
