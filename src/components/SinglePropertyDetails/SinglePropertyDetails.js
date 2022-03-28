@@ -201,18 +201,7 @@ const SingleProperty = () => {
                       </div>
                       <div class="overview-area listing-area">
                         <h3 class="item-title">About This Place</h3>
-                        <p>
-                          'Akshardham' means the divine abode of God. It is
-                          hailed as an eternal place of devotion, purity and
-                          peace. Swaminarayan Akshardham at New Delhi is a
-                          Mandir – an abode of God, a Hindu house of worship,
-                          and a spiritual and cultural campus dedicated to
-                          devotion, learning and harmony. Timeless Hindu
-                          spiritual messages, vibrant devotional traditions and
-                          ancient architecture all are echoed in its art and
-                          architecture.The mandir is a humble tribute to Bhagwan
-                          Swaminarayan (1781- 1830), the avatars, devas and
-                          great sages of Hinduism.
+                        <p>                          
                           {propertyDetails?.about}
                         </p>
                         {/* <p>
@@ -224,32 +213,13 @@ const SingleProperty = () => {
                       </div>
                       <div class="overview-area listing-area">
                         <h3 class="item-title">Facts and Figures</h3>
-                        <p>
-                          Opened 6th November 2005 Constructed by Bochasanwasi
-                          Shri Akshar Purushottam Swaminarayan Sanstha (BAPS)
-                          Inspired by HH Yogiji Maharaj (1892-1971 CE) Created
-                          by His Holiness Pramukh Swami Maharaj More than
-                          300,000,000 volunteer hours went into making the
-                          complex Over 8,000 volunteers from across the world
-                          participated in building it Mandir built from
-                          intricately carved sandstone and marble Exhibitions on
-                          Hinduism, including Bhagwan Swaminarayan's life and
-                          teachings such as prayer, compassion, and
-                          non-violence. Open gardens, water bodies and step-well
-                          styled courtyard
+                        <p>                          
                           {propertyDetails?.factsAndFigures}
                         </p>
                       </div>
                       <div class="overview-area listing-area">
                         <h3 class="item-title">Why is it famous?</h3>
-                        <p>
-                          Praesent eros turpis, commodo vel justo at, pulvinar
-                          mollis eros. Mauris aliquet eu quam id ornareor bi ac
-                          quam enim. Cras vitae nulla condimentum, semper dolor
-                          non, faucibus dolor. Vivamus adip iscing eros quis
-                          orci fringilla, sed pretium lectus viverra.
-                          Pellentesque habitant morbi tristique senectus et
-                          netus et malesuada fames ac turpis egestas.
+                        <p>                          
                           {propertyDetails?.famous}
                         </p>
                       </div>
@@ -468,7 +438,7 @@ const SingleProperty = () => {
                         <h3 class="item-title">Video</h3>
                         <div class="item-img">
                           <img
-                            src="img/blog/listing1.jpg"
+                            src={propertyDetails?.propertyImage}
                             alt="map"
                             width="731"
                             height="349"
@@ -782,14 +752,14 @@ const SingleProperty = () => {
                               <SwiperSlide class="swiper-slide width-swiper ">
                                 <div class="feature-img1 zoom-image-hover">
                                   <img
-                                    src="img/blog/product1-1.jpg"
+                                    src={propertyDetails?.propertyImage}
                                     alt="feature"
                                     // width="798"
                                     // height="420"
                                   />
                                 </div>
                               </SwiperSlide>
-                              <SwiperSlide class="swiper-slide width-swiper">
+                              {/* <SwiperSlide class="swiper-slide width-swiper">
                                 <div class="feature-img1 zoom-image-hover">
                                   <img
                                     src="img/blog/product3.jpg"
@@ -831,7 +801,7 @@ const SingleProperty = () => {
                                     // height="420"
                                   />
                                 </div>
-                              </SwiperSlide>
+                              </SwiperSlide> */}
                             </Swiper>
                           </div>
                         </div>

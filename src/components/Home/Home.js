@@ -19,7 +19,7 @@ const Home = () => {
     });
   });
   const [isclick, setIsClick] = useState(false);
-  console.log(isclick);
+  // console.log(isclick);
 
   return (
     <div style={{ width: '100%' }}>
