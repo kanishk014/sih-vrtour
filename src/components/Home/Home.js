@@ -1183,7 +1183,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-1.png'
+                      src='img/blog/location-1.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1212,7 +1212,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-2.png'
+                      src='img/blog/location-2.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1241,7 +1241,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-3.png'
+                      src='img/blog/location-3.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1272,7 +1272,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-4.png'
+                      src='img/blog/location-4.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1301,7 +1301,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-5.png'
+                      src='img/blog/location-5.jpg'
                       alt='location'
                       width='846'
                       height='280'
@@ -1325,7 +1325,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         class='property-banner-wrap1 parallaxie'
         data-bg-image='img/banner/banner3.jpg'
       >
@@ -1356,7 +1356,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       <section class='banner-collection4 motion-effects-wrap'>
         <div class='item-element'>
           <ul>

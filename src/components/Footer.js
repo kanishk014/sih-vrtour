@@ -283,7 +283,7 @@ const Footer = () => {
             </div>
             <div class='col-lg-6 col-md-6'>
               <div class='copyright-area2'>
-                <p>2022© All rightre served by VRTOUR</p>
+                <p>2022 © All rightre served by VRTOUR</p>
               </div>
             </div>
           </div>

@@ -14098,7 +14098,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   margin-top: -1px;
   padding: 20px 30px 30px 30px;
 }
-.single-property .single-listing-box1 .ameniting-box .ameniting-list li {
+.single-property .single-listing-box1 .ameniting-box .ameniting-list {
   color: #878c9f;
   font-size: 15px;
   font-weight: 400;
@@ -14112,7 +14112,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   li:last-child {
   margin-bottom: 0;
 }
-.single-property .single-listing-box1 .ameniting-box .ameniting-list li i {
+.single-property .single-listing-box1 .ameniting-box .ameniting-list i {
   color: var(--rt-primary-color);
   font-size: 18px;
   margin-right: 12px;
