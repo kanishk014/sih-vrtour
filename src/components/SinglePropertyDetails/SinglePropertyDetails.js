@@ -40,7 +40,7 @@ const SingleProperty = () => {
   }, [success, dispatch]);
 
   const activities = propertyDetails?.activities;
-  // console.log(propertyDetails);
+
   return (
     <div>
       <Navbar />
@@ -265,7 +265,16 @@ const SingleProperty = () => {
                       <div class='overview-area ameniting-box'>
                         <h3 class='item-title'>Features {'&'} Activites</h3>
                         <div class='row'>
-                          <div class='col-lg-4 ameniting-list'>
+                          {activities.map((item, i) => {
+                            return (
+                              <div class='col-lg-4 ameniting-list'>
+                                <i class='fas fa-check-circle'></i>
+                                {item}
+                              </div>
+                            );
+                          })}
+
+                          {/* <div class='col-lg-4 ameniting-list'>
                             <i class='fas fa-check-circle'></i>TV Cable
                           </div>
                           <div class='col-lg-4 ameniting-list'>
@@ -297,7 +306,7 @@ const SingleProperty = () => {
                           </div>
                           <div class='col-lg-4 ameniting-list'>
                             <i class='fas fa-check-circle'></i>Window
-                          </div>
+                          </div> */}
                         </div>
                       </div>
                       <div class='overview-area map-box'>
