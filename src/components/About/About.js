@@ -64,13 +64,13 @@ const About = () => {
 							<div class="about-box3 wow fadeInUp" data-wow-delay=".2s">
 								<span class="item-subtitle">About Us</span>
 								<h2 class="item-title">
-									We're on a Mission to Change View of RealEstate Field.
+									We're on a Mission to Change View of Toursim In India.
 								</h2>
 								<p>
-									VRDOOR is a unique digital platform which offers 360 degree
-									view solution to our customers for all their property needs.
+									VRTOUR is a unique digital platform which offers 360 degree
+									immersive experience which give the viewers real-life Experience. 
 									The portal is completely devoted to meet every requirement of
-									the customer.
+									the viewers.
 								</p>
 								<div class="row">
 									<div class="col-lg-6 col-md-6 col-sm-6">

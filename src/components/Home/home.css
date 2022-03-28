@@ -32,4 +32,7 @@
   }
 }
 
-
+.colour {
+  filter: invert(33%) sepia(100%) saturate(6272%) hue-rotate(244deg)
+    brightness(97%) contrast(98%);
+}
