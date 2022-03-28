@@ -13,7 +13,7 @@ import {
 	MEET_REQUEST,
 	MEET_SUCCESS,
 } from "../constants/constants";
-const API_URL = "https://vrtour-sih.herokuapp.com/";
+const API_URL = "https://vrtour-sih.herokuapp.com";
 
 export const addMeeting = (details) => async (dispatch, getState) => {
 	console.log("action");
