@@ -17,7 +17,7 @@ import {
 	USER_REGISTER_SUCCESS,
 } from "../constants/constants";
 import axios from "axios";
-const API_URL = "http://localhost:4000";
+const API_URL = "https://vrtour-sih.herokuapp.com/";
 export const userRgister = (details) => async (dispatch) => {
 	console.log(details);
 	try {
