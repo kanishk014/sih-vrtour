@@ -91,15 +91,7 @@ const Navbar = () => {
                       <Link to='/about'>About</Link>
                     </li>
                     <li>
-                      <a>Property</a>
-                      <ul class='dropdown-menu-col-1'>
-                        <li>
-                          <a href='/properties?category=buy'>Buy</a>
-                        </li>
-                        <li>
-                          <a href='/properties?category=rent'>Rent</a>
-                        </li>
-                      </ul>
+                    <a href='/properties?category=buy'>Pilgrimages</a>                     
                     </li>
 
                     <li>
