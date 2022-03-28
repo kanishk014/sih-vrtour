@@ -67,7 +67,8 @@
   top: 0;
   z-index: 100000;
   width: 100%;
+  box-shadow: 0 10px 20px rgba(85, 85, 85, 0.144);
 }
 .mean-bar {
-  background: #ffefe2 !important;
+  background: #fdf6f0 !important;
 }

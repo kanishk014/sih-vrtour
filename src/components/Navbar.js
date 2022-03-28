@@ -91,7 +91,7 @@ const Navbar = () => {
                       <Link to='/about'>About</Link>
                     </li>
                     <li>
-                    <a href='/properties?category=buy'>Pilgrimages</a>                     
+                      <a href='/properties?category=buy'>Pilgrimages</a>
                     </li>
 
                     <li>
@@ -127,7 +127,7 @@ const Navbar = () => {
                         <span>
                           <i class='fas fa-plus-circle'></i>
                         </span>
-                        <span class='item-text'>Add Property</span>
+                        <span class='item-text'>Donate Now!</span>
                       </Link>
                     </li>
                   </ul>
@@ -143,7 +143,7 @@ const Navbar = () => {
       >
         <div class='mean-bar'>
           <Link to='/'>
-            <img src='img/logo.svg' alt='logo' class='img-fluid' />
+            <img src='img/logo.png' alt='logo' class='img-fluid' />
           </Link>
           <div class='mean-bar--right'>
             <div class='actions search'>
