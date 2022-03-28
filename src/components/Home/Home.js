@@ -1095,14 +1095,14 @@ const Home = () => {
                 <div class='item-heading-left mb-bottom'>
                   <span class='section-subtitle'>WHO WE ARE</span>
                   <h2 class='section-title'>
-                    We are Offering The Best Real Estate Property For All
+                    We are Offering The Best immersive experience for all Pilgrimages
                   </h2>
                   <div class='bg-title-wrap' style={{ display: 'block' }}>
                     <span class='background-title solid'>About</span>
                   </div>
                   <p>
-                    Experience homes in a smarter way with Virtual reality.
-                    Explore your future home with timely listings and a seamless
+                    Experience places in a smarter way with Virtual reality.
+                    Explore future at  your home with all details and a seamless
                     experience.
                   </p>
                 </div>
