@@ -74,13 +74,22 @@ const Properties = () => {
                 <form
                   action='https://radiustheme.com/demo/html/homlisti//properties'
                   class='map-form'
+                  style={{ marginTop: '30px' }}
                 >
                   <input
                     type='text'
                     class='form-control'
                     placeholder='What are you looking for?'
                   />
-                  <div class='row'>
+                  <div
+                    class='row'
+                    style={{
+                      display: 'flex',
+                      justifyContent: 'space-between',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                  >
                     <div class='col-lg-4 pl-15'>
                       <div class='rld-single-select'>
                         <select
@@ -143,22 +152,13 @@ const Properties = () => {
                           class='select single-select mr-0'
                           style={{ width: 'fitContent', padding: '0 20px' }}
                         >
-                          <option value='1'>All Categories</option>
-                          <option value='2'>Rent</option>
-                          <option value='3'>Buy</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class='col-lg-4 pl-15'>
-                      <div class='rld-single-select'>
-                        <select
-                          class='select single-select mr-0'
-                          style={{ width: 'fitContent', padding: '0 20px' }}
-                        >
-                          <option value='1'>All Cities</option>
-                          <option value='2'>Los Angeles</option>
-                          <option value='3'>Chicago</option>
-                          <option value='3'>Philadelphia</option>
+                          <option value='1'>Categories</option>
+                          <option value='2'>Temple</option>
+                          <option value='3'>Mandir</option>
+                          <option value='4'>Church</option>
+                          <option value='5'>Mosque</option>
+                          <option value='6'>Gurudwara</option>
+                          <option value='7'>Shrine</option>
                         </select>
                       </div>
                     </div>
@@ -173,37 +173,10 @@ const Properties = () => {
                           display: 'flex',
                           justifyContent: 'space-between',
                           alignItems: 'center',
+                          justifyContent: 'center',
+                          marginTop: '-30px',
                         }}
                       >
-                        <div class='rld-progress-box'>
-                          <div class='main-search-field-3'>
-                            {/* <!-- Area Range --> */}
-                            <div class='price-range-wrapper'>
-                              <div class='range-box'>
-                                <div class='price-label'>Price:</div>
-                                <div
-                                  id='price-range-filter-4'
-                                  class='price-range-filter'
-                                ></div>
-                                <div class='price-filter-wrap d-flex align-items-center'>
-                                  <div class='price-range-select'>
-                                    <div class='price-range range-title'>₹</div>
-                                    <div
-                                      class='price-range'
-                                      id='price-range-min-4'
-                                    ></div>
-                                    <div class='price-range'></div>
-                                    <div
-                                      class='price-range'
-                                      id='price-range-max-4'
-                                    ></div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-
                         <div class='filter-button'>
                           <div
                             class='dropdown-filter'
@@ -519,15 +492,13 @@ const Properties = () => {
                                     />
 
                                     <div class='item-category-box1'>
-                                      <div class='item-category'>
-                                        For {currEle.category}
-                                      </div>
+                                      <div class='item-category'>Visit</div>
                                     </div>
                                     <div class='rent-price'>
                                       <div class='item-price'>
-                                        ${currEle.price}
+                                        ₹{currEle.price}
                                         <span>
-                                          <i>/</i>mo
+                                          <i>/</i>person
                                         </span>
                                       </div>
                                     </div>
@@ -544,22 +515,6 @@ const Properties = () => {
                                     <div class='location-area'>
                                       <i class='flaticon-maps-and-flags'></i>
                                       {currEle.location}
-                                    </div>
-                                    <div class='item-categoery3'>
-                                      <ul>
-                                        <li>
-                                          <i class='flaticon-bed'></i>Beds:{' '}
-                                          {currEle.beds}
-                                        </li>
-                                        <li>
-                                          <i class='flaticon-shower'></i>Baths:{' '}
-                                          {currEle.baths}
-                                        </li>
-                                        <li>
-                                          <i class='flaticon-two-overlapping-square'></i>
-                                          {currEle.sqft} Sqft
-                                        </li>
-                                      </ul>
                                     </div>
                                   </div>
                                 </div>
