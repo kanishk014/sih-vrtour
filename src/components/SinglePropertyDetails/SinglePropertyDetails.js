@@ -430,7 +430,7 @@ const SingleProperty = () => {
 													></iframe>
 												</div>
 											</div>
-											<div class="overview-area floor-plan-box">
+											{/* <div class="overview-area floor-plan-box">
 												<h3 class="item-title">Floor Plans</h3>
 												<div id="accordion" class="accordion">
 													<div class="card">
@@ -563,7 +563,7 @@ const SingleProperty = () => {
 														</div>
 													</div>
 												</div>
-											</div>
+											</div> */}
 											<div class="overview-area video-box1">
 												<h3 class="item-title">Property Video</h3>
 												<div class="item-img">
@@ -896,7 +896,7 @@ const SingleProperty = () => {
 											</div>
 										) : (
 											<div class="widget widget-contact-box">
-												<h3 class="widget-subtitle">Contact Agent</h3>
+												<h3 class="widget-subtitle">Contact Tour Guide</h3>
 												<div class="media d-flex">
 													<div
 														class="flex-shrink-0"
@@ -913,7 +913,7 @@ const SingleProperty = () => {
 														</div>
 													</div>
 													<div class="media-body flex-grow-1 ms-3">
-														<h4 class="item-title">VRDOOR</h4>
+														<h4 class="item-title">VRTOUR</h4>
 														<div class="item-phn">
 															+91{" "}
 															{userData?.phoneno
@@ -926,7 +926,7 @@ const SingleProperty = () => {
 														<div class="item-mail">
 															{userData?.email
 																? userData?.email
-																: "info@vrdoor.com"}
+																: "info@vrtour.com"}
 														</div>
 														<div class="item-rating">
 															<ul>
