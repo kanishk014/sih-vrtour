@@ -1209,7 +1209,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section
+      {/* <section
         class='property-banner-wrap1 parallaxie'
         data-bg-image='img/banner/banner3.jpg'
       >
@@ -1240,7 +1240,7 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
       {/*  */}
       <section class='banner-collection4 motion-effects-wrap'>
         <div class='item-element'>
@@ -1295,8 +1295,8 @@ const Home = () => {
                     We’re Providing the Best Virtual Reality Experience
                   </h2>
                   <p class='item-para'>
-                    Explore places in VR. A smart way to visti any place and  experience using
-                    virtual reality
+                    Explore places in VR. A smart way to visti any place and
+                    experience using virtual reality
                   </p>
                   <p></p>
                 </div>
@@ -1460,13 +1460,18 @@ const Home = () => {
       <section class='banner-collection3'>
         <div class='container'>
           <div class='item-heading-center'>
-            <h2 class='section-title'>Find Your Desire Dream Home Today!</h2>
-            <div class='bg-title-wrap' style={{ display: 'block' }}>
-              <span class='background-title solid'>Dream Home</span>
+            {/* <h2 class='section-title'>Find Your Desire Dream Home Today!</h2> */}
+            <div
+              class='bg-title-wrap'
+              style={{ display: 'block', position: 'relative', marginTop: 50 }}
+            >
+              <span class='background-title solid'>
+                Cleanse Your Soul Today!
+              </span>
             </div>
             <div class='banner-button'>
               <Link to='Contactus' class='banner-btn'>
-                Contact With Us
+                Contact Us
               </Link>
             </div>
           </div>
