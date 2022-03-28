@@ -146,99 +146,52 @@ const SingleProperty = () => {
                       ></iframe>
                     </div>
                     <div class="single-listing-box1">
-                      <div class="overview-area">
+                    <div class="overview-area single-details-box table-responsive">
                         <h3 class="item-title">Overview</h3>
-                        <div class="gallery-icon-box">
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-comment"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>ID No :</li>
-                              <li class="deep-clr">
-                                {" "}
-                                {propertyDetails?._id?.slice(1, 5)}
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-home"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Type :</li>
-                              <li class="deep-clr">{propertyDetails?.type}</li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-bed"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Bed Room :</li>
-                              <li class="deep-clr">{propertyDetails?.beds}</li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-shower"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>ID No :</li>
-                              <li class="deep-clr">
-                                {propertyDetails?._id?.slice(1, 5)}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
-                        <div class="gallery-icon-box">
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-home"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Parking :</li>
-                              <li class="deep-clr">
+                        <table class="table-box1">
+                          <tbody>
+                            <tr>
+                              <td class="item-bold">Id No</td>
+                              <td> {propertyDetails?._id?.slice(1, 5)}</td>
+                              <td class="item-bold">Ticket Price</td>
+                              <td>Rs.{propertyDetails?.price}</td>
+                            </tr>
+                            <tr>
+                              <td class="item-bold">Type</td>
+                              <td>{propertyDetails?.type}</td>
+                              <td class="item-bold">Parking</td>
+                              <td>
                                 {propertyDetails?.parkingSpaces > 0
                                   ? "Yes"
                                   : "No"}
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-home"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Area :</li>
-                              <li class="deep-clr">
-                                {propertyDetails?.sqft} sqft
-                              </li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-pencil"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Land Size :</li>
-                              <li class="deep-clr">15,000 sqft</li>
-                            </ul>
-                          </div>
-                          <div class="item-icon-box">
-                            <div class="item-icon">
-                              <i class="flaticon-two-overlapping-square"></i>
-                            </div>
-                            <ul class="item-number">
-                              <li>Year Build :</li>
-                              <li class="deep-clr">
+                              </td>
+                            </tr>
+                            <tr>
+                              <td class="item-bold">Timings</td>
+                              <td>
+                                {propertyDetails?.timings}
+                              </td>
+                              <td class="item-bold">Aarti Time</td>
+                              <td>{propertyDetails?.aartiTime}</td>
+                            </tr>
+                            <tr>
+                              <td class="item-bold">Tour Time</td>
+                              <td>{propertyDetails?.tourTime}</td>
+                              <td class="item-bold">Land Area</td>
+                              <td>{propertyDetails?.landArea}</td>
+                            </tr>
+                            <tr>
+                              <td class="item-bold">Size</td>
+                              <td>{propertyDetails?.sqft} sqft</td>
+                              <td class="item-bold">Year Build</td>
+                              <td>
                                 {propertyDetails?.builtYear
                                   ? propertyDetails?.builtYear
                                   : 2019}
-                              </li>
-                            </ul>
-                          </div>
-                        </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
                       </div>
                       <div class="overview-area listing-area">
                         <h3 class="item-title">About This Place</h3>
@@ -254,13 +207,14 @@ const SingleProperty = () => {
                           architecture.The mandir is a humble tribute to Bhagwan
                           Swaminarayan (1781- 1830), the avatars, devas and
                           great sages of Hinduism.
+                          {propertyDetails?.about}
                         </p>
-                        <p>
+                        {/* <p>
                           The traditionally-styled complex was inaugurated on 6
                           November 2005 with the blessings of HH Pramukh Swami
                           Maharaj and through the devoted efforts of skilled
                           artisans and volunteers.
-                        </p>
+                        </p> */}
                       </div>
                       <div class="overview-area listing-area">
                         <h3 class="item-title">Facts and Figures</h3>
@@ -277,6 +231,7 @@ const SingleProperty = () => {
                           teachings such as prayer, compassion, and
                           non-violence. Open gardens, water bodies and step-well
                           styled courtyard
+                          {propertyDetails?.factsAndFigures}
                         </p>
                       </div>
                       <div class="overview-area listing-area">
@@ -289,64 +244,12 @@ const SingleProperty = () => {
                           orci fringilla, sed pretium lectus viverra.
                           Pellentesque habitant morbi tristique senectus et
                           netus et malesuada fames ac turpis egestas.
-                        </p>
-                        <p>
-                          Praesent eros turpis, commodo vel justo at, pulvinar
-                          mollis eros. Mauris aliquet eu quam id ornareor bi ac
-                          quam enim. Cras vitae nulla condimentum, semper dolor
-                          non, faucibus dolor. Vivamus adip iscing eros quis
-                          orci fringilla, sed pretium lectus viverra.
-                        </p>
+                          {
+                            propertyDetails?.famous
+                          }
+                        </p>                        
                       </div>
-                      <div class="overview-area single-details-box table-responsive">
-                        <h3 class="item-title">Details</h3>
-                        <table class="table-box1">
-                          <tbody>
-                            <tr>
-                              <td class="item-bold">Id No</td>
-                              <td> {propertyDetails?._id?.slice(1, 5)}</td>
-                              <td class="item-bold">Price</td>
-                              <td>Rs.{propertyDetails?.price}</td>
-                            </tr>
-                            <tr>
-                              <td class="item-bold">Property Type</td>
-                              <td>{propertyDetails?.type}</td>
-                              <td class="item-bold">Parking</td>
-                              <td>
-                                {propertyDetails?.parkingSpaces > 0
-                                  ? "Yes"
-                                  : "No"}
-                              </td>
-                            </tr>
-                            <tr>
-                              <td class="item-bold">Rooms</td>
-                              <td>
-                                {propertyDetails?.roomCount
-                                  ? propertyDetails?.roomCount
-                                  : 4}
-                              </td>
-                              <td class="item-bold">Property Status</td>
-                              <td>{propertyDetails?.category}</td>
-                            </tr>
-                            <tr>
-                              <td class="item-bold">Bath Rooms</td>
-                              <td>{propertyDetails?.baths}</td>
-                              <td class="item-bold">Land Area</td>
-                              <td>15,000 sqft</td>
-                            </tr>
-                            <tr>
-                              <td class="item-bold">Size</td>
-                              <td>{propertyDetails?.sqft} sqft</td>
-                              <td class="item-bold">Year Build</td>
-                              <td>
-                                {propertyDetails?.builtYear
-                                  ? propertyDetails?.builtYear
-                                  : 2019}
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
+                      
                       <div class="overview-area ameniting-box">
                         <h3 class="item-title">Features {"&"} Activites</h3>
                         <div class="row">
