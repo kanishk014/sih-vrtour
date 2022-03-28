@@ -520,7 +520,7 @@ const Properties = () => {
 
                                     <div class='item-category-box1'>
                                       <div class='item-category'>
-                                        For {currEle.category}
+                                        {currEle.type}
                                       </div>
                                     </div>
                                     <div class='rent-price'>
