@@ -87,38 +87,8 @@ const Properties = () => {
                           class='select single-select mr-0'
                           style={{ width: 'fitContent', padding: '0 20px' }}
                         >
-                          {/* <option value="1">Property Type</option>
-													<option value="2">Andhra Pradesh</option>
-													<option value="4">Arunachal Pradesh</option>
-													<option value="5">Assam</option>
-													<option value="6">Bihar</option>
-													<option value="7">Chhattisgarh</option>
-													<option value="8">Goa</option>
-													<option value="9">Gujarat</option>
-													<option value="10">Haryana</option>
-													<option value="11">Himachal Pradesh</option>
-													<option value="12">Jharkhand</option>
-													<option value="13">Karnataka</option>
-													<option value="14">Kerala</option>
-													<option value="15">Madhya Pradesh</option>
-													<option value="16">Maharashtra</option>
-													<option value="17">Manipur</option>
-													<option value="18">Meghalaya</option>
-													<option value="19">Condo</option>
-													<option value="20">Condo</option>
-													<option value="21">Condo</option>
-													<option value="22">Condo</option>
-													<option value="23">Condo</option>
-													<option value="24">Condo</option>
-													<option value="25">Condo</option>
-													<option value="26">Condo</option>
-													<option value="27">Condo</option>
-													<option value="28">Condo</option> */}
-
-                          <option value='State'>State</option>
-                          <option value='Andaman and Nicobar Islands'>
-                            Andaman and Nicobar Islands
-                          </option>
+                          <option value='1'>State</option>
+                          <option value='2'>Andaman and Nicobar Islands</option>
                           <option value='Andhra Pradesh'>Andhra Pradesh</option>
                           <option value='Arunachal Pradesh'>
                             Arunachal Pradesh
