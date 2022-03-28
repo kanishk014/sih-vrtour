@@ -37,9 +37,7 @@ const SingleProperty = () => {
     if (success) {
       dispatch(fetchUserData(propertyDetails?.userId));
     }
-  }, [success, dispatch]);
-
-  const activities = propertyDetails?.activities;  
+  }, [success, dispatch]);  
 
   return (
     <div>
@@ -259,9 +257,9 @@ const SingleProperty = () => {
                       <div class='overview-area ameniting-box'>
                         <h3 class='item-title'>Features {'&'} Activites</h3>
                         <div class='row'>
-                          {activities.map((item) => {
+                          {propertyDetails?.activities.map((item, i) => {
                             return (
-                              <div class='col-lg-4 ameniting-list'>
+                              <div class='col-lg-4 ameniting-list' key={i}>
                                 <i class='fas fa-check-circle'></i>
                                 {item}
                               </div>
