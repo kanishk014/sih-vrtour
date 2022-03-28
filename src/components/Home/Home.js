@@ -92,15 +92,15 @@ const Home = () => {
             />
           </div>
         </div>
-        <div class='container hero'>
+        <div class='container'>
           <div class='row'>
             <div class='col-xl-8'>
               <div class='main-banner-box1 main-banner-box6'>
                 <h1 class='item-title wow fadeInUp' data-wow-delay='.4s'>
-                  A journey becomes a pilgrimage as we discover, day by day
+                  Achieve Mindfulness With
                 </h1>
                 <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>pilgrimages</span>
+                  <span class='background-title solid'>Properties</span>
                 </div>
 
                 <div class='banner-search-wrap'>
@@ -533,7 +533,6 @@ const Home = () => {
                     {/* <span class='banner-p'> </span> */}
                     <span class='item-shape'>
                       <img
-                        class='colour-1'
                         src='img/figure/shape39.svg'
                         width='79'
                         height='16'
@@ -937,7 +936,7 @@ const Home = () => {
             <ul>
               <li>
                 <img
-                  class='wow animated fadeInRight colour'
+                  class='wow animated fadeInRight'
                   data-wow-delay='.4s'
                   src='img/figure/shape30.svg'
                   width='312'
@@ -1003,11 +1002,7 @@ const Home = () => {
                 <div class='row'>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img
-                        class='colour-1'
-                        src='img/figure/shape28.svg'
-                        alt='svg'
-                      />
+                      <img src='img/figure/shape28.svg' alt='svg' />
                       <div class='item-content'>
                         <div class='item-content'>
                           <div class='item-content__text'>
@@ -1025,11 +1020,7 @@ const Home = () => {
                   </div>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img
-                        class='colour-1'
-                        src='img/figure/shape29.svg'
-                        alt='svg'
-                      />
+                      <img src='img/figure/shape29.svg' alt='svg' />
                       <div class='item-content'>
                         <div class='item-content__text'>
                           <div class='item-k'>
@@ -1045,8 +1036,8 @@ const Home = () => {
                   </div>
                 </div>
                 <p>
-                  The company's promise is using technology to reduce the time
-                  and friction of buying and Buying house or apartment.
+                  The promise to use best-in-class technology to reduce the time
+                  and friction of visiting different places around the country.
                 </p>
                 <div class='banner-button about-button-2'>
                   <Link to='/contactus' class='banner-btn'>
@@ -1076,7 +1067,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-1.jpg'
+                      src='img/blog/location-1.png'
                       alt='location'
                       width='424'
                       height='280'
@@ -1091,7 +1082,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>3 locations</span>
+                      <span>03 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1105,7 +1096,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-2.jpg'
+                      src='img/blog/location-2.png'
                       alt='location'
                       width='424'
                       height='280'
@@ -1120,7 +1111,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>6 locations</span>
+                      <span>0 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1134,7 +1125,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-3.jpg'
+                      src='img/blog/location-3.png'
                       alt='location'
                       width='424'
                       height='280'
@@ -1149,7 +1140,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>5 locations</span>
+                      <span>05 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1165,7 +1156,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-4.jpg'
+                      src='img/blog/location-4.png'
                       alt='location'
                       width='424'
                       height='280'
@@ -1180,7 +1171,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>8 locations</span>
+                      <span>08 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1194,7 +1185,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/singleproperty'>
                     <img
-                      src='img/blog/location-5.jpg'
+                      src='img/blog/location-5.png'
                       alt='location'
                       width='846'
                       height='280'
@@ -1209,7 +1200,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>2 locations</span>
+                      <span>02 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1218,7 +1209,7 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section
+      <section
         class='property-banner-wrap1 parallaxie'
         data-bg-image='img/banner/banner3.jpg'
       >
@@ -1228,7 +1219,7 @@ const Home = () => {
               <div class='property-box1 wow slideInUp' data-wow-delay='100'>
                 <div class='item-subtitle'>Let’s Take a Tour</div>
                 <h3 class='item-title'>
-                  Search Property Smarter, Quicker & Anywhere
+                  Search places Smarter, Quicker & Anywhere
                 </h3>
                 <div class='play-button'>
                   <div class='item-icon'>
@@ -1243,13 +1234,14 @@ const Home = () => {
             <div class='col-lg-7 col-md-12'>
               <div class='property-img wow fadeInUp' data-wow-delay='100'>
                 <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Property For All</span>
+                  <span class='background-title solid'>Virtual Reality For All</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section> */}
+      </section>
+      {/*  */}
       <section class='banner-collection4 motion-effects-wrap'>
         <div class='item-element'>
           <ul>
@@ -1300,10 +1292,10 @@ const Home = () => {
               <div class='banner-content-2 wow fadeInUp' data-wow-delay='.7s'>
                 <div class='item-heading-left'>
                   <h2 class='section-title'>
-                    We’re Providing the Best Real Estate Services
+                    We’re Providing the Best Virtual Reality Experience
                   </h2>
                   <p class='item-para'>
-                    Explore places in VR. A smart real estate experience using
+                    Explore places in VR. A smart way to visti any place and  experience using
                     virtual reality
                   </p>
                   <p></p>
@@ -1355,21 +1347,122 @@ const Home = () => {
           </div>
         </div>
       </section>
+      {/* <section class="testimonial-wrap3">
+				<div class="container">
+					<div class="testimonial-layout3 swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<div class="item-img">
+									<img
+										src="img/slider/slider1.png"
+										width="74"
+										height="74"
+										alt="slider"
+									/>
+								</div>
+								<div class="testimonial-content">
+									<h3 class="item-title">Maria Zokatti</h3>
+									<div class="item-subtitle">SEO Marketing</div>
+									<div class="rtin-content">
+										<span>
+											“ when an unknown printer took a galley of type and
+											scrambled it to make a type specimen bookhas survived not
+											only five centuries, but also the leap into electronic
+											type setting emaining essentially unchanged follower.”
+										</span>
+										<div class="item-icon">
+											<i class="fas fa-quote-left"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="item-img">
+									<img
+										src="img/slider/slider2.png"
+										width="74"
+										height="74"
+										alt="slider"
+									/>
+								</div>
+								<div class="testimonial-content">
+									<h3 class="item-title">Maria Zokatti</h3>
+									<div class="item-subtitle">SEO Marketing</div>
+									<div class="rtin-content">
+										<span>
+											“ when an unknown printer took a galley of type and
+											scrambled it to make a type specimen bookhas survived not
+											only five centuries, but also the leap into electronic
+											type setting emaining essentially unchanged follower.”
+										</span>
+										<div class="item-icon">
+											<i class="fas fa-quote-left"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="item-img">
+									<img
+										src="img/slider/slider3.png"
+										width="74"
+										height="74"
+										alt="slider"
+									/>
+								</div>
+								<div class="testimonial-content">
+									<h3 class="item-title">Maria Zokatti</h3>
+									<div class="item-subtitle">SEO Marketing</div>
+									<div class="rtin-content">
+										<span>
+											“ when an unknown printer took a galley of type and
+											scrambled it to make a type specimen bookhas survived not
+											only five centuries, but also the leap into electronic
+											type setting emaining essentially unchanged follower.”
+										</span>
+										<div class="item-icon">
+											<i class="fas fa-quote-left"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="swiper-slide">
+								<div class="item-img">
+									<img
+										src="img/slider/slider1.png"
+										width="74"
+										height="74"
+										alt="slider"
+									/>
+								</div>
+								<div class="testimonial-content">
+									<h3 class="item-title">Maria Zokatti</h3>
+									<div class="item-subtitle">SEO Marketing</div>
+									<div class="rtin-content">
+										<span>
+											“ when an unknown printer took a galley of type and
+											scrambled it to make a type specimen bookhas survived not
+											only five centuries, but also the leap into electronic
+											type setting emaining essentially unchanged follower.”
+										</span>
+										<div class="item-icon">
+											<i class="fas fa-quote-left"></i>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						{/* <div class="swiper-button-prev testimonial-btn"></div>
+						<div class="swiper-button-next testimonial-btn"></div> */}
+      {/* </div>
+				</div>
+			</section>  */}
       <section class='banner-collection3'>
         <div class='container'>
           <div class='item-heading-center'>
-            {/* <h2 class='section-title'>Cleanse Your Soul Today!</h2> */}
-            <div
-              class='bg-title-wrap'
-              style={{
-                display: 'block',
-                position: 'relative',
-                marginTop: '15%',
-              }}
-            >
-              <span class='background-title solid'>
-                Cleanse Your Soul Today!
-              </span>
+            <h2 class='section-title'>Find Your Desire Dream Home Today!</h2>
+            <div class='bg-title-wrap' style={{ display: 'block' }}>
+              <span class='background-title solid'>Dream Home</span>
             </div>
             <div class='banner-button'>
               <Link to='Contactus' class='banner-btn'>
