@@ -523,9 +523,12 @@ const Home = () => {
                     </div>
                   </div>
                   <p class='item-para wow fadeInUp' data-wow-delay='.4s'>
-                    We’ve more than
-                    <span class='banner-p'>54,000</span> apartments, place &
-                    plot.
+                    Put your
+                    <span class='banner-p'> heart, mind, and soul</span> into
+                    even your
+                    <br></br>
+                    smallest acts.
+                    {/* <span class='banner-p'> </span> */}
                     <span class='item-shape'>
                       <img
                         src='img/figure/shape39.svg'

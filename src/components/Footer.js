@@ -11,8 +11,8 @@ const Footer = () => {
               <div class='footer-logo-area footer-logo-area-2'>
                 <div className='img-container'>
                   <img
-                    style={{ height: '50px', marginBottom: '20px' }}
-                    src='img/logo.png'
+                    style={{ height: '100px' }}
+                    src='img/logo_white.png'
                     height={100}
                     alt='logo'
                     class='img-fluid'
