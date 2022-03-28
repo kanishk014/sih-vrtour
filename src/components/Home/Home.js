@@ -92,15 +92,15 @@ const Home = () => {
             />
           </div>
         </div>
-        <div class='container'>
+        <div class='container hero'>
           <div class='row'>
             <div class='col-xl-8'>
               <div class='main-banner-box1 main-banner-box6'>
                 <h1 class='item-title wow fadeInUp' data-wow-delay='.4s'>
-                  Achieve Mindfulness With
+                  A journey becomes a pilgrimage as we discover, day by day
                 </h1>
                 <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Properties</span>
+                  <span class='background-title solid'>pilgrimages</span>
                 </div>
 
                 <div class='banner-search-wrap'>
@@ -531,6 +531,7 @@ const Home = () => {
                     {/* <span class='banner-p'> </span> */}
                     <span class='item-shape'>
                       <img
+                        class='colour-1'
                         src='img/figure/shape39.svg'
                         width='79'
                         height='16'
@@ -1044,7 +1045,7 @@ const Home = () => {
             <ul>
               <li>
                 <img
-                  class='wow animated fadeInRight'
+                  class='wow animated fadeInRight colour'
                   data-wow-delay='.4s'
                   src='img/figure/shape30.svg'
                   width='312'
@@ -1109,7 +1110,11 @@ const Home = () => {
                 <div class='row'>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img src='img/figure/shape28.svg' alt='svg' />
+                      <img
+                        class='colour-1'
+                        src='img/figure/shape28.svg'
+                        alt='svg'
+                      />
                       <div class='item-content'>
                         <div class='item-content'>
                           <div class='item-content__text'>
@@ -1127,7 +1132,11 @@ const Home = () => {
                   </div>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img src='img/figure/shape29.svg' alt='svg' />
+                      <img
+                        class='colour-1'
+                        src='img/figure/shape29.svg'
+                        alt='svg'
+                      />
                       <div class='item-content'>
                         <div class='item-content__text'>
                           <div class='item-k'>
@@ -1189,7 +1198,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>03 properties</span>
+                      <span>3 locations</span>
                     </div>
                   </div>
                 </div>
@@ -1218,7 +1227,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>0 properties</span>
+                      <span>6 locations</span>
                     </div>
                   </div>
                 </div>
@@ -1247,7 +1256,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>05 properties</span>
+                      <span>5 locations</span>
                     </div>
                   </div>
                 </div>
@@ -1278,7 +1287,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>08 properties</span>
+                      <span>8 locations</span>
                     </div>
                   </div>
                 </div>
@@ -1307,7 +1316,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>02 properties</span>
+                      <span>2 locations</span>
                     </div>
                   </div>
                 </div>
@@ -1348,7 +1357,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/*  */}
       <section class='banner-collection4 motion-effects-wrap'>
         <div class='item-element'>
           <ul>
@@ -1454,122 +1462,131 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section class="testimonial-wrap3">
-				<div class="container">
-					<div class="testimonial-layout3 swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider1.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider2.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider3.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider1.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* <div class="swiper-button-prev testimonial-btn"></div>
-						<div class="swiper-button-next testimonial-btn"></div> */}
-      {/* </div>
-				</div>
-			</section>  */}
+      <section class='testimonial-wrap3'>
+        <div class='container'>
+          <div class='testimonial-layout3 swiper-container'>
+            <div class='swiper-wrapper'>
+              <div class='swiper-slide'>
+                <div class='item-img'>
+                  <img
+                    src='img/slider/slider1.png'
+                    width='74'
+                    height='74'
+                    alt='slider'
+                  />
+                </div>
+                <div class='testimonial-content'>
+                  <h3 class='item-title'>Maria Zokatti</h3>
+                  <div class='item-subtitle'>SEO Marketing</div>
+                  <div class='rtin-content'>
+                    <span>
+                      “ when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen bookhas survived not
+                      only five centuries, but also the leap into electronic
+                      type setting emaining essentially unchanged follower.”
+                    </span>
+                    <div class='item-icon'>
+                      <i class='fas fa-quote-left'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='swiper-slide'>
+                <div class='item-img'>
+                  <img
+                    src='img/slider/slider2.png'
+                    width='74'
+                    height='74'
+                    alt='slider'
+                  />
+                </div>
+                <div class='testimonial-content'>
+                  <h3 class='item-title'>Maria Zokatti</h3>
+                  <div class='item-subtitle'>SEO Marketing</div>
+                  <div class='rtin-content'>
+                    <span>
+                      “ when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen bookhas survived not
+                      only five centuries, but also the leap into electronic
+                      type setting emaining essentially unchanged follower.”
+                    </span>
+                    <div class='item-icon'>
+                      <i class='fas fa-quote-left'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='swiper-slide'>
+                <div class='item-img'>
+                  <img
+                    src='img/slider/slider3.png'
+                    width='74'
+                    height='74'
+                    alt='slider'
+                  />
+                </div>
+                <div class='testimonial-content'>
+                  <h3 class='item-title'>Maria Zokatti</h3>
+                  <div class='item-subtitle'>SEO Marketing</div>
+                  <div class='rtin-content'>
+                    <span>
+                      “ when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen bookhas survived not
+                      only five centuries, but also the leap into electronic
+                      type setting emaining essentially unchanged follower.”
+                    </span>
+                    <div class='item-icon'>
+                      <i class='fas fa-quote-left'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class='swiper-slide'>
+                <div class='item-img'>
+                  <img
+                    src='img/slider/slider1.png'
+                    width='74'
+                    height='74'
+                    alt='slider'
+                  />
+                </div>
+                <div class='testimonial-content'>
+                  <h3 class='item-title'>Maria Zokatti</h3>
+                  <div class='item-subtitle'>SEO Marketing</div>
+                  <div class='rtin-content'>
+                    <span>
+                      “ when an unknown printer took a galley of type and
+                      scrambled it to make a type specimen bookhas survived not
+                      only five centuries, but also the leap into electronic
+                      type setting emaining essentially unchanged follower.”
+                    </span>
+                    <div class='item-icon'>
+                      <i class='fas fa-quote-left'></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* <div class='swiper-button-prev testimonial-btn'></div>
+            <div class='swiper-button-next testimonial-btn'></div> */}
+          </div>
+        </div>
+      </section>
       <section class='banner-collection3'>
         <div class='container'>
           <div class='item-heading-center'>
-            <h2 class='section-title'>Find Your Desire Dream Home Today!</h2>
-            <div class='bg-title-wrap' style={{ display: 'block' }}>
-              <span class='background-title solid'>Dream Home</span>
+            <h2 class='section-title'>Cleanse Your Soul Today!</h2>
+            <div
+              class='bg-title-wrap'
+              style={{
+                display: 'block',
+                position: 'relative',
+                marginTop: '15%',
+              }}
+            >
+              <span class='background-title solid'>
+                Cleanse Your Soul Today!
+              </span>
             </div>
             <div class='banner-button'>
               <Link to='Contactus' class='banner-btn'>

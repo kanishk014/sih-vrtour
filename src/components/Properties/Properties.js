@@ -87,8 +87,10 @@ const Properties = () => {
                           class='select single-select mr-0'
                           style={{ width: 'fitContent', padding: '0 20px' }}
                         >
-                          <option value='1'>State</option>
-                          <option value='2'>Andaman and Nicobar Islands</option>
+                          <option value='State'>State</option>
+                          <option value='Andaman and Nicobar Islands'>
+                            Andaman and Nicobar Islands
+                          </option>
                           <option value='Andhra Pradesh'>Andhra Pradesh</option>
                           <option value='Arunachal Pradesh'>
                             Arunachal Pradesh

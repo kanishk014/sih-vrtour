@@ -3003,6 +3003,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   left: 0;
   width: 100%;
 }
+
 .item-heading-center .bg-title-wrap .background-title {
   display: inline-block;
   font-family: 'Quentin';
@@ -6626,7 +6627,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   }
 }
 .banner-collection3 .item-heading-center .section-title {
-  color: #0e2e50;
+  color: #ffffff;
   font-size: 48px;
   line-height: 1.2;
   margin-bottom: 0;
@@ -8489,7 +8490,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   color: #70778a;
   font-size: 20px;
   font-weight: 500;
-  font-family: "Ubuntu", sans-serif;
+  font-family: 'Ubuntu', sans-serif;
   position: relative;
 }
 @media only screen and (max-width: 767px) {
@@ -11360,7 +11361,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   border: 2px solid var(--rt-primary-color);
   border-radius: 30px;
   font-size: 15px;
-  font-family: "Roboto";
+  font-family: 'Roboto';
   font-weight: 400;
   transition: 0.4s;
   line-height: 1.5;
