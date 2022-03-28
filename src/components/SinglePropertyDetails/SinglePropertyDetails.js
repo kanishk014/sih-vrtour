@@ -109,7 +109,7 @@ const SingleProperty = () => {
                         <div class="item-title">
                           <h3>
                             <Link to="/singlelisting">
-                              {propertyDetails.title}
+                              {propertyDetails?.title}
                             </Link>
                           </h3>
                         </div>
