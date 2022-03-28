@@ -222,7 +222,9 @@ const Home = () => {
                             <div class='row'>
                               <div class='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
                                 <div class='form-group bed'>
-                                  <label class='item-bedrooms'>Bedrooms</label>
+                                  <label class='item-bedrooms'>
+                                    Number of Visitors
+                                  </label>
                                   <select
                                     class='form-select'
                                     aria-label='addcategory'
@@ -260,7 +262,7 @@ const Home = () => {
 																	<option value="Buy">Buy</option>
 																</select>
 															</div> */}
-                              <div class='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
+                              {/* <div class='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
                                 <div class='form-group bath'>
                                   <label class='item-bath'>Bathrooms</label>
                                   <select
@@ -282,8 +284,8 @@ const Home = () => {
                                     <option value={5}>5</option>
                                   </select>
                                 </div>
-                              </div>
-                              <div class='col-lg-4 col-md-6 py-1 pl-0 pr-0'>
+                              </div> */}
+                              {/* <div class='col-lg-4 col-md-6 py-1 pl-0 pr-0'>
                                 <div class='form-group garage'>
                                   <label class='item-garage'>Rooms</label>
                                   <select
@@ -305,8 +307,8 @@ const Home = () => {
                                     <option value={5}>5</option>
                                   </select>
                                 </div>
-                              </div>
-                              <div class='main-search-field-2 col-12'>
+                              </div> */}
+                              {/* <div class='main-search-field-2 col-12'>
                                 <div class='row'>
                                   <div class='col-md-6 pl-0'>
                                     <div class='price-range-wrapper'>
@@ -315,7 +317,7 @@ const Home = () => {
                                           class='price-label'
                                           style={{ width: '200px' }}
                                         >
-                                          Flat Size:
+                                          Size:
                                         </div>
                                         <div
                                           id='price-range-filter-3'
@@ -368,7 +370,7 @@ const Home = () => {
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                               <div class='row' style={{ marginLeft: '0' }}>
                                 <div
                                   class='col-lg-12 col-md-12 col-sm-12'
@@ -387,7 +389,7 @@ const Home = () => {
                                         htmlFor='a-1'
                                         class='checkbox-custom-label'
                                       >
-                                        Air Condition
+                                        Timings
                                       </label>
                                     </li>
                                     <li>
@@ -401,7 +403,7 @@ const Home = () => {
                                         htmlFor='a-2'
                                         class='checkbox-custom-label'
                                       >
-                                        Barbeque
+                                        Aarti Time
                                       </label>
                                     </li>
                                     <li>
@@ -415,7 +417,7 @@ const Home = () => {
                                         htmlFor='a-3'
                                         class='checkbox-custom-label'
                                       >
-                                        Gym
+                                        Tour Time
                                       </label>
                                     </li>
                                     <li>
@@ -429,7 +431,7 @@ const Home = () => {
                                         htmlFor='a-4'
                                         class='checkbox-custom-label'
                                       >
-                                        Internet
+                                        Land Area
                                       </label>
                                     </li>
                                     <li>
@@ -443,10 +445,10 @@ const Home = () => {
                                         htmlFor='a-5'
                                         class='checkbox-custom-label'
                                       >
-                                        Tv Cable
+                                        Year Build
                                       </label>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                       <input
                                         id='a-6'
                                         class='checkbox-custom'
@@ -473,7 +475,7 @@ const Home = () => {
                                       >
                                         Laundry
                                       </label>
-                                    </li>
+                                    </li> */}
                                     <li>
                                       <input
                                         id='a-8'
@@ -488,7 +490,7 @@ const Home = () => {
                                         Parking
                                       </label>
                                     </li>
-                                    <li>
+                                    {/* <li>
                                       <input
                                         id='a-9'
                                         class='checkbox-custom'
@@ -501,7 +503,7 @@ const Home = () => {
                                       >
                                         Cc Cam
                                       </label>
-                                    </li>
+                                    </li> */}
                                   </ul>
                                 </div>
                               </div>
@@ -570,13 +572,13 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Buy</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
                     <div class='item-price'>
-                      $15,000
+                      ₹250
                       <span>
-                        <i>/</i>mo
+                        <i>/</i>person
                       </span>
                     </div>
                   </div>
@@ -606,29 +608,16 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='SingleProperty'>Appartment</Link>
+                  <Link to='SingleProperty'>Temple</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/singleproperty'>Family House For Buy</Link>
+                      <Link to='/singleproperty'>Akshardham Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -648,15 +637,10 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Rent</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
-                    <div class='item-price'>
-                      $12,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
-                    </div>
+                    <div class='item-price'>Free</div>
                   </div>
                   <div class='react-icon'>
                     <ul>
@@ -684,31 +668,16 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='SingleProperty'>Villa</Link>
+                  <Link to='SingleProperty'>Temple</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='SingleProperty'>
-                        Countryside Modern Lake View
-                      </Link>
+                      <Link to='SingleProperty'>Lotus Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -728,15 +697,10 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Buy</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
-                    <div class='item-price'>
-                      $18,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
-                    </div>
+                    <div class='item-price'>Free</div>
                   </div>
                   <div class='react-icon'>
                     <ul>
@@ -764,31 +728,16 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/singleproperty'>Office</Link>
+                  <Link to='/singleproperty'>Mandir</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/singleproperty'>
-                        Gorgeous Apartment Building
-                      </Link>
+                      <Link to='/singleproperty'>Hanuman Mandir</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -808,15 +757,10 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Rent</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
-                    <div class='item-price'>
-                      $19,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
-                    </div>
+                    <div class='item-price'>Free</div>
                   </div>
                   <div class='react-icon'>
                     <ul>
@@ -844,31 +788,16 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/singleproperty'>Commercial</Link>
+                  <Link to='/singleproperty'>Gurudwara</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/singleproperty'>
-                        Countryside Modern Lake View
-                      </Link>
+                      <Link to='/singleproperty'>Golden Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>Amritsar, India
                   </div>
                 </div>
               </div>
@@ -888,15 +817,10 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Buy</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
-                    <div class='item-price'>
-                      $30,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
-                    </div>
+                    <div class='item-price'>Free</div>
                   </div>
                   <div class='react-icon'>
                     <ul>
@@ -924,29 +848,17 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/singleproperty'>Villa</Link>
+                  <Link to='/singleproperty'>Church</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/singleproperty'>Family House For Buy</Link>
+                      <Link to='/singleproperty'>Shimla Christ Church</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>Himachal Pradesh,
+                    India
                   </div>
                 </div>
               </div>
@@ -966,15 +878,10 @@ const Home = () => {
                     />
                   </Link>
                   <div class='item-category-box1'>
-                    <div class='item-category'>For Rent</div>
+                    <div class='item-category'>Visit Now</div>
                   </div>
                   <div class='rent-price'>
-                    <div class='item-price'>
-                      $25,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
-                    </div>
+                    <div class='item-price'>Free</div>
                   </div>
                   <div class='react-icon'>
                     <ul>
@@ -1002,31 +909,16 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/singleproperty'>Office</Link>
+                  <Link to='/singleproperty'>Mandir</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/singleproperty'>
-                        Countryside Modern Lake View
-                      </Link>
+                      <Link to='/singleproperty'>Kapaleeshwarar Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Downey, California
-                  </div>
-                  <div class='item-categoery3'>
-                    <ul>
-                      <li>
-                        <i class='flaticon-bed'></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class='flaticon-shower'></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class='flaticon-two-overlapping-square'></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class='flaticon-maps-and-flags'></i>Chennai, India
                   </div>
                 </div>
               </div>
@@ -1096,14 +988,15 @@ const Home = () => {
                 <div class='item-heading-left mb-bottom'>
                   <span class='section-subtitle'>WHO WE ARE</span>
                   <h2 class='section-title'>
-                    We are Offering The Best immersive experience for all Pilgrimages
+                    We are Offering The Best immersive experience for all
+                    Pilgrimages
                   </h2>
                   <div class='bg-title-wrap' style={{ display: 'block' }}>
                     <span class='background-title solid'>About</span>
                   </div>
                   <p>
                     Experience places in a smarter way with Virtual reality.
-                    Explore future at  your home with all details and a seamless
+                    Explore future at your home with all details and a seamless
                     experience.
                   </p>
                 </div>
