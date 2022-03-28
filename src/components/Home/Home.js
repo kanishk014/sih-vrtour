@@ -97,10 +97,10 @@ const Home = () => {
             <div class='col-xl-8'>
               <div class='main-banner-box1 main-banner-box6'>
                 <h1 class='item-title wow fadeInUp' data-wow-delay='.4s'>
-                  Achieve Mindfulness With
+                  A journey becomes a pilgrimage as we discover, day by day
                 </h1>
                 <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Properties</span>
+                  <span class='background-title solid'>Pilgrimages</span>
                 </div>
 
                 <div class='banner-search-wrap'>
@@ -533,6 +533,7 @@ const Home = () => {
                     {/* <span class='banner-p'> </span> */}
                     <span class='item-shape'>
                       <img
+                        class='colour'
                         src='img/figure/shape39.svg'
                         width='79'
                         height='16'
@@ -549,10 +550,10 @@ const Home = () => {
       <section class='property-wrap1 property-wrap-10'>
         <div class='container'>
           <div class='item-heading-center'>
-            <span class='section-subtitle'>OUR PROPERTIES</span>
-            <h2 class='section-title'>Our Featured Properties</h2>
+            <span class='section-subtitle'>MOST VISITED</span>
+            <h2 class='section-title'>Religious Places</h2>
             <div class='bg-title-wrap' style={{ display: 'block' }}>
-              <span class='background-title solid'>Properties</span>
+              <span class='background-title solid'>Pilgrimages</span>
             </div>
           </div>
           <div class='row'>
@@ -1002,7 +1003,11 @@ const Home = () => {
                 <div class='row'>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img src='img/figure/shape28.svg' alt='svg' />
+                      <img
+                        class='colour-1'
+                        src='img/figure/shape28.svg'
+                        alt='svg'
+                      />
                       <div class='item-content'>
                         <div class='item-content'>
                           <div class='item-content__text'>
@@ -1020,7 +1025,11 @@ const Home = () => {
                   </div>
                   <div class='col-lg-6 col-md-6'>
                     <div class='about-svg-shape'>
-                      <img src='img/figure/shape29.svg' alt='svg' />
+                      <img
+                        class='colour-1'
+                        src='img/figure/shape29.svg'
+                        alt='svg'
+                      />
                       <div class='item-content'>
                         <div class='item-content__text'>
                           <div class='item-k'>
@@ -1053,7 +1062,7 @@ const Home = () => {
         <div class='container'>
           <div class='item-heading-center'>
             <span class='section-subtitle'>Top Areas</span>
-            <h2 class='section-title'>Find Your Neighborhood</h2>
+            <h2 class='section-title'>Find Temples in Your Neighborhood</h2>
             <div class='bg-title-wrap' style={{ display: 'block' }}>
               <span class='background-title solid'>Locations</span>
             </div>
@@ -1082,7 +1091,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>03 properties</span>
+                      <span>3 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1111,7 +1120,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>0 properties</span>
+                      <span>6 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1140,7 +1149,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>05 properties</span>
+                      <span>5 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1171,7 +1180,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>08 properties</span>
+                      <span>8 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1200,7 +1209,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>02 properties</span>
+                      <span>2 properties</span>
                     </div>
                   </div>
                 </div>
@@ -1326,7 +1335,7 @@ const Home = () => {
                 </div>
                 <div class='banner-button'>
                   <Link to='Contactus' class='banner-btn'>
-                    Contact With Us
+                    Connect With Us
                   </Link>
                 </div>
               </div>
