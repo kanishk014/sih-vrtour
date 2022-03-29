@@ -1,13 +1,15 @@
 import React, { useState } from 'react';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { addProperty } from '../../store/actions/propertiesAction';
 import { storage } from '../firebase/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { ProgressBar, Button } from 'react-bootstrap';
+import axios from "axios";
+
 
 import ScrollButton from '../scrollToTop';
 const AddPost = () => {
@@ -25,6 +27,8 @@ const AddPost = () => {
   const [formErrors, setFormErrors] = useState({});
   const [iImage, setiImage] = useState(null);
   const [iprogress, setIProgress] = useState(0);
+  const [donation, setDonation] = useState('6241b6b33eee31225bec9285');
+  const [amount, setAmount] = useState(0);
   const id = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))._id
     : null;
@@ -35,128 +39,69 @@ const AddPost = () => {
     }
   });
 
-  const [propDetails, setpropDetails] = useState({
-    userId: id,
-    title: '',
-    propertyImage: '',
-    overview: '',
-    price: '',
-    beds: '',
-    baths: '',
-    sqft: '',
-    type: 'Family House',
-    category: 'Rent',
-    builtYear: '',
-    parkingSpaces: '',
-    roomCount: '',
-    location: '',
-    tvCable: false,
-    barbeque: false,
-    ac: false,
-    lawn: false,
-    laundry: false,
-    ccCam: false,
-    feel_360: '',
-  });
+  const fetchPropertyReducer = useSelector(
+    (state) => state.fetchPropertyReducer
+  );
 
-  console.log(propDetails);
-  const dispatch = useDispatch();
+  const { loading, error, propertiesData } = fetchPropertyReducer;
 
-  const addPostHandler = (e) => {
+  // console.log(propertiesData);
+  
+
+  // console.log(propDetails);
+  const dispatch = useDispatch();  
+  
+  const addPostHandler = async (e) => {
     e.preventDefault();
-    setFormErrors(validate(propDetails));
-    //    console.log("FORM ERROR",Object.keys(formErrors).length===0);
-    // if (Object.keys(formErrors).length === 0) {
-    // 	console.log("called");
-    dispatch(addProperty(propDetails)).then(() => {
-      setpropDetails({
-        userId: id,
-        title: '',
-        propertyImage: '',
-        overview: '',
-        price: '',
-        beds: '',
-        baths: '',
-        sqft: '',
-        type: 'Family House',
-        category: 'Rent',
-        builtYear: '',
-        parkingSpaces: '',
-        roomCount: '',
-        location: '',
-        tvCable: false,
-        barbeque: false,
-        ac: false,
-        lawn: false,
-        laundry: false,
-        ccCam: false,
-        feel_360: '',
-      });
-      navigate('/');
-    });
+
+    await axios.post('https://vrtour-sih.herokuapp.com/api/bookings/checkout-session', {
+      id: donation,
+      amount: amount
+    }).then(res => {
+      console.log(res);
+      console.log(res.data);
+    })
+    
+    // const stripe = stripe(
+    //   'pk_test_51J4Kz8SHGufhIZqgIWmxgdrE20A6C7svKlBCUFc4ojVdtQ9YuaUOhgpH7y3Jvtyw8Iv2f8Rbn3y6PBKZBn60EatG00Wk9mBTUk'
+    // );
+  
+    // try {
+    //   // 1. Get the checkout session from API
+    //   const session = await axios(`/api/bookings/checkout-session/${donation}/${amount}`);
+  
+    //   // 2. Create checkout form + charge credit card
+    //   await stripe.redirectToCheckout({
+    //     sessionId: session.data.session.id,
+    //   });
+    // } catch (err) {
+    //   console.log(err);      
     // }
   };
-  // console.log(propDetails);
-  useEffect(() => {
-    console.log(formErrors);
-  }, [formErrors]);
-  const validate = (values) => {
-    const errors = {};
-    if (!values.title) {
-      errors.title = 'Title is required!';
-    }
-    if (!values.overview) {
-      errors.overview = 'Overview is required!';
-    }
-    if (!values.price) {
-      errors.price = 'Price is required!';
-    }
-    if (!values.beds) {
-      errors.beds = 'No. of Beds is required!';
-    }
-    if (!values.baths) {
-      errors.baths = 'No. of Bathrooms is required!';
-    }
-    if (!values.sqft) {
-      errors.sqft = 'Area is required!';
-    }
-    if (!values.builtYear) {
-      errors.builtYear = 'Built Year is required!';
-    }
-    if (!values.parkingSpaces) {
-      errors.parkingSpaces = 'No. of Parking Spaces is required!';
-    }
-    if (!values.roomCount) {
-      errors.roomCount = 'Room Count is required!';
-    }
-    if (!values.location) {
-      errors.location = 'Address is required!';
-    }
-    return errors;
-  };
-  const iImageHanlder = () => {
-    const storageRef = ref(storage, `property/${iImage.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, iImage);
+  // console.log(propDetails);  
+  // const iImageHanlder = () => {
+  //   const storageRef = ref(storage, `property/${iImage.name}`);
+  //   const uploadTask = uploadBytesResumable(storageRef, iImage);
 
-    uploadTask.on(
-      'state_changed',
-      (snapshot) => {
-        const prog = Math.round(
-          (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-        );
-        setIProgress(prog);
-      },
-      (error) => console.log(error),
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-          // setUserImage(downloadURL)
-          setpropDetails((prev) => {
-            return { ...prev, propertyImage: downloadURL };
-          });
-        });
-      }
-    );
-  };
+  //   uploadTask.on(
+  //     'state_changed',
+  //     (snapshot) => {
+  //       const prog = Math.round(
+  //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+  //       );
+  //       setIProgress(prog);
+  //     },
+  //     (error) => console.log(error),
+  //     () => {
+  //       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+  //         // setUserImage(downloadURL)
+  //         setpropDetails((prev) => {
+  //           return { ...prev, propertyImage: downloadURL };
+  //         });
+  //       });
+  //     }
+  //   );
+  // };
   return (
     <div>
       <Navbar />
@@ -202,6 +147,20 @@ const AddPost = () => {
         </div>
 
         <main class='site-main content-area'>
+        {loading ? (
+          <div
+            class='container-fluid'
+            style={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              marginTop: '20px',
+              marginBottom: '40x',
+            }}
+          >
+            <img src='img/preloader.gif' alt='load' />
+          </div>
+        ) : (
           <div class='container'>
             <div class='row'>
               <div class='col-lg-12 col-sm-12 col-12'>
@@ -221,21 +180,24 @@ const AddPost = () => {
                           class='form-select'
                           aria-label='addcategory'
                           onChange={(e) => {
-                            setpropDetails((prev) => {
-                              return { ...prev, category: e.target.value };
-                            });
+                            setDonation(e.target.value);
+                            // console.log(donation);
                           }}
-                        >
-                          <option value='0' hidden disabled selected>
-                            Select
-                          </option>
-                          <option value='1'>Akshardham</option>
+                        >                          
+                          {
+                            propertiesData?.map((currEle, i) => {
+                              return (
+                              <option value={currEle._id}>{currEle.title}</option>
+                              )                              
+                            })
+                          }
+                          {/* <option value='1'>Akshardham</option>
                           <option value='2'>Golden Temple</option>
                           <option value='3'>Lotus Temple</option>
                           <option value='4'>Shimla Christ Church</option>
                           <option value='5'>Soumnath Temple</option>
                           <option value='6'>Tirupati Balaji</option>
-                          <option value='7'>Vaishno Devi</option>
+                          <option value='7'>Vaishno Devi</option> */}
                         </select>
                       </div>
 
@@ -271,10 +233,13 @@ const AddPost = () => {
                             padding: '0 50px',
                             borderRadius: '4px',
                           }}
+                          onChange = {(e) => {
+                            setAmount(e.target.value);
+                          }}
                         ></input>
                       </div>
                       <div
-                        class='submit-button'
+                        // class='submit-button'
                         style={{
                           display: 'flex',
                           alignItems: 'center',
@@ -304,6 +269,7 @@ const AddPost = () => {
               </div>
             </div>
           </div>
+        )}
         </main>
         <ScrollButton scrollState={scrollState} />
 

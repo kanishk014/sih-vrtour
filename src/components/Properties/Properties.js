@@ -32,6 +32,8 @@ const Properties = () => {
   console.log(window.location.search);
 
   const { loading, error, propertiesData } = fetchPropertyReducer;
+    console.log(propertiesData);
+
   useEffect(() => {
     dispatch(fetchProperty(category));
   }, [dispatch, category]);
