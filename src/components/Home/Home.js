@@ -932,7 +932,7 @@ const Home = () => {
           </div>
           <div class='property-button'>
             <Link to='/' class='item-btn'>
-              View All Properties
+              View All Locations
             </Link>
           </div>
         </div>
@@ -1082,7 +1082,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/properties?category=buy'>
                     <img
-                      src='img/blog/location-1.png'
+                      src='img/blog/location-1.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1097,7 +1097,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>3 properties</span>
+                      <span>3 Locations</span>
                     </div>
                   </div>
                 </div>
@@ -1111,7 +1111,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/properties?category=buy'>
                     <img
-                      src='img/blog/location-2.png'
+                      src='img/blog/location-2.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1126,7 +1126,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>6 properties</span>
+                      <span>6 Locations</span>
                     </div>
                   </div>
                 </div>
@@ -1140,7 +1140,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/properties?category=buy'>
                     <img
-                      src='img/blog/location-3.png'
+                      src='img/blog/location-3.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1155,7 +1155,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>5 properties</span>
+                      <span>5 Locations</span>
                     </div>
                   </div>
                 </div>
@@ -1171,7 +1171,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/properties?category=buy'>
                     <img
-                      src='img/blog/location-4.png'
+                      src='img/blog/location-4.jpg'
                       alt='location'
                       width='424'
                       height='280'
@@ -1186,7 +1186,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>8 properties</span>
+                      <span>8 Locations</span>
                     </div>
                   </div>
                 </div>
@@ -1200,7 +1200,7 @@ const Home = () => {
                 <div class='item-img'>
                   <Link to='/properties?category=buy'>
                     <img
-                      src='img/blog/location-5.png'
+                      src='img/blog/location-5.jpg'
                       alt='location'
                       width='846'
                       height='280'
@@ -1215,7 +1215,7 @@ const Home = () => {
                       </h3>
                     </div>
                     <div class='item-category'>
-                      <span>2 properties</span>
+                      <span>2 Locations</span>
                     </div>
                   </div>
                 </div>
