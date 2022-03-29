@@ -945,7 +945,7 @@ const SingleProperty = () => {
                       </div>
                     )}
 
-                    <div class="widget widget-post">
+                    {/* <div class="widget widget-post">
                       <div class="item-img">
                         <img src="img/blog/widget5.jpg" alt="widget" />
                         <div class="circle-shape">
@@ -961,7 +961,7 @@ const SingleProperty = () => {
                           </Link>
                         </div>
                       </div>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>

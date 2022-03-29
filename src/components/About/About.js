@@ -653,7 +653,7 @@ const About = () => {
                 <div class='brand-box2 wow fadeInUp' data-wow-delay='.4s'>
                   <div class='item-img'>
                     <Link to='/'>
-                      <img src='img/brand/brand1.svg' alt='brand' />
+                      <img class='' src='img/brand/brand1.svg' alt='brand' />
                     </Link>
                   </div>
                 </div>

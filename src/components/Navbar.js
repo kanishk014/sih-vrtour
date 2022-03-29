@@ -37,13 +37,13 @@ const Navbar = () => {
           <Link to='/profile'>Profile</Link>
         </li>
         <li>
-          <Link to='/listing'>My Listings</Link>
+          <Link to='/listing'>Bookmarks</Link>
         </li>
         <li>
-          <Link to='/schedule'>Created Meetings</Link>
+          <Link to='/schedule'>Scheduled Meetings</Link>
         </li>
         <li>
-          <Link to='/scheduledmeetings'>Meetings Scheduled</Link>
+          <Link to='/scheduledmeetings'>Tours Scheduled</Link>
         </li>
         <li>
           <Link to='/' onClick={logoutHandle}>
