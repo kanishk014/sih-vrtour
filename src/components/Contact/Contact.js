@@ -52,7 +52,7 @@ const Contact = () => {
 									<h3 class="contact-title">Office Information</h3>
 									<div class="contact-list">
 										<ul>
-											<li>VRDOOR Real Estate Agency</li>
+											<li>VRTOUR Virtual Pilgrimage</li>
 											<li>Indra vihar</li>
 											<li>Delhi- 110009</li>
 										</ul>

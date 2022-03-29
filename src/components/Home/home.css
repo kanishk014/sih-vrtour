@@ -32,4 +32,20 @@
   }
 }
 
+.colour {
+  filter: invert(32%) sepia(89%) saturate(3622%) hue-rotate(357deg)
+    brightness(107%) contrast(112%);
+}
+.colour-1 {
+  filter: invert(42%) sepia(89%) saturate(3622%) hue-rotate(357deg)
+    brightness(107%) contrast(112%);
+}
 
+@media screen and (max-width: 992px) {
+  .hero {
+    margin-top: 200px;
+  }
+  .item-banner-thumb {
+    display: none;
+  }
+}
