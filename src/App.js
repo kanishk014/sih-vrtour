@@ -34,7 +34,7 @@ function App() {
 
 				<Route exact path={"/contactus"} element={<Contact />} />
 				<Route exact path={"/agents"} element={<Agents />} />
-				<Route exact path={"/properties"} element={<Properties />} />
+				<Route exact path={"/pilgrimage"} element={<Properties />} />
 				<Route exact path={"/singleproperty"} element={<SingleProperty />} />
 				<Route exact path={"/singleagent"} element={<SingleAgent />} />
 				<Route exact path={"*"} element={<Error />} />

@@ -8,6 +8,7 @@ import { addProperty } from '../../store/actions/propertiesAction';
 import { storage } from '../firebase/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { ProgressBar, Button } from 'react-bootstrap';
+import { fetchProperty } from '../../store/actions/propertiesAction';
 import axios from "axios";
 
 
