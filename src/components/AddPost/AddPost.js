@@ -45,11 +45,15 @@ const AddPost = () => {
 
   const { loading, error, propertiesData } = fetchPropertyReducer;
 
+
   // console.log(propertiesData);
   
 
   // console.log(propDetails);
   const dispatch = useDispatch();  
+  useEffect(() => {
+    dispatch(fetchProperty());
+  }, [dispatch]);
   
   const addPostHandler = async (e) => {
     e.preventDefault();

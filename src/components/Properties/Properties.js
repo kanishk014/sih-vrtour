@@ -35,8 +35,8 @@ const Properties = () => {
     console.log(propertiesData);
 
   useEffect(() => {
-    dispatch(fetchProperty(category));
-  }, [dispatch, category]);
+    dispatch(fetchProperty());
+  }, [dispatch]);
   return (
     <div>
       <Navbar />

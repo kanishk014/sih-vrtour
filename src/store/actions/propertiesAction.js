@@ -47,7 +47,7 @@ export const addProperty = (details) => async (dispatch, getState) => {
 	}
 };
 
-export const fetchProperty = (category) => async (dispatch, getState) => {
+export const fetchProperty = () => async (dispatch, getState) => {
 	console.log("Caled");
 	try {
 		const config = {
@@ -57,7 +57,7 @@ export const fetchProperty = (category) => async (dispatch, getState) => {
 		};
 		dispatch({ type: GET_PROPERTIES_REQUEST });
 		const { data } = await axios.get(
-			`${API_URL}/api/property/get/${category}`,
+			`${API_URL}/api/property/get`,
 			config
 		);
 		// console.log(data);

@@ -91,7 +91,7 @@ const Navbar = () => {
                       <Link to='/about'>About</Link>
                     </li>
                     <li>
-                      <a href='/properties?category=buy'>Pilgrimages</a>
+                      <a href='/pilgrimage'>Pilgrimages</a>
                     </li>
 
                     <li>
