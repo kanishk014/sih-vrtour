@@ -563,7 +563,7 @@ const Home = () => {
                 data-wow-delay='.3s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog4.jpg'
                       alt='blog'
@@ -608,12 +608,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='SingleProperty'>Temple</Link>
+                  <Link to='/pilgrimage'>Temple</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>
+                      <Link to='/pilgrimage'>
                         Akshardham Temple
                       </Link>
                     </h3>
@@ -630,7 +630,7 @@ const Home = () => {
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog5.jpg'
                       alt='blog'
@@ -670,12 +670,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/properties?category=buy'>Temple</Link>
+                  <Link to='/pilgrimage'>Temple</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>Lotus Temple</Link>
+                      <Link to='/pilgrimage'>Lotus Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
@@ -690,7 +690,7 @@ const Home = () => {
                 data-wow-delay='.1s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog6.jpg'
                       alt='blog'
@@ -730,12 +730,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/properties?category=buy'>Mandir</Link>
+                  <Link to='/pilgrimage'>Mandir</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>Hanuman Mandir</Link>
+                      <Link to='/pilgrimage'>Hanuman Mandir</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
@@ -750,7 +750,7 @@ const Home = () => {
                 data-wow-delay='.3s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog7.jpg'
                       alt='blog'
@@ -790,12 +790,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/properties?category=buy'>Gurudwara</Link>
+                  <Link to='/pilgrimage'>Gurudwara</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>Golden Temple</Link>
+                      <Link to='/pilgrimage'>Golden Temple</Link>
                     </h3>
                   </div>
                   <div class='location-area'>
@@ -810,7 +810,7 @@ const Home = () => {
                 data-wow-delay='.6s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog8.jpg'
                       alt='blog'
@@ -850,12 +850,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/properties?category=buy'>Church</Link>
+                  <Link to='/pilgrimage'>Church</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>
+                      <Link to='/pilgrimage'>
                         Shimla Christ Church
                       </Link>
                     </h3>
@@ -873,7 +873,7 @@ const Home = () => {
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog9.jpg'
                       alt='blog'
@@ -913,12 +913,12 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='item-category10'>
-                  <Link to='/properties?category=buy'>Mandir</Link>
+                  <Link to='/pilgrimage'>Mandir</Link>
                 </div>
                 <div class='item-content'>
                   <div class='verified-area'>
                     <h3 class='item-title'>
-                      <Link to='/properties?category=buy'>
+                      <Link to='/pilgrimage'>
                         Kapaleeshwarar Temple
                       </Link>
                     </h3>
@@ -931,7 +931,7 @@ const Home = () => {
             </div>
           </div>
           <div class='property-button'>
-            <Link to='/' class='item-btn'>
+            <Link to='/pilgrimage' class='item-btn'>
               View All Locations
             </Link>
           </div>
@@ -1055,7 +1055,7 @@ const Home = () => {
                   and friction of visiting different places around the country.
                 </p>
                 <div class='banner-button about-button-2'>
-                  <Link to='/contactus' class='banner-btn'>
+                  <Link to='/contact' class='banner-btn'>
                     Contact With Us
                   </Link>
                 </div>
@@ -1080,7 +1080,7 @@ const Home = () => {
                 data-wow-delay='.3s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-1.jpg'
                       alt='location'
@@ -1093,7 +1093,7 @@ const Home = () => {
                   <div class='content-body'>
                     <div class='item-title'>
                       <h3>
-                        <Link to='/properties?category=buy'>Delhi</Link>
+                        <Link to='/pilgrimage'>Delhi</Link>
                       </h3>
                     </div>
                     <div class='item-category'>
@@ -1109,7 +1109,7 @@ const Home = () => {
                 data-wow-delay='.4s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-2.jpg'
                       alt='location'
@@ -1122,7 +1122,7 @@ const Home = () => {
                   <div class='content-body'>
                     <div class='item-title'>
                       <h3>
-                        <Link to='/properties?category=buy'>Mumbai</Link>
+                        <Link to='/pilgrimage'>Mumbai</Link>
                       </h3>
                     </div>
                     <div class='item-category'>
@@ -1138,7 +1138,7 @@ const Home = () => {
                 data-wow-delay='.5s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-3.jpg'
                       alt='location'
@@ -1151,7 +1151,7 @@ const Home = () => {
                   <div class='content-body'>
                     <div class='item-title'>
                       <h3>
-                        <Link to='/properties?category=buy'>Bangalore</Link>
+                        <Link to='/pilgrimage'>Bangalore</Link>
                       </h3>
                     </div>
                     <div class='item-category'>
@@ -1169,7 +1169,7 @@ const Home = () => {
                 data-wow-delay='.6s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-4.jpg'
                       alt='location'
@@ -1182,7 +1182,7 @@ const Home = () => {
                   <div class='content-body'>
                     <div class='item-title'>
                       <h3>
-                        <Link to='/properties?category=buy'>Punjab</Link>
+                        <Link to='/pilgrimage'>Punjab</Link>
                       </h3>
                     </div>
                     <div class='item-category'>
@@ -1198,7 +1198,7 @@ const Home = () => {
                 data-wow-delay='.7s'
               >
                 <div class='item-img'>
-                  <Link to='/properties?category=buy'>
+                  <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-5.jpg'
                       alt='location'
@@ -1211,7 +1211,7 @@ const Home = () => {
                   <div class='content-body'>
                     <div class='item-title'>
                       <h3>
-                        <Link to='/properties?category=buy'>Kolkata</Link>
+                        <Link to='/pilgrimage'>Kolkata</Link>
                       </h3>
                     </div>
                     <div class='item-category'>
@@ -1340,7 +1340,7 @@ const Home = () => {
                   </div>
                 </div>
                 <div class='banner-button'>
-                  <Link to='Contactus' class='banner-btn'>
+                  <Link to='/contact' class='banner-btn'>
                     Connect With Us
                   </Link>
                 </div>
@@ -1485,7 +1485,7 @@ const Home = () => {
               </span>
             </div>
             <div class='banner-button'>
-              <Link to='Contactus' class='banner-btn'>
+              <Link to='/contact' class='banner-btn'>
                 Contact Us
               </Link>
             </div>

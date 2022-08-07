@@ -848,9 +848,6 @@ const SingleProperty = () => {
                               {userData?.phoneno
                                 ? userData?.phoneno
                                 : 1234567890}
-                              <Link to="/property">
-                                <span>(Show)</span>
-                              </Link>
                             </div>
                             <div class="item-mail">
                               {userData?.email
@@ -987,8 +984,8 @@ const SingleProperty = () => {
             </div>
             <div class="col-lg-6 col-md-5 col-sm-5">
               <div class="heading-button">
-                <Link to="/singlelisting" class="heading-btn item-btn2">
-                  All Properties
+                <Link to="/pilgrimage" class="heading-btn item-btn2">
+                  All Sites
                 </Link>
               </div>
             </div>
@@ -1000,7 +997,7 @@ const SingleProperty = () => {
                 data-wow-delay=".3s"
               >
                 <div class="item-img">
-                  <Link to="/property">
+                  <Link to="/pilgrimage">
                     <img
                       src="img/blog/blog4.jpg"
                       alt="blog"
@@ -1009,41 +1006,28 @@ const SingleProperty = () => {
                     />
                   </Link>
                   <div class="item-category-box1">
-                    <div class="item-category">For Sell</div>
+                    <div class="item-category">Visit Now</div>
                   </div>
                   <div class="rent-price">
                     <div class="item-price">
-                      $15,000
+                      ₹250
                       <span>
-                        <i>/</i>mo
+                        <i>/</i>person
                       </span>
                     </div>
                   </div>
                 </div>
                 <div class="item-category10">
-                  <Link to="/property">Appartment</Link>
+                  <Link to="/pilgrimage">Temple</Link>
                 </div>
                 <div class="item-content">
                   <div class="verified-area">
                     <h3 class="item-title">
-                      <Link to="/property">Family House For Sell</Link>
+                      <Link to="/pilgrimage">Akshardham Temple</Link>
                     </h3>
                   </div>
                   <div class="location-area">
-                    <i class="flaticon-maps-and-flags"></i>Downey, California
-                  </div>
-                  <div class="item-categoery3">
-                    <ul>
-                      <li>
-                        <i class="flaticon-bed"></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class="flaticon-shower"></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class="flaticon-two-overlapping-square"></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class="flaticon-maps-and-flags"></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -1054,7 +1038,7 @@ const SingleProperty = () => {
                 data-wow-delay=".2s"
               >
                 <div class="item-img">
-                  <Link to="/property">
+                  <Link to="/pilgrimage">
                     <img
                       src="img/blog/blog5.jpg"
                       alt="blog"
@@ -1063,41 +1047,25 @@ const SingleProperty = () => {
                     />
                   </Link>
                   <div class="item-category-box1">
-                    <div class="item-category">For Rent</div>
+                    <div class="item-category">Visit Now</div>
                   </div>
                   <div class="rent-price">
                     <div class="item-price">
-                      $12,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
+                      Free
                     </div>
                   </div>
                 </div>
                 <div class="item-category10">
-                  <Link to="/property">Villa</Link>
+                  <Link to="/pilgrimage">Temple</Link>
                 </div>
                 <div class="item-content">
                   <div class="verified-area">
                     <h3 class="item-title">
-                      <Link to="/property">Countryside Modern Lake View</Link>
+                      <Link to="/pilgrimage">Lotus Temple</Link>
                     </h3>
                   </div>
                   <div class="location-area">
-                    <i class="flaticon-maps-and-flags"></i>Downey, California
-                  </div>
-                  <div class="item-categoery3">
-                    <ul>
-                      <li>
-                        <i class="flaticon-bed"></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class="flaticon-shower"></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class="flaticon-two-overlapping-square"></i>931 Sqft
-                      </li>
-                    </ul>
+                    <i class="flaticon-maps-and-flags"></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -1108,7 +1076,7 @@ const SingleProperty = () => {
                 data-wow-delay=".1s"
               >
                 <div class="item-img">
-                  <Link to="/property">
+                  <Link to="/pilgrimage">
                     <img
                       src="img/blog/blog6.jpg"
                       alt="blog"
@@ -1117,42 +1085,28 @@ const SingleProperty = () => {
                     />
                   </Link>
                   <div class="item-category-box1">
-                    <div class="item-category">For Sell</div>
+                    <div class="item-category">Visit Now</div>
                   </div>
                   <div class="rent-price">
                     <div class="item-price">
-                      $18,000
-                      <span>
-                        <i>/</i>mo
-                      </span>
+                      Free
+                      
                     </div>
                   </div>
                 </div>
                 <div class="item-category10">
-                  <Link to="/property">Office</Link>
+                  <Link to="/pilgrimage">Mandir</Link>
                 </div>
                 <div class="item-content">
                   <div class="verified-area">
                     <h3 class="item-title">
-                      <Link to="/property">Gorgeous Apartment Building </Link>
+                      <Link to="/pilgrimage">Hanuman Mandir</Link>
                     </h3>
                   </div>
                   <div class="location-area">
-                    <i class="flaticon-maps-and-flags"></i>Downey, California
+                    <i class="flaticon-maps-and-flags"></i>New Delhi, India
                   </div>
-                  <div class="item-categoery3">
-                    <ul>
-                      <li>
-                        <i class="flaticon-bed"></i>Beds: 03
-                      </li>
-                      <li>
-                        <i class="flaticon-shower"></i>Baths: 02
-                      </li>
-                      <li>
-                        <i class="flaticon-two-overlapping-square"></i>931 Sqft
-                      </li>
-                    </ul>
-                  </div>
+                  
                 </div>
               </div>
             </div>

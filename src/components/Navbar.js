@@ -98,7 +98,7 @@ const Navbar = () => {
                       <Link to='/blog'>Blog</Link>
                     </li>
                     <li>
-                      <Link to='/contactus'>Contact</Link>
+                      <Link to='/contact'>Contact</Link>
                     </li>
                   </ul>
                 </nav>
@@ -123,7 +123,7 @@ const Navbar = () => {
                 <div class='header-action-layout1'>
                   <ul class='action-list'>
                     <li class='listing-button'>
-                      <Link to='/AddPost' class='listing-btn'>
+                      <Link to='/donate' class='listing-btn'>
                         <span>
                           <i class='fas fa-plus-circle'></i>
                         </span>

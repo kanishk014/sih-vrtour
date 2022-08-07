@@ -216,14 +216,15 @@ const About = () => {
               <span class='background-title solid'>Our Team</span>
             </div>
           </div>
+
           <div class='row'>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team0.jpeg'
                       alt='team'
@@ -231,47 +232,44 @@ const About = () => {
                       width='240'
                       style={{ height: '240px', width: '240px' }}
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -280,19 +278,20 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Ridhima Jain</Link>
+                      <div>Ridhima Jain</div>
                     </h3>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.6s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team1.jpg'
                       alt='team'
@@ -300,47 +299,44 @@ const About = () => {
                       width='240'
                       style={{ height: '240px', width: '240px' }}
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -349,19 +345,20 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Devesh Jain</Link>
+                      <div>Devesh Jain</div>
                     </h3>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.4s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team2.jpg'
                       alt='team'
@@ -369,47 +366,44 @@ const About = () => {
                       style={{ height: '240px', width: '240px' }}
                       width='240'
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -418,19 +412,20 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Chirag Seth</Link>
+                      <div>Chirag Seth</div>
                     </h3>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team3.jpg'
                       alt='team'
@@ -438,47 +433,44 @@ const About = () => {
                       width='240'
                       style={{ height: '240px', width: '240px' }}
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a 
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -487,19 +479,20 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Sushant Patial</Link>
+                      <div>Sushant Patial</div>
                     </h3>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team4.jpg'
                       alt='team'
@@ -507,47 +500,44 @@ const About = () => {
                       width='240'
                       style={{ height: '240px', width: '240px' }}
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -556,19 +546,20 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Kanishk Sharma</Link>
+                      <div>Kanishk Sharma</div>
                     </h3>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-3 col-md-6 col-sm-6'>
+
+            <div class='col-lg-4 col-md-6 col-sm-6'>
               <div
                 class='team-box1 team-box2 wow fadeInUp'
                 data-wow-delay='.2s'
               >
                 <div class='item-img'>
-                  <Link to='/'>
+                  <div>
                     <img
                       src='img/team/team5.jpg'
                       alt='team'
@@ -576,47 +567,44 @@ const About = () => {
                       width='240'
                       style={{ height: '240px', width: '240px' }}
                     />
-                  </Link>
+                  </div>
                   <ul class='team-social-1'>
                     <li class='social-item'>
-                      <Link
-                        to='https://radiustheme.com/'
-                        target='_blank'
-                        rel='noreferrer'
+                      <div
                         class='social-hover-icon social-link'
                       >
                         <i class='fas fa-share-alt'></i>
-                      </Link>
+                      </div>
                       <ul class='team-social-dropdown'>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.facebook.com/'
+                          <a
+                            href='https://www.facebook.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-facebook-f'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://twitter.com/'
+                          <a
+                            href='https://twitter.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-twitter'></i>
-                          </Link>
+                          </a>
                         </li>
                         <li class='social-item'>
-                          <Link
-                            to='https://www.linkedin.com/'
+                          <a
+                            href='https://www.linkedin.com/'
                             target='_blank'
                             rel='noreferrer'
                             class='social-link'
                           >
                             <i class='fab fa-linkedin-in'></i>
-                          </Link>
+                          </a>
                         </li>
                       </ul>
                     </li>
@@ -625,7 +613,7 @@ const About = () => {
                 <div class='item-content'>
                   <div class='item-title'>
                     <h3>
-                      <Link to='/'>Aman Dutt Bhagat</Link>
+                      <div>Aman Dutt Bhagat</div>
                     </h3>
                   </div>
                 </div>
@@ -634,7 +622,8 @@ const About = () => {
           </div>
         </div>
       </section>
-      <div class='brand-wrap1 brand-wrap2'>
+
+      {/* <div class='brand-wrap1 brand-wrap2'>
         <div class='container'>
           <div class='brand-layout swiper-container'>
             <Swiper
@@ -778,7 +767,7 @@ const About = () => {
             </Swiper>
           </div>
         </div>
-      </div>
+      </div> */}
 
       <section class='newsletter-wrap1'>
         <div class='shape-img1'>

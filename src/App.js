@@ -30,9 +30,9 @@ function App() {
 				<Route exact path={"/"} element={<Home />} />
 				<Route exact path={"/about"} element={<About />} />
 				<Route exact path={"/blog"} element={<Blog />} />
-				<Route exact path={"/property"} element={<SinglePropertyDetails />} />
+				<Route exact path={"/site"} element={<SinglePropertyDetails />} />
 
-				<Route exact path={"/contactus"} element={<Contact />} />
+				<Route exact path={"/contact"} element={<Contact />} />
 				<Route exact path={"/agents"} element={<Agents />} />
 				<Route exact path={"/pilgrimage"} element={<Properties />} />
 				<Route exact path={"/singleproperty"} element={<SingleProperty />} />
@@ -40,7 +40,7 @@ function App() {
 				<Route exact path={"*"} element={<Error />} />
 				<Route exact path={"/blogdetail"} element={<BlogDetail />} />
 				<Route exact path={"/login"} element={<Login />} />
-				<Route exact path={"/addpost"} element={<AddPost />} />
+				<Route exact path={"/donate"} element={<AddPost />} />
 				<Route exact path={"/signup"} element={<SignUp />} />
 				<Route exact path={"/meet"} element={<Meet />} />
 

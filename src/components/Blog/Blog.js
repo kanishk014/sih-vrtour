@@ -72,12 +72,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>
                               Akshardham Temple, New Delhi
-                            </Link>
                           </li>
                           <li>
-                            <Link to='/blogdetail'>5 min</Link>
+                            5 min
                           </li>
                         </ul>
                       </div>
@@ -121,12 +119,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>
                               Lotus Temple, New Delhi
-                            </Link>
                           </li>
                           <li>
-                            <Link to='/blogdetail'>4 min</Link>
+                            4 min
                           </li>
                         </ul>
                       </div>
@@ -170,12 +166,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>
                               Tirupati Balaji Temple, Tirumala
-                            </Link>
                           </li>
                           <li>
-                            <Link to='/blogdetail'>3 min</Link>
+                            3 min
                           </li>
                         </ul>
                       </div>
@@ -219,12 +213,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>
                               Golden Temple, Amritsar
-                            </Link>
                           </li>
                           <li>
-                            <Link to='/blogdetail'>5 min</Link>
+                            5 min
                           </li>
                         </ul>
                       </div>
@@ -269,10 +261,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>India</Link>
+                            India
                           </li>
                           <li>
-                            <Link to='/blogdetail'>4 min</Link>
+                            4 min
                           </li>
                         </ul>
                       </div>
@@ -316,10 +308,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>Mumbai, India</Link>
+                            Mumbai, India
                           </li>
                           <li>
-                            <Link to='/blogdetail'>3 min</Link>
+                            3 min
                           </li>
                         </ul>
                       </div>
@@ -363,10 +355,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>New Delhi, India</Link>
+                            New Delhi, India
                           </li>
                           <li>
-                            <Link to='/blogdetail'>4 min</Link>
+                            4 min
                           </li>
                         </ul>
                       </div>
@@ -410,10 +402,10 @@ const Blog = () => {
                       <div class='entry-meta'>
                         <ul>
                           <li>
-                            <Link to='/blogdetail'>Karnatka, India</Link>
+                            Karnatka, India
                           </li>
                           <li>
-                            <Link to='/blogdetail'>5 min</Link>
+                            5 min
                           </li>
                         </ul>
                       </div>
@@ -436,33 +428,33 @@ const Blog = () => {
               <div class='pagination-style-1'>
                 <ul class='pagination'>
                   <li class='page-item'>
-                    <Link class='page-link' to='/' aria-label='Previous'>
+                    <Link class='page-link' to='/blog' aria-label='Previous'>
                       <span aria-hidden='true'>&laquo;</span>
                       <span class='sr-only'>Previous</span>
                     </Link>
                   </li>
                   <li class='page-item'>
-                    <Link class='page-link active' to='/'>
+                    <Link class='page-link active' to='/blog'>
                       1
                     </Link>
                   </li>
                   <li class='page-item'>
-                    <Link class='page-link' to='/'>
+                    <Link class='page-link' to='/blog'>
                       2
                     </Link>
                   </li>
                   <li class='page-item'>
-                    <Link class='page-link' to='/'>
+                    <Link class='page-link' to='/blog'>
                       3
                     </Link>
                   </li>
                   <li class='page-item'>
-                    <Link class='page-link' to='/'>
+                    <Link class='page-link' to='/blog'>
                       4
                     </Link>
                   </li>
                   <li class='page-item'>
-                    <Link class='page-link' to='/' aria-label='Next'>
+                    <Link class='page-link' to='/blog' aria-label='Next'>
                       <span aria-hidden='true'>&raquo;</span>
                       <span class='sr-only'>Next</span>
                     </Link>
