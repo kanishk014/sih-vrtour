@@ -74,7 +74,7 @@ const Properties = () => {
             <div class='row'>
               <div class='col-xl-6'>
                 <form
-                  action='https://radiustheme.com/demo/html/homlisti//properties'
+                  action=''
                   class='map-form'
                   style={{ marginTop: '30px' }}
                 >
@@ -191,7 +191,7 @@ const Properties = () => {
                               <i class='fas fa-sliders-h'></i>
                             </span>
                           </div>
-                          <Link to='/properties' class='filter-btn1 search-btn'>
+                          <Link to='/pilgrimage' class='filter-btn1 search-btn'>
                             Search<i class='fas fa-search'></i>
                           </Link>
                         </div>
@@ -408,11 +408,11 @@ const Properties = () => {
                               class='filter-button'
                               style={{ justifyContent: 'center' }}
                             >
-                              <Link to='/properties' class='filter-btn1'>
+                              <Link to='/pilgrimage' class='filter-btn1'>
                                 Apply Filter
                               </Link>
                               <Link
-                                to='/properties'
+                                to='/pilgrimage'
                                 class='filter-btn1 reset-btn'
                               >
                                 Reset Filter<i class='fas fa-redo-alt'></i>
@@ -479,7 +479,7 @@ const Properties = () => {
                                   <div
                                     class='item-img'
                                     onClick={() => {
-                                      navigate(`/property?id=${currEle._id}`);
+                                      navigate(`/site?id=${currEle._id}`);
                                     }}
                                   >
                                     <img
@@ -531,7 +531,7 @@ const Properties = () => {
                             <li class='page-item'>
                               <Link
                                 class='page-link'
-                                to='/properties'
+                                to='/pilgrimage'
                                 aria-label='Previous'
                               >
                                 <span aria-hidden='true'>&laquo;</span>
@@ -539,29 +539,29 @@ const Properties = () => {
                               </Link>
                             </li>
                             <li class='page-item'>
-                              <Link class='page-link active' to='/properties'>
+                              <Link class='page-link active' to='/pilgrimage'>
                                 1
                               </Link>
                             </li>
                             <li class='page-item'>
-                              <Link class='page-link' to='/properties'>
+                              <Link class='page-link' to='/pilgrimage'>
                                 2
                               </Link>
                             </li>
                             <li class='page-item'>
-                              <Link class='page-link' to='/properties'>
+                              <Link class='page-link' to='/pilgrimage'>
                                 3
                               </Link>
                             </li>
                             <li class='page-item'>
-                              <Link class='page-link' to='/properties'>
+                              <Link class='page-link' to='/pilgrimage'>
                                 4
                               </Link>
                             </li>
                             <li class='page-item'>
                               <Link
                                 class='page-link'
-                                to='/properties'
+                                to='/pilgrimage'
                                 aria-label='Next'
                               >
                                 <span aria-hidden='true'>&raquo;</span>

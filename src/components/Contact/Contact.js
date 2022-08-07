@@ -67,7 +67,7 @@ const Contact = () => {
 									<div class="social-box">
 										<div class="item-lebel">Social Share :</div>
 										<ul class="item-social">
-											<li>
+											<li style={{ 'margin-right': '10px' }}>
 												<Link
 													to="https://www.facebook.com/"
 													target="_blank"
@@ -76,7 +76,7 @@ const Contact = () => {
 													<i class="fab fa-facebook-f"></i>
 												</Link>
 											</li>
-											<li>
+											<li style={{ 'margin-right': '10px' }}>
 												<Link
 													to="https://twitter.com/"
 													target="_blank"
@@ -85,7 +85,7 @@ const Contact = () => {
 													<i class="fab fa-twitter"></i>
 												</Link>
 											</li>
-											<li>
+											<li style={{ 'margin-right': '10px' }}>
 												<Link
 													to="https://vimeo.com/"
 													target="_blank"
@@ -94,7 +94,7 @@ const Contact = () => {
 													<i class="fab fa-vimeo-v"></i>
 												</Link>
 											</li>
-											<li>
+											<li style={{ 'margin-right': '10px' }}>
 												<Link
 													to="https://www.pinterest.com/"
 													target="_blank"
@@ -103,7 +103,7 @@ const Contact = () => {
 													<i class="fab fa-pinterest-p"></i>
 												</Link>
 											</li>
-											<li>
+											<li style={{ 'margin-right': '10px' }}>
 												<Link
 													to="https://web.whatsapp.com/"
 													target="_blank"

@@ -1,3 +1,20 @@
-.zoom-image-hover:hover{
+.zoom-image-hover:hover {
         transform: scale(1.1);
+}
+.item-img {
+        margin-bottom: 0 !important;
+}
+.item-img>div {
+        display: inline-block;
+        border-radius: 50%;
+        overflow: hidden;
+}
+.team-box1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+}
+.team-box1 .item-title {
+        margin-bottom: 30px;
 }

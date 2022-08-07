@@ -10,3 +10,9 @@
 	
 	-webkit-box-orient: vertical;
 }
+.item-content ul li {
+	display: inline-block;
+    color: #788593;
+    font-size: 15px;
+    transition: all 0.3s ease-in-out;
+}
