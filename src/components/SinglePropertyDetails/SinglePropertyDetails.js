@@ -975,10 +975,9 @@ const SingleProperty = () => {
           <div class="row align-items-center">
             <div class="col-lg-6 col-md-7 col-sm-7">
               <div class="item-heading-left">
-                <span class="section-subtitle">Our PROPERTIES</span>
-                <h2 class="section-title">Latest Properties</h2>
+                <h2 class="section-title">Latest Destinations</h2>
                 <div class="bg-title-wrap" style={{ display: "block" }}>
-                  <span class="background-title solid">Properties</span>
+                  <span class="background-title solid">Destinations</span>
                 </div>
               </div>
             </div>
