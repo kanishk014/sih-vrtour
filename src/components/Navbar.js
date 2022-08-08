@@ -5,7 +5,11 @@ import { Dropdown } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/userActions';
 
+import SideBar from "./SideBar";
+
+
 const Navbar = () => {
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -54,7 +58,9 @@ const Navbar = () => {
     );
   }
 
+
   return (
+    
     <div className='nav-head'>
       {' '}
       <header class='rt-header sticky-on'>
@@ -137,11 +143,13 @@ const Navbar = () => {
           </div>
         </div>
       </header>
+
       <div
         class='rt-header-menu mean-container position-relative'
         id='meanmenu'
       >
         <div class='mean-bar'>
+          <SideBar />
           <Link to='/'>
             <img src='img/logo.png' alt='logo' class='img-fluid' />
           </Link>
@@ -157,8 +165,8 @@ const Navbar = () => {
               </Link>
             </div>
             <span class='sidebarBtn'>
-              <span class='bar'></span>
-              <span class='bar'></span>
+              <span class='bar'>as</span>
+              <span class='bar'>as</span>
               <span class='bar'></span>
               <span class='bar'></span>
             </span>
