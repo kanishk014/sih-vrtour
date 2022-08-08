@@ -1,3 +1,37 @@
+.MuiDrawer-root {
+  z-index: 1000000000 !important;
+}
+.MuiDrawer-root a {
+  color: #111;
+}
+
+.mean-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+.mean-bar--right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mean-bar--right .user {
+  margin-right: 30px;
+}
+.mean-bar--right .user, .mean-bar--right .sidebarBtn {  
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#login-icon, #side-bar-icon {
+  font-size: 30px;
+  color: #000;
+}
+
 @media (max-width: 1024px) {
   .mean-bar {
     height: 100px;
@@ -10,8 +44,7 @@
 @media (max-width: 768px) {
   .mean-bar {
     height: 100px;
-    overflow: hidden;
-    padding: 0 50px;
+    padding: 0 20px;
   }
   .mean-bar img {
     height: 140px;
@@ -20,8 +53,6 @@
 @media (max-width: 426px) {
   .mean-bar {
     height: 70px;
-    overflow: hidden;
-    padding: 0 40px;
   }
   .mean-bar img {
     height: 120px;
