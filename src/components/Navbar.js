@@ -5,11 +5,10 @@ import { Dropdown } from 'react-bootstrap';
 import { useDispatch } from 'react-redux';
 import { logout } from '../store/actions/userActions';
 
-import SideBar from "./SideBar";
-
+import PersonIcon from '@mui/icons-material/Person';
+import SideBar from './SideBar';
 
 const Navbar = () => {
-
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -58,9 +57,7 @@ const Navbar = () => {
     );
   }
 
-
   return (
-    
     <div className='nav-head'>
       {' '}
       <header class='rt-header sticky-on'>
@@ -143,91 +140,24 @@ const Navbar = () => {
           </div>
         </div>
       </header>
-
       <div
         class='rt-header-menu mean-container position-relative'
         id='meanmenu'
       >
         <div class='mean-bar'>
-          <SideBar />
           <Link to='/'>
             <img src='img/logo.png' alt='logo' class='img-fluid' />
           </Link>
           <div class='mean-bar--right'>
-            <div class='actions search'>
-              <Link to='#template-search' class='item-icon' title='Search'>
-                <i class='fas fa-search'></i>
-              </Link>
-            </div>
             <div class='actions user'>
-              <Link to='/'>
-                <i class='flaticon-user'></i>
+              <Link to='/login'>
+                <PersonIcon id='login-icon' />
               </Link>
             </div>
-            <span class='sidebarBtn'>
-              <span class='bar'>as</span>
-              <span class='bar'>as</span>
-              <span class='bar'></span>
-              <span class='bar'></span>
-            </span>
-          </div>
-        </div>
-        <div class='rt-slide-nav'>
-          <div class='offscreen-navigation'>
-            <nav class='menu-main-primary-container'>
-              <ul class='menu'>
-                <li class='list menu-item-parent menu-item-has-children'>
-                  <Link class='animation' to='/'>
-                    Home
-                  </Link>
-                  <ul class='main-menu__dropdown sub-menu'>
-                    <li>
-                      <Link to='/'>Home </Link>
-                    </li>
-                  </ul>
-                </li>
-                <li class='list menu-item-parent menu-item-has-children'>
-                  <Link class='animation' to='/listing'>
-                    Listing
-                  </Link>
-                  <ul class='main-menu__dropdown sub-menu'>
-                    <li>
-                      <Link to='/Properties'>Properties Map Grid</Link>
-                    </li>
 
-                    <li>
-                      <Link to='/SingleProperty'>Single Property 1</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li class='list menu-item-parent menu-item-has-children'>
-                  <Link class='animation' to='/'>
-                    Pages
-                  </Link>
-                  <ul class='main-menu__dropdown sub-menu'>
-                    <li>
-                      <Link to='/about'>About Us</Link>
-                    </li>
-                  </ul>
-                </li>
-                <li class='list menu-item-parent menu-item-has-children'>
-                  <Link class='animation' to='/'>
-                    Blog
-                  </Link>
-                </li>
-                <li class='list menu-item-parent menu-item-has-children'>
-                  <Link class='animation' to='/'>
-                    Agents
-                  </Link>
-                  <ul class='main-menu__dropdown sub-menu'></ul>
-                </li>
-                <li class='list menu-item-parent'>
-                  <Link class='animation' to='ConactUs'>
-                    Contact us
-                  </Link>
-                </li>
-              </ul>
-            </nav>
+            <div class='sidebarBtn'>
+              <SideBar />
+            </div>
           </div>
         </div>
       </div>

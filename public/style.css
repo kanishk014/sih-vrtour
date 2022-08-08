@@ -2611,7 +2611,7 @@ body .sidebarBtn .bar {
   display: block;
   margin-bottom: 5px;
   -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;  
 }
 body .sidebarBtn .bar:nth-child(2),
 body .sidebarBtn .bar:nth-child(3) {
@@ -2635,21 +2635,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   -ms-transform: rotate(-45deg) translate(8px, -8px);
   transform: rotate(-45deg) translate(8px, -8px);
 }
-.mean-bar--right {
-  display: flex;
-  align-items: center;
-  min-width: 120px;
-  justify-content: space-between;
-}
-@media only screen and (max-width: 320px) {
-  .mean-bar--right {
-    min-width: 100px;
-  }
-}
-.mean-bar--right .actions a {
-  color: #fff;
-  font-size: 20px;
-}
+
 .template-search {
   position: fixed;
   top: 0;

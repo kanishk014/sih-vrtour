@@ -46,6 +46,12 @@
 }
 
 @media screen and (max-width: 992px) {
+  .main-banner-box1 {
+    padding-top: 150px;
+  }
+  .main-banner-box1 .bg-title-wrap {
+    margin-top: 150px;
+  }
   .hero {
     margin-top: 200px;
   }
