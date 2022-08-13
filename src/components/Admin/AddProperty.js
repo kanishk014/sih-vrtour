@@ -19,7 +19,7 @@ const AddProperty = () => {
     about: '',
     factsAndFigures: '',
     famous: '',
-    activities: ['', ''],
+    activities: '',
     feel360: '',
     mapLocation: '',
     latitude: '',
@@ -35,13 +35,40 @@ const AddProperty = () => {
     });
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
-    console.log(property);
-    // axios.post('/', { fname, lname, email }).then((result) => {
-    //   //access the results here....
-    // });
+    var activitiesArray = property.activities.trim().split(/\s*,\s*/);
+
+    await axios
+      .post('https://vrtour-sih.herokuapp.com/api/admin/addProperty', {
+        title: property.title,
+        propertyImage: property.propertyImage,
+        price: property.price,
+        sqft: property.sqft,
+        landArea: property.landArea,
+        type: property.type,
+        builtYear: property.builtYear,
+        parkingSpaces: property.parkingSpaces,
+        address: property.address,
+        timings: property.timings,
+        aartiTime: property.aartiTime,
+        tourTime: property.tourTime,
+        about: property.about,
+        factsAndFigures: property.factsAndFigures,
+        famous: property.famous,
+        activities: activitiesArray,
+        feel360: property.feel360,
+        mapLocation: property.mapLocation,
+        longitude: property.longitude,
+        latitude: property.latitude,
+        video: property.video,
+        websiteUrl: property.websiteUrl,
+      })
+      .then((res) => {
+        console.log(res);
+        console.log(res.data);
+      });
   };
 
   return (
@@ -61,9 +88,8 @@ const AddProperty = () => {
         <div className='form-input'>
           <h4>Property Image:</h4>
           <input
-            type='file'
+            type='text'
             name='propertyImage'
-            accept='image/png, image/jpeg ,image/jpg'
             value={property.propertyImage}
             onChange={handleChange}
             required
@@ -252,9 +278,8 @@ const AddProperty = () => {
         <div className='form-input'>
           <h4>Video:</h4>
           <input
-            type='file'
+            type='text'
             name='video'
-            accept='video/mp4,video/x-m4v,video/*,video/mkv, video/mov'
             value={property.video}
             onChange={handleChange}
             required
@@ -272,7 +297,7 @@ const AddProperty = () => {
         </div>
 
         <div className='submit-button'>
-          <button type='submit'>Add Property</button>
+          <button type='submit'>Add Monument</button>
         </div>
       </form>
     </div>
