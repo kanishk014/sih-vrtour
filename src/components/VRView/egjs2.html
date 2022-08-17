@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="asset/demo.css">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.17.0/video-js.css">
+    <link rel="stylesheet" href="https://naver.github.io/egjs-view360/common/css/PanoControls.css">
+
+</head>
+
+<body>
+
+    <div class="panoviewer-container viewer">
+        <div id="panoSet">
+            <div class="panoviewer container" id="myPanoViewer"></div>
+        </div>
+    </div>
+
+    <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/jquery-2.2.4.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/PieView.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/screenfull.min.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/GyroTouchOptions.js"></script>
+    <script src="https://naver.github.io/egjs-view360/release/latest/dist/view360.pkgd.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/PanoControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/initXR.js"></script>
+
+    <script>
+        var PanoViewer = eg.view360.PanoViewer;
+        var container = document.getElementById("myPanoViewer");
+        var panoViewer = new PanoViewer(container, {
+            image: "https://naver.github.io/egjs-view360/examples/panoviewer/controls/equi-car-inside.jpg",
+            projectionType: "equirectangular"
+        });
+
+        var panoviewerSet = document.getElementById("panoSet");
+        PanoControls.init(panoviewerSet, panoViewer, {
+            enableGyroOption: true,
+            enableTouchOption: true
+        });
+        PanoControls.showLoading();
+    </script>
+
+
+
+
+</body>
+
+</html>

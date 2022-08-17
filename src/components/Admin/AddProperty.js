@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './AddProperty.css';
 
+import FileBase64 from 'react-file-base64';
+
 const AddProperty = () => {
   const [property, setProperty] = useState({
     title: '',
@@ -28,6 +30,51 @@ const AddProperty = () => {
     websiteUrl: '',
   });
 
+  // function encodeImageFileAsURL() {
+  //   var filesSelected = document.getElementById('propertyImage').files;
+  //   var srcData;
+  //   if (filesSelected.length > 0) {
+  //     var fileToLoad = filesSelected[0];
+
+  //     var fileReader = new FileReader();
+
+  //     fileReader.onload = function (fileLoadedEvent) {
+  //       srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+  //       srcData = srcData.slice(22);
+  //     };
+  //     fileReader.readAsDataURL(fileToLoad);
+
+  //     setPropertyImage(srcData);
+
+  //     setTimeout(function () {
+  //       console.log(propertyImage);
+  //     }, 2000);
+  //   }
+  // }
+
+  const uploadImage = async (e) => {
+    // console.log(e.target.files);
+    const file = e.target.files[0];
+    const base64 = await convertBase64(file);
+    console.log(base64);
+    // setPropertyImage(base64);
+  };
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
+
   const handleChange = (event) => {
     setProperty({
       ...property,
@@ -40,10 +87,13 @@ const AddProperty = () => {
 
     var activitiesArray = property.activities.trim().split(/\s*,\s*/);
 
+    let trimmedPropertyImage = property.propertyImage.slice(22);
+    // console.log(trimmedPropertyImage);
+
     await axios
       .post('https://vrtour-sih.herokuapp.com/api/admin/addProperty', {
         title: property.title,
-        propertyImage: property.propertyImage,
+        propertyImage: trimmedPropertyImage,
         price: property.price,
         sqft: property.sqft,
         landArea: property.landArea,
@@ -66,8 +116,12 @@ const AddProperty = () => {
         websiteUrl: property.websiteUrl,
       })
       .then((res) => {
+        alert('Property added sucessfully!');
         console.log(res);
-        console.log(res.data);
+      })
+      .catch((err) => {
+        alert('Can not add property right now. Try again later');
+        console.log(err);
       });
   };
 
@@ -87,16 +141,17 @@ const AddProperty = () => {
         </div>
         <div className='form-input'>
           <h4>Property Image:</h4>
-          <input
-            type='text'
-            name='propertyImage'
-            value={property.propertyImage}
-            onChange={handleChange}
-            required
+          <FileBase64
+            type='file'
+            multiple={false}
+            onDone={({ base64 }) =>
+              setProperty({ ...property, propertyImage: base64 })
+            }
           />
+          {/* <img src={propertyImage} /> */}
         </div>
         <div className='form-input'>
-          <h4>Price:</h4>
+          <h4>Price (Numeric Value):</h4>
           <input
             type='text'
             name='price'
@@ -106,7 +161,7 @@ const AddProperty = () => {
           />
         </div>
         <div className='form-input'>
-          <h4>Square Feet:</h4>
+          <h4>Square Feet (Numeric Value): </h4>
           <input
             type='text'
             name='sqft'
@@ -116,7 +171,7 @@ const AddProperty = () => {
           />
         </div>
         <div className='form-input'>
-          <h4>Land Area:</h4>
+          <h4>Land Area (Numeric Value):</h4>
           <input
             type='text'
             name='landArea'
@@ -146,7 +201,7 @@ const AddProperty = () => {
           />
         </div>
         <div className='form-input'>
-          <h4>Parking Spaces:</h4>
+          <h4>Parking Spaces (Numeric Value):</h4>
           <input
             type='text'
             name='parkingSpaces'

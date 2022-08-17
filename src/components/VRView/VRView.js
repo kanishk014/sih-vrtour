@@ -4,6 +4,7 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import ScrollButton from '../scrollToTop';
 import Chatbotbtn from '../../chatbot/Chatbotbtn';
+import './VRView.css';
 
 const VRView = () => {
   const [scrollState, setScrollState] = useState(false);
@@ -21,6 +22,21 @@ const VRView = () => {
   return (
     <div>
       <Navbar />
+
+      <div className='vr-top'>
+        <iframe
+          src='https://sushantpatial.github.io/VR/egjs2.html'
+          width='500'
+          height='600'
+          title='Iframe Example'
+        ></iframe>
+        <iframe
+          src='https://sushantpatial.github.io/VR/egjs.html'
+          width='500'
+          height='600'
+          title='Iframe Example'
+        ></iframe>
+      </div>
 
       <ScrollButton scrollState={scrollState} />
       <div>
