@@ -24,6 +24,7 @@ const Home = () => {
   return (
     <div style={{ width: '100%' }}>
       <Navbar />
+
       <section class='main-banner-wrap1 main-banner-wrap6 motion-effects-wrap adj-height'>
         <div class='shape-element'>
           <ul>
@@ -102,7 +103,7 @@ const Home = () => {
                 <div class='bg-title-wrap' style={{ display: 'block' }}>
                   <span class='background-title solid'>Pilgrimages</span>
                 </div>
-
+                
                 <div class='banner-search-wrap'>
                   <div class='rld-main-search'>
                     <div class='row'>
@@ -547,6 +548,7 @@ const Home = () => {
           </div>
         </div>
       </section>
+
       <section class='property-wrap1 property-wrap-10'>
         <div class='container'>
           <div class='item-heading-center'>

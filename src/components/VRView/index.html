@@ -1,15 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html> 
+<html lang="en-US"> 
+  
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>
+        How To Add Google Translate
+        Button On Your Webpage ?
+    </title>
 </head>
-<body style="height: 100vh">
+  
+<body> 
+    <p>Hello everyone!</p> 
+    <p>Welcome to GeeksforGeeks</p> 
+      
+    <p>
+        Translate this page in
+        your preferred language:
+    </p> 
+      
+    <div id="google_translate_element"></div> 
+    <p>
+      You can translate the content of this
+      page by selecting a language in the
+      select box.
+  </p> 
 
-  <iframe style="height: 50%" src="egjs2.html" width="500" title="Iframe Example"></iframe>
-  <iframe style="height: 50%" src="egjs.html" height="200" width="500" title="Iframe Example"></iframe>
+    <script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+    </script> 
+    <script type="text/javascript"> 
+        function googleTranslateElementInit() { 
+            new google.translate.TranslateElement(
+                {pageLanguage: 'en'}, 
+                'google_translate_element'
+            ); 
+        } 
+    </script> 
+      
     
-</body>
+      
+    
+</body> 
+  
 </html>

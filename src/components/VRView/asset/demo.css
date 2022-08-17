@@ -11,9 +11,12 @@ body {
   bottom: 40px !important;
 }
 
+.vr-top {
+  margin-top: 150px;
+}
 .viewer {
   position: relative;
-  width: 100%;
+  width: 70%;
   margin: 0px auto;
   overflow: hidden;
   outline: none;
@@ -135,7 +138,7 @@ p.info img {
 .qrcode:before {
   position: absolute;
   content: "";
-  background: url(../img/qrcode.png) no-repeat;
+
   background-size: 100% 100%;
   width: 22px;
   height: 22px;
@@ -189,7 +192,7 @@ p.info img {
   height: 100px;
   border-radius: 50%;
   box-sizing: border-box;
-  background: url(../img/play.svg) no-repeat;
+  /* background: url(../img/play.svg) no-repeat; */
   border: 0;
   background-size: 100% 100%;
 }
