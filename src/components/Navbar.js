@@ -102,7 +102,6 @@ const Navbar = () => {
         </select>
       </div> */}
       <header class='rt-header sticky-on'>
-        <div id='sticky-placeholder'></div>
         <div
           id='navbar-wrap'
           class='header-menu menu-layout1 header-menu menu-layout2'
@@ -147,6 +146,7 @@ const Navbar = () => {
                   </ul>
                 </nav>
               </div>
+
 
               <div class='col-xl-2 col-lg-2 g-0 d-flex justify-content-end'>
                 <div class='header-action-layout1'>
