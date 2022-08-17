@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { Dropdown } from 'react-bootstrap';
@@ -7,10 +7,32 @@ import { logout } from '../store/actions/userActions';
 
 import PersonIcon from '@mui/icons-material/Person';
 import SideBar from './SideBar';
+import { Button } from '@mui/material';
+import { useTranslation } from 'react-i18next';
 
+const languages = [
+  { value: '', text: 'Options' },
+  { value: 'en', text: 'English' },
+  { value: 'hi-IN', text: 'Hindi' },
+  { value: 'bn', text: 'Bengali' },
+  { value: 'te', text: 'Tamil' },
+  { value: 'mr', text: 'Marathi' },
+  { value: 'pa', text: 'Punjabi' },
+  { value: 'ur', text: 'Urdu' },
+];
 const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
+
+  const [lang, setLang] = useState('bn');
+
+  const handleChange = (e) => {
+    setLang(e.target.value);
+    let loc = 'http://localhost:3000/';
+    window.location.replace(loc + '?lng=' + e.target.value);
+  };
 
   const logoutHandle = () => {
     dispatch(logout());
@@ -57,9 +79,28 @@ const Navbar = () => {
     );
   }
 
+  // function googleTranslateElementInit() {
+  //   new google.translate.TranslateElement(
+  //     { pageLanguage: 'en' },
+  //     'google_translate_element'
+  //   );
+  // }
+
   return (
     <div className='nav-head'>
-      {' '}
+      {/* <div className='App'>
+        <h1>{t('Welcome to VRTOUR')}</h1>
+        <label>{t('choose')}</label>
+        <select value={lang} onChange={handleChange}>
+          {languages.map((item) => {
+            return (
+              <option key={item.value} value={item.value}>
+                {item.text}
+              </option>
+            );
+          })}
+        </select>
+      </div> */}
       <header class='rt-header sticky-on'>
         <div id='sticky-placeholder'></div>
         <div
@@ -162,6 +203,7 @@ const Navbar = () => {
         </div>
       </div>
     </div>
+    // </div>
   );
 };
 

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="asset/demo.css">
+    <link rel="stylesheet" href="https://vjs.zencdn.net/7.17.0/video-js.css">
+    <link rel="stylesheet" href="https://naver.github.io/egjs-view360/common/css/PanoControls.css">
+    
+</head>
+
+<body>
+
+    <div class="viewer">
+        <video id="video" class="video-js  vjs-fluid vjs-default-skin vjs-big-play-centered vjs-controls-enabled"
+            crossorigin="anonymous" playsinline="playsinline" controls="" loop="">
+            <source src="https://naver.github.io/egjs-view360/examples/panoviewer/etc/img/seven.mp4" type="video/mp4">
+            <source src="https://naver.github.io/egjs-view360/examples/panoviewer/etc/img/seven.webm" type="video/webm">
+            <p class="vjs-no-js">
+                To view this video please enable JavaScript, and consider upgrading to a web browser that
+                <a href="http://videojs.com/html5-video-support/" target="_blank">supports HTML5 video</a>
+            </p>
+        </video>
+    </div>
+
+
+    <script src="https://vjs.zencdn.net/7.17.0/video.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/jquery-2.2.4.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/PieView.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/screenfull.min.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/GyroTouchOptions.js"></script>
+    <script src="https://naver.github.io/egjs-view360/release/latest/dist/view360.pkgd.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/PanoControls.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9.7.2/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/webxr-polyfill@latest/build/webxr-polyfill.min.js"></script>
+    <script src="https://naver.github.io/egjs-view360/common/js/initXR.js"></script>
+    
+    <script>
+        videojs("video").ready(function () {
+            var video = document.querySelector(".viewer video");
+            var videoContainer = document.querySelector("#video");
+            var view360Container = document.createElement('div');
+
+            view360Container.className = "container";
+            videoContainer.insertBefore(view360Container, videoContainer.firstChild);
+
+            var panoViewer = new eg.view360.PanoViewer(view360Container, {
+                video: video,
+                projectionType: "equirectangular",
+                useZoom: false,
+            });
+
+            window.addEventListener("resize", function () {
+                panoViewer.updateViewportDimensions();
+            });
+
+            PanoControls.init(document.querySelector("#video"), panoViewer,{
+            enableGyroOption: true,
+            enableTouchOption: true
+        });
+            PanoControls.showLoading();
+        });
+    </script>
+
+
+
+
+</body>
+
+</html>
