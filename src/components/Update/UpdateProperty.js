@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import './AddProperty.css';
+import './UpdateProperty.css';
 
 import FileBase64 from 'react-file-base64';
 
-const AddProperty = () => {
+const UpdateProperty = () => {
   const [property, setProperty] = useState({
     title: '',
     propertyImage: '',
@@ -30,18 +31,24 @@ const AddProperty = () => {
     websiteUrl: '',
   });
 
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
+  const { id } = useParams();
 
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
+  useEffect(() => {
+    getProperty();
+  }, []);
+
+  const getProperty = () => {
+    axios
+      .get(
+        `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+      )
+      .then((res) => {
+        setProperty(res.data);
+        console.log(property);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   };
 
   const handleChange = (event) => {
@@ -50,20 +57,17 @@ const AddProperty = () => {
       [event.target.name]: event.target.value,
     });
   };
-
+  // https://vrtour-sih.herokuapp.com/api/property/update/:propertyid
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    var activitiesArray = property.activities
-      .toString()
-      .trim()
-      .split(/\s*,\s*/);
+    var activitiesArray = property.activities.toString().trim();
+    activitiesArray.split(/\s*,\s*/);
 
     let trimmedPropertyImage = property.propertyImage.slice(22);
-    // console.log(trimmedPropertyImage);
 
     await axios
-      .post('http://43.204.24.76:4000/api/admin/addProperty', {
+      .patch(`http://43.204.24.76:4000/api/property/update/${id}`, {
         title: property.title,
         propertyImage: trimmedPropertyImage,
         price: property.price,
@@ -88,18 +92,17 @@ const AddProperty = () => {
         websiteUrl: property.websiteUrl,
       })
       .then((res) => {
-        alert('Property added sucessfully!');
+        alert('Property updated sucessfully!');
         console.log(res);
       })
       .catch((err) => {
-        alert('Can not add property right now. Try again later');
+        alert('Can not update property right now. Try again later');
         console.log(err);
       });
   };
-
   return (
-    <div className='add-property'>
-      <h1>Add A New Destination</h1>
+    <div className='update-property'>
+      <h1>Update Destination</h1>
       <form action='/admin' method='post' onSubmit={onSubmit}>
         <div className='form-input'>
           <h4>Title:</h4>
@@ -324,11 +327,11 @@ const AddProperty = () => {
         </div>
 
         <div className='submit-button'>
-          <button type='submit'>Add Monument</button>
+          <button type='submit'>Save</button>
         </div>
       </form>
     </div>
   );
 };
 
-export default AddProperty;
+export default UpdateProperty;

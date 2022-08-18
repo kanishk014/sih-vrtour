@@ -20,28 +20,28 @@ const VRView = () => {
   });
 
   useEffect(() => {
-    var PanoViewer =  window.eg.view360.PanoViewer;
-        var container = document.getElementById("myPanoViewer");
-        var panoViewer = new PanoViewer(container, {
-            image: "https://sushantpatial.github.io/VR/images/akshardham.jpg",
-            projectionType: "equirectangular"
-        });
+    var PanoViewer = window.eg.view360.PanoViewer;
+    var container = document.getElementById('myPanoViewer');
+    var panoViewer = new PanoViewer(container, {
+      image: 'https://sushantpatial.github.io/VR/images/akshardham.jpg',
+      projectionType: 'equirectangular',
+    });
 
-        var panoviewerSet = document.getElementById("panoSet");
-        window.PanoControls.init(panoviewerSet, panoViewer, {
-            enableGyroOption: true,
-            enableTouchOption: true
-        });
-        window.PanoControls.showLoading();
+    var panoviewerSet = document.getElementById('panoSet');
+    window.PanoControls.init(panoviewerSet, panoViewer, {
+      enableGyroOption: true,
+      enableTouchOption: true,
+    });
+    window.PanoControls.showLoading();
   }, []);
 
   // useEffect(() => {
-  //   function googleTranslateElementInit() { 
+  //   function googleTranslateElementInit() {
   //     new window.google.translate.TranslateElement(
-  //         {pageLanguage: 'en'}, 
+  //         {pageLanguage: 'en'},
   //         'google_translate_element'
-  //     ); 
-  // } 
+  //     );
+  // }
   // }, []);
 
   return (
@@ -49,10 +49,11 @@ const VRView = () => {
       <Navbar />
 
       <div className='vr-top'>
-      <div id="google_translate_element"></div>
-        <div className="panoviewer-container viewer">
-          <div id="panoSet">
-              <div className="panoviewer container" id="myPanoViewer"></div>
+        <h4>Start building your app. Happy Coding!</h4>
+
+        <div className='panoviewer-container viewer'>
+          <div id='panoSet'>
+            <div className='panoviewer container' id='myPanoViewer'></div>
           </div>
         </div>
       </div>

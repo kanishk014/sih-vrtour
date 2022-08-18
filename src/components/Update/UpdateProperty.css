@@ -1,0 +1,67 @@
+.update-property {
+    padding: 50px 20px;
+    font-family: 'Ubuntu', sans-serif;
+}
+.update-property h1 {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+.update-property > form {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.update-property .form-input {    
+    padding: 10px 30px;
+    width: 50%
+}
+.update-property .form-input > h4 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+.update-property .form-input input {
+    width: 100% !important;
+    padding: 8px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+    outline: none !important;
+    border: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+.update-property .form-input input:focus {
+    border-radius: 0px;
+    border: 1px solid #33333355;
+    box-shadow: 0 0 5px #33333355;
+}
+.update-property .form-input textarea {
+    width: 100% !important;
+    padding: 8px 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    transition: 0.3s;
+    border: 1px solid rgba(39, 33, 33, 0.15);
+}
+.update-property .form-input textarea:focus {
+    border-radius: 0px;
+    border: 1px solid #33333355;
+    box-shadow: 0 0 5px #33333355;
+    outline: none;
+}
+.update-property .submit-button button {
+    margin-top: 30px;
+    width: 200px;
+    height: 50px;
+    background-color: #f58f3c;
+    border-radius: 12px;
+    /* border-color: gray; */
+}
+
+@media screen and (max-width: 760px) {
+    .update-property .form-input {    
+        width: 100%
+    }
+}

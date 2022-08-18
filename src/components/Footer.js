@@ -3,19 +3,19 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
   return (
-    <footer class='footer-area'>
-      <div class='footer-top footer-top-style'>
-        <div class='container'>
-          <div class='row justify-content-between'>
-            <div class='col-xl-3 col-lg-4 col-md-6 col-sm-6'>
-              <div class='footer-logo-area footer-logo-area-2'>
+    <footer className='footer-area'>
+      <div className='footer-top footer-top-style'>
+        <div className='container'>
+          <div className='row justify-content-between'>
+            <div className='col-xl-3 col-lg-4 col-md-6 col-sm-6'>
+              <div className='footer-logo-area footer-logo-area-2'>
                 <div className='img-container'>
                   <img
                     style={{ height: '100px' }}
                     src='img/logo_white.png'
                     height={100}
                     alt='logo'
-                    class='img-fluid'
+                    className='img-fluid'
                   />
                 </div>
                 <p>
@@ -24,63 +24,63 @@ const Footer = () => {
                   Experience. The portal is completely devoted to meet every
                   requirement of the viewers.
                 </p>
-                <div class='item-social'>
+                <div className='item-social'>
                   <ul>
-                    <li style={{ 'margin-right': '10px' }}>
+                    <li style={{ marginRight: '10px' }}>
                       <a
                         href='https://www.facebook.com/'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <i class='fab fa-facebook-f'></i>
+                        <i className='fab fa-facebook-f'></i>
                       </a>
                     </li>
-                    <li style={{ 'margin-right': '10px' }}>
+                    <li style={{ marginRight: '10px' }}>
                       <a
                         href='https://twitter.com/'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <i class='fab fa-twitter'></i>
+                        <i className='fab fa-twitter'></i>
                       </a>
                     </li>
-                    <li style={{ 'margin-right': '10px' }}>
+                    <li style={{ marginRight: '10px' }}>
                       <a
                         href='https://vimeo.com/'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <i class='fab fa-vimeo-v'></i>
+                        <i className='fab fa-vimeo-v'></i>
                       </a>
                     </li>
-                    <li style={{ 'margin-right': '10px' }}>
+                    <li style={{ marginRight: '10px' }}>
                       <a
                         href='https://www.pinterest.com/'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <i class='fab fa-pinterest-p'></i>
+                        <i className='fab fa-pinterest-p'></i>
                       </a>
                     </li>
-                    <li style={{ 'margin-right': '10px' }}>
+                    <li style={{ marginRight: '10px' }}>
                       <a
                         href='https://web.whatsapp.com/'
                         target='_blank'
                         rel='noreferrer'
                       >
-                        <i class='fab fa-whatsapp'></i>
+                        <i className='fab fa-whatsapp'></i>
                       </a>
                     </li>
                   </ul>
                 </div>
               </div>
             </div>
-            <div class='col-xl-2 col-lg-2 col-md-6 col-sm-6'>
-              <div class='footer-link footer-link-style-2'>
-                <div class='footer-title footer-title-style2'>
+            <div className='col-xl-2 col-lg-2 col-md-6 col-sm-6'>
+              <div className='footer-link footer-link-style-2'>
+                <div className='footer-title footer-title-style2'>
                   <h3>Quick Links</h3>
                 </div>
-                <div class='item-link'>
+                <div className='item-link'>
                   <ul>
                     <li>
                       <Link to='/about'>About Us </Link>
@@ -101,16 +101,19 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div class='col-xl-3 col-lg-3 col-md-6 col-sm-6'>
-              <div class='footer-insta'>
-                <div class='footer-title footer-title-style2'>
+            <div className='col-xl-3 col-lg-3 col-md-6 col-sm-6'>
+              <div className='footer-insta'>
+                <div className='footer-title footer-title-style2'>
                   <h3>Instagram</h3>
                 </div>
-                <div class='insta-link'>
+                <div className='insta-link'>
                   <ul>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta1.jpg'
                             width='86'
@@ -118,20 +121,23 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta2.jpg'
                             width='86'
@@ -139,20 +145,23 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta3.jpg'
                             width='86'
@@ -160,20 +169,23 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta4.jpg'
                             width='86'
@@ -181,20 +193,23 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta5.jpg'
                             width='86'
@@ -202,20 +217,23 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
                     </li>
                     <li>
-                      <div class='item-img'>
-                        <a href='https://www.instagram.com/' class='insta-pic'>
+                      <div className='item-img'>
+                        <a
+                          href='https://www.instagram.com/'
+                          className='insta-pic'
+                        >
                           <img
                             src='img/instagram/insta6.jpg'
                             width='86'
@@ -223,13 +241,13 @@ const Footer = () => {
                             alt='instagram'
                           />
                         </a>
-                        <div class='item-overlay'>
+                        <div className='item-overlay'>
                           <a
                             href='https://www.instagram.com/'
                             target='_blank'
                             rel='noreferrer'
                           >
-                            <i class='fab fa-instagram'></i>
+                            <i className='fab fa-instagram'></i>
                           </a>
                         </div>
                       </div>
@@ -238,25 +256,25 @@ const Footer = () => {
                 </div>
               </div>
             </div>
-            <div class='col-xl-3 col-lg-3 col-md-6 col-sm-6'>
-              <div class='footer-contact footer-contact-style-2'>
-                <div class='footer-title footer-title-style2'>
+            <div className='col-xl-3 col-lg-3 col-md-6 col-sm-6'>
+              <div className='footer-contact footer-contact-style-2'>
+                <div className='footer-title footer-title-style2'>
                   <h3>Contact</h3>
                 </div>
-                <div class='footer-location'>
+                <div className='footer-location'>
                   <ul>
-                    <li class='item-map'>
-                      <i class='fas fa-map-marker-alt'></i>Indra vihar, Delhi-
-                      110009
+                    <li className='item-map'>
+                      <i className='fas fa-map-marker-alt'></i>Indra vihar,
+                      Delhi- 110009
                     </li>
                     <li>
                       <a href='mailto:info@example.com'>
-                        <i class='fas fa-envelope'></i>info@example.com
+                        <i className='fas fa-envelope'></i>info@example.com
                       </a>
                     </li>
                     <li>
                       <a href='tel:+123596000'>
-                        <i class='fas fa-phone-alt'></i>+91 8826024495
+                        <i className='fas fa-phone-alt'></i>+91 8826024495
                       </a>
                     </li>
                   </ul>
@@ -266,11 +284,11 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div class='footer-bottom footer-bottom-style-2'>
-        <div class='container'>
-          <div class='row justify-content-center'>
-            <div class='col-lg-6 col-md-6'>
-              <div class='copyright-area1'>
+      <div className='footer-bottom footer-bottom-style-2'>
+        <div className='container'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-6 col-md-6'>
+              <div className='copyright-area1'>
                 <ul>
                   <li>
                     <a href='about'>Terms of Use</a>
@@ -281,8 +299,8 @@ const Footer = () => {
                 </ul>
               </div>
             </div>
-            <div class='col-lg-6 col-md-6'>
-              <div class='copyright-area2'>
+            <div className='col-lg-6 col-md-6'>
+              <div className='copyright-area2'>
                 <p>2022 © All rights served by VRTOUR</p>
               </div>
             </div>

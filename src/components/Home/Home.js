@@ -24,13 +24,12 @@ const Home = () => {
   return (
     <div style={{ width: '100%' }}>
       <Navbar />
-
-      <section class='main-banner-wrap1 main-banner-wrap6 motion-effects-wrap adj-height'>
-        <div class='shape-element'>
+      <section className='main-banner-wrap1 main-banner-wrap6 motion-effects-wrap adj-height'>
+        <div className='shape-element'>
           <ul>
             <li>
               <img
-                class='wow fadeInLeft colour'
+                className='wow fadeInLeft colour'
                 data-wow-delay='.3s'
                 src='img/figure/shape33.svg'
                 height='296'
@@ -40,7 +39,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='colour'
+                className='colour'
                 src='img/figure/shape34.svg'
                 height='426'
                 width='319'
@@ -49,7 +48,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='motion-effects12 colour'
+                className='motion-effects12 colour'
                 src='img/figure/shape35.svg'
                 width='150'
                 height='150'
@@ -58,7 +57,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='colour'
+                className='colour'
                 src='img/figure/shape36.svg'
                 width='70'
                 height='27'
@@ -67,7 +66,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='motion-effects13 colour'
+                className='motion-effects13 colour'
                 src='img/figure/shape37.svg'
                 width='191'
                 height='178'
@@ -76,7 +75,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='colour'
+                className='colour'
                 src='img/figure/shape38.svg'
                 width='719'
                 height='196'
@@ -84,7 +83,10 @@ const Home = () => {
               />
             </li>
           </ul>
-          <div class='item-banner-thumb wow fadeInRight' data-wow-delay='.4s'>
+          <div
+            className='item-banner-thumb wow fadeInRight'
+            data-wow-delay='.4s'
+          >
             <img
               src='img/banner/banner6.png'
               width='1204'
@@ -93,24 +95,24 @@ const Home = () => {
             />
           </div>
         </div>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-xl-8'>
-              <div class='main-banner-box1 main-banner-box6'>
-                <h1 class='item-title wow fadeInUp' data-wow-delay='.4s'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-xl-8'>
+              <div className='main-banner-box1 main-banner-box6'>
+                <h1 className='item-title wow fadeInUp' data-wow-delay='.4s'>
                   A journey becomes a pilgrimage as we discover, day by day
                 </h1>
-                <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Pilgrimages</span>
+                <div className='bg-title-wrap' style={{ display: 'block' }}>
+                  <span className='background-title solid'>Pilgrimages</span>
                 </div>
-                
-                <div class='banner-search-wrap'>
-                  <div class='rld-main-search'>
-                    <div class='row'>
-                      <div class='col-sm-12'>
-                        <div class='box'>
-                          <div class='box-top'>
-                            <div class='rld-single-input item'>
+
+                <div className='banner-search-wrap'>
+                  <div className='rld-main-search'>
+                    <div className='row'>
+                      <div className='col-sm-12'>
+                        <div className='box'>
+                          <div className='box-top'>
+                            <div className='rld-single-input item'>
                               <input
                                 style={{
                                   width: 'fit-content',
@@ -120,9 +122,9 @@ const Home = () => {
                                 placeholder='Enter Keyword here...'
                               />
                             </div>
-                            <div class='rld-single-select ml-22'>
+                            <div className='rld-single-select ml-22'>
                               <select
-                                class='select single-select'
+                                className='select single-select'
                                 style={{
                                   width: 'fit-content',
                                   padding: '0 20px',
@@ -188,21 +190,21 @@ const Home = () => {
                               </select>
                             </div>
 
-                            <div class='item rt-filter-btn'>
+                            <div className='item rt-filter-btn'>
                               <div
-                                class='dropdown-filter item'
+                                className='dropdown-filter item'
                                 onClick={() => setIsClick(!isclick)}
                               >
                                 <span>
-                                  <i class='fas fa-sliders-h'></i>
+                                  <i className='fas fa-sliders-h'></i>
                                 </span>
                               </div>
                               <div
-                                class='filter-button-area'
+                                className='filter-button-area'
                                 style={{ height: '100%', display: 'flex' }}
                               >
                                 <Link
-                                  class='filter-btn'
+                                  className='filter-btn'
                                   style={{
                                     display: 'flex',
                                     alignItems: 'center',
@@ -210,24 +212,24 @@ const Home = () => {
                                   to='/'
                                 >
                                   <span>Search</span>
-                                  <i class='fas fa-search'></i>
+                                  <i className='fas fa-search'></i>
                                 </Link>
                               </div>
                             </div>
                           </div>
                           <div
-                            class={`explore__form-checkbox-list full-filter ${
+                            className={`explore__form-checkbox-list full-filter ${
                               isclick && 'filter-block '
                             }`}
                           >
-                            <div class='row'>
-                              <div class='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
-                                <div class='form-group bed'>
-                                  <label class='item-bedrooms'>
+                            <div className='row'>
+                              <div className='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
+                                <div className='form-group bed'>
+                                  <label className='item-bedrooms'>
                                     Number of Visitors
                                   </label>
                                   <select
-                                    class='form-select'
+                                    className='form-select'
                                     aria-label='addcategory'
                                     // onChange={(e) => {
                                     // 	setpropDetails((prev) => {
@@ -246,149 +248,24 @@ const Home = () => {
                                   </select>
                                 </div>
                               </div>
-                              {/* <div class="form-group">
-																<label
-																	htmlFor="addcategory"
-																	class="control-label"
-																>
-																	Category
-																	<strong class="rtcl-required">*</strong>
-																</label>
-																<select
-																	class="form-select"
-																	aria-label="addcategory"
-																	
-																>
-																	<option value="Rent">Rent</option>
-																	<option value="Buy">Buy</option>
-																</select>
-															</div> */}
-                              {/* <div class='col-lg-4 col-md-6 py-1 pr-30 pl-0'>
-                                <div class='form-group bath'>
-                                  <label class='item-bath'>Bathrooms</label>
-                                  <select
-                                    class='form-select'
-                                    aria-label='addcategory'
-                                    // onChange={(e) => {
-                                    // 	setpropDetails((prev) => {
-                                    // 		return {
-                                    // 			...prev,
-                                    // 			category: e.target.value,
-                                    // 		};
-                                    // 	});
-                                    // }}
-                                  >
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                    <option value={4}>4</option>
-                                    <option value={5}>5</option>
-                                  </select>
-                                </div>
-                              </div> */}
-                              {/* <div class='col-lg-4 col-md-6 py-1 pl-0 pr-0'>
-                                <div class='form-group garage'>
-                                  <label class='item-garage'>Rooms</label>
-                                  <select
-                                    class='form-select'
-                                    aria-label='addcategory'
-                                    // onChange={(e) => {
-                                    // 	setpropDetails((prev) => {
-                                    // 		return {
-                                    // 			...prev,
-                                    // 			category: e.target.value,
-                                    // 		};
-                                    // 	});
-                                    // }}
-                                  >
-                                    <option value={1}>1</option>
-                                    <option value={2}>2</option>
-                                    <option value={3}>3</option>
-                                    <option value={4}>4</option>
-                                    <option value={5}>5</option>
-                                  </select>
-                                </div>
-                              </div> */}
-                              {/* <div class='main-search-field-2 col-12'>
-                                <div class='row'>
-                                  <div class='col-md-6 pl-0'>
-                                    <div class='price-range-wrapper'>
-                                      <div class='range-box'>
-                                        <div
-                                          class='price-label'
-                                          style={{ width: '200px' }}
-                                        >
-                                          Size:
-                                        </div>
-                                        <div
-                                          id='price-range-filter-3'
-                                          class='price-range-filter'
-                                        ></div>
-                                        <div class='price-filter-wrap d-flex align-items-center'>
-                                          <div class='price-range-select'>
-                                            <div
-                                              class='price-range'
-                                              id='price-range-min-3'
-                                            ></div>
-                                            <div class='price-range'>-</div>
-                                            <div
-                                              class='price-range'
-                                              id='price-range-max-3'
-                                            ></div>
-                                            <div class='price-range range-title'>
-                                              sft
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <div class='col-md-6 pl-0'>
-                                    <div class='price-range-wrapper'>
-                                      <div class='range-box'>
-                                        <div class='price-label'>Distance:</div>
-                                        <div
-                                          id='price-range-filter-2'
-                                          class='price-range-filter'
-                                        ></div>
-                                        <div class='price-filter-wrap d-flex align-items-center'>
-                                          <div class='price-range-select'>
-                                            <div
-                                              class='price-range'
-                                              id='price-range-min-2'
-                                            ></div>
-                                            <div class='price-range'>-</div>
-                                            <div
-                                              class='price-range'
-                                              id='price-range-max-2'
-                                            ></div>
-                                            <div class='price-range range-title'>
-                                              km
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> */}
-                              <div class='row' style={{ marginLeft: '0' }}>
+
+                              <div className='row' style={{ marginLeft: '0' }}>
                                 <div
-                                  class='col-lg-12 col-md-12 col-sm-12'
+                                  className='col-lg-12 col-md-12 col-sm-12'
                                   style={{ padding: 0 }}
                                 >
-                                  <h4 class='text-dark'>Amenities</h4>
-                                  <ul class='no-ul-list third-row'>
+                                  <h4 className='text-dark'>Amenities</h4>
+                                  <ul className='no-ul-list third-row'>
                                     <li>
                                       <input
                                         id='a-1'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-1'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-1'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Timings
                                       </label>
@@ -396,13 +273,13 @@ const Home = () => {
                                     <li>
                                       <input
                                         id='a-2'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-2'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-2'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Aarti Time
                                       </label>
@@ -410,13 +287,13 @@ const Home = () => {
                                     <li>
                                       <input
                                         id='a-3'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-3'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-3'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Tour Time
                                       </label>
@@ -424,13 +301,13 @@ const Home = () => {
                                     <li>
                                       <input
                                         id='a-4'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-4'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-4'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Land Area
                                       </label>
@@ -438,85 +315,45 @@ const Home = () => {
                                     <li>
                                       <input
                                         id='a-5'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-5'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-5'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Year Build
                                       </label>
                                     </li>
-                                    {/* <li>
-                                      <input
-                                        id='a-6'
-                                        class='checkbox-custom'
-                                        name='a-6'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-6'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Lawn
-                                      </label>
-                                    </li>
-                                    <li>
-                                      <input
-                                        id='a-7'
-                                        class='checkbox-custom'
-                                        name='a-7'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-7'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Laundry
-                                      </label>
-                                    </li> */}
+
                                     <li>
                                       <input
                                         id='a-8'
-                                        class='checkbox-custom'
+                                        className='checkbox-custom'
                                         name='a-8'
                                         type='checkbox'
                                       />
                                       <label
                                         htmlFor='a-8'
-                                        class='checkbox-custom-label'
+                                        className='checkbox-custom-label'
                                       >
                                         Parking
                                       </label>
                                     </li>
-                                    {/* <li>
-                                      <input
-                                        id='a-9'
-                                        class='checkbox-custom'
-                                        name='a-9'
-                                        type='checkbox'
-                                      />
-                                      <label
-                                        htmlFor='a-9'
-                                        class='checkbox-custom-label'
-                                      >
-                                        Cc Cam
-                                      </label>
-                                    </li> */}
                                   </ul>
                                 </div>
                               </div>
                               <div
-                                class='filter-button'
+                                className='filter-button'
                                 style={{ justifyContent: 'center' }}
                               >
-                                <Link to='/' class='filter-btn1'>
+                                <Link to='/' className='filter-btn1'>
                                   Apply Filter
                                 </Link>
-                                <Link to='/' class='filter-btn1 reset-btn'>
-                                  Reset Filter<i class='fas fa-redo-alt'></i>
+                                <Link to='/' className='filter-btn1 reset-btn'>
+                                  Reset Filter
+                                  <i className='fas fa-redo-alt'></i>
                                 </Link>
                               </div>
                             </div>
@@ -525,16 +362,19 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <p class='item-para wow fadeInUp' data-wow-delay='.4s'>
+                  <p className='item-para wow fadeInUp' data-wow-delay='.4s'>
                     Put your
-                    <span class='banner-p'> heart, mind, and soul</span> into
-                    even your
+                    <span className='banner-p'>
+                      {' '}
+                      heart, mind, and soul
+                    </span>{' '}
+                    into even your
                     <br></br>
                     smallest acts.
-                    {/* <span class='banner-p'> </span> */}
-                    <span class='item-shape'>
+                    {/* <span className='banner-p'> </span> */}
+                    <span className='item-shape'>
                       <img
-                        class='colour'
+                        className='colour'
                         src='img/figure/shape39.svg'
                         width='79'
                         height='16'
@@ -548,23 +388,23 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      <section class='property-wrap1 property-wrap-10'>
-        <div class='container'>
-          <div class='item-heading-center'>
-            <span class='section-subtitle'>MOST VISITED</span>
-            <h2 class='section-title'>Religious Places</h2>
-            <div class='bg-title-wrap' style={{ display: 'block' }}>
-              <span class='background-title solid'>Pilgrimages</span>
+      <div id='google_translate_element'></div>
+      <section className='property-wrap1 property-wrap-10'>
+        <div className='container'>
+          <div className='item-heading-center'>
+            <span className='section-subtitle'>MOST VISITED</span>
+            <h2 className='section-title'>Religious Places</h2>
+            <div className='bg-title-wrap' style={{ display: 'block' }}>
+              <span className='background-title solid'>Pilgrimages</span>
             </div>
           </div>
-          <div class='row'>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+          <div className='row'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.3s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog4.jpg'
@@ -573,18 +413,18 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>
+                  <div className='rent-price'>
+                    <div className='item-price'>
                       ₹250
                       <span>
                         <i>/</i>person
                       </span>
                     </div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -593,7 +433,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -603,35 +443,33 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Temple</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
-                      <Link to='/pilgrimage'>
-                        Akshardham Temple
-                      </Link>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
+                      <Link to='/pilgrimage'>Akshardham Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.2s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog5.jpg'
@@ -640,13 +478,13 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -655,7 +493,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -665,33 +503,33 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Temple</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Lotus Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.1s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog6.jpg'
@@ -700,13 +538,13 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -715,7 +553,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -725,33 +563,33 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Mandir</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Hanuman Mandir</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.3s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog7.jpg'
@@ -760,13 +598,13 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -775,7 +613,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -785,33 +623,33 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Gurudwara</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Golden Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Amritsar, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>Amritsar, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.6s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog8.jpg'
@@ -820,13 +658,13 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -835,7 +673,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -845,36 +683,34 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Church</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
-                      <Link to='/pilgrimage'>
-                        Shimla Christ Church
-                      </Link>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
+                      <Link to='/pilgrimage'>Shimla Christ Church</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Himachal Pradesh,
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>Himachal Pradesh,
                     India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.2s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog9.jpg'
@@ -883,13 +719,13 @@ const Home = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
-                  <div class='react-icon'>
+                  <div className='react-icon'>
                     <ul>
                       <li>
                         <Link
@@ -898,7 +734,7 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Favourites'
                         >
-                          <i class='flaticon-heart'></i>
+                          <i className='flaticon-heart'></i>
                         </Link>
                       </li>
                       <li>
@@ -908,44 +744,42 @@ const Home = () => {
                           data-bs-placement='top'
                           title='Compare'
                         >
-                          <i class='flaticon-left-and-right-arrows'></i>
+                          <i className='flaticon-left-and-right-arrows'></i>
                         </Link>
                       </li>
                     </ul>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Mandir</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
-                      <Link to='/pilgrimage'>
-                        Kapaleeshwarar Temple
-                      </Link>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
+                      <Link to='/pilgrimage'>Kapaleeshwarar Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>Chennai, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>Chennai, India
                   </div>
                 </div>
               </div>
             </div>
           </div>
-          <div class='property-button'>
-            <Link to='/pilgrimage' class='item-btn'>
+          <div className='property-button'>
+            <Link to='/pilgrimage' className='item-btn'>
               View All Locations
             </Link>
           </div>
         </div>
       </section>
-      <section class='about-wrap-5 counter-appear motion-effects-wrap'>
-        <div class='container'>
-          <div class='item-element-shape'>
+      <section className='about-wrap-5 counter-appear motion-effects-wrap'>
+        <div className='container'>
+          <div className='item-element-shape'>
             <ul>
               <li>
                 <img
-                  class='wow animated fadeInRight'
+                  className='wow animated fadeInRight'
                   data-wow-delay='.4s'
                   src='img/figure/shape30.svg'
                   width='312'
@@ -955,7 +789,7 @@ const Home = () => {
               </li>
               <li>
                 <img
-                  class='motion-effects12'
+                  className='motion-effects12'
                   src='img/figure/shape31.svg'
                   width='155'
                   height='92'
@@ -972,13 +806,13 @@ const Home = () => {
               </li>
             </ul>
           </div>
-          <div class='row'>
-            <div class='col-lg-6 col-md-12'>
+          <div className='row'>
+            <div className='col-lg-6 col-md-12'>
               <div
-                class='about-box-9 wow animated fadeInLeft'
+                className='about-box-9 wow animated fadeInLeft'
                 data-wow-delay='.5s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <img
                     src='img/blog/about2.png'
                     alt='shape'
@@ -988,19 +822,19 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class='col-lg-6 col-md-12'>
+            <div className='col-lg-6 col-md-12'>
               <div
-                class='about-box-10 wow animated fadeInRight'
+                className='about-box-10 wow animated fadeInRight'
                 data-wow-delay='.3s'
               >
-                <div class='item-heading-left mb-bottom'>
-                  <span class='section-subtitle'>WHO WE ARE</span>
-                  <h2 class='section-title'>
+                <div className='item-heading-left mb-bottom'>
+                  <span className='section-subtitle'>WHO WE ARE</span>
+                  <h2 className='section-title'>
                     We are Offering The Best immersive experience for all
                     Pilgrimages
                   </h2>
-                  <div class='bg-title-wrap' style={{ display: 'block' }}>
-                    <span class='background-title solid'>About</span>
+                  <div className='bg-title-wrap' style={{ display: 'block' }}>
+                    <span className='background-title solid'>About</span>
                   </div>
                   <p>
                     Experience places in a smarter way with Virtual reality.
@@ -1008,19 +842,19 @@ const Home = () => {
                     experience.
                   </p>
                 </div>
-                <div class='row'>
-                  <div class='col-lg-6 col-md-6'>
-                    <div class='about-svg-shape'>
+                <div className='row'>
+                  <div className='col-lg-6 col-md-6'>
+                    <div className='about-svg-shape'>
                       <img
-                        class='colour-1'
+                        className='colour-1'
                         src='img/figure/shape28.svg'
                         alt='svg'
                       />
-                      <div class='item-content'>
-                        <div class='item-content'>
-                          <div class='item-content__text'>
-                            <div class='item-k'>
-                              <span class='counterUp' data-counter='55'>
+                      <div className='item-content'>
+                        <div className='item-content'>
+                          <div className='item-content__text'>
+                            <div className='item-k'>
+                              <span className='counterUp' data-counter='55'>
                                 55
                               </span>
                               K
@@ -1031,17 +865,17 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
-                  <div class='col-lg-6 col-md-6'>
-                    <div class='about-svg-shape'>
+                  <div className='col-lg-6 col-md-6'>
+                    <div className='about-svg-shape'>
                       <img
-                        class='colour-1'
+                        className='colour-1'
                         src='img/figure/shape29.svg'
                         alt='svg'
                       />
-                      <div class='item-content'>
-                        <div class='item-content__text'>
-                          <div class='item-k'>
-                            <span class='counterUp' data-counter='11'>
+                      <div className='item-content'>
+                        <div className='item-content__text'>
+                          <div className='item-k'>
+                            <span className='counterUp' data-counter='11'>
                               11
                             </span>
                             K
@@ -1053,11 +887,12 @@ const Home = () => {
                   </div>
                 </div>
                 <p>
-                  The promise to use best-in-class technology to reduce the time
-                  and friction of visiting different places around the country.
+                  The promise to use best-in-className technology to reduce the
+                  time and friction of visiting different places around the
+                  country.
                 </p>
-                <div class='banner-button about-button-2'>
-                  <Link to='/contact' class='banner-btn'>
+                <div className='banner-button about-button-2'>
+                  <Link to='/contact' className='banner-btn'>
                     Contact With Us
                   </Link>
                 </div>
@@ -1066,22 +901,22 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <section class='location-wrap1'>
-        <div class='container'>
-          <div class='item-heading-center'>
-            <span class='section-subtitle'>Top Areas</span>
-            <h2 class='section-title'>Find Temples in Your Neighborhood</h2>
-            <div class='bg-title-wrap' style={{ display: 'block' }}>
-              <span class='background-title solid'>Locations</span>
+      <section className='location-wrap1'>
+        <div className='container'>
+          <div className='item-heading-center'>
+            <span className='section-subtitle'>Top Areas</span>
+            <h2 className='section-title'>Find Temples in Your Neighborhood</h2>
+            <div className='bg-title-wrap' style={{ display: 'block' }}>
+              <span className='background-title solid'>Locations</span>
             </div>
           </div>
-          <div class='row justify-content-center'>
-            <div class='col-lg-4 col-md-6'>
+          <div className='row justify-content-center'>
+            <div className='col-lg-4 col-md-6'>
               <div
-                class='location-box3 location-box4 wow zoomIn'
+                className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.3s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-1.jpg'
@@ -1091,26 +926,26 @@ const Home = () => {
                     />
                   </Link>
                 </div>
-                <div class='item-content'>
-                  <div class='content-body'>
-                    <div class='item-title'>
+                <div className='item-content'>
+                  <div className='content-body'>
+                    <div className='item-title'>
                       <h3>
                         <Link to='/pilgrimage'>Delhi</Link>
                       </h3>
                     </div>
-                    <div class='item-category'>
+                    <div className='item-category'>
                       <span>3 Locations</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-4 col-md-6'>
+            <div className='col-lg-4 col-md-6'>
               <div
-                class='location-box3 location-box4 wow zoomIn'
+                className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.4s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-2.jpg'
@@ -1120,26 +955,26 @@ const Home = () => {
                     />
                   </Link>
                 </div>
-                <div class='item-content'>
-                  <div class='content-body'>
-                    <div class='item-title'>
+                <div className='item-content'>
+                  <div className='content-body'>
+                    <div className='item-title'>
                       <h3>
                         <Link to='/pilgrimage'>Mumbai</Link>
                       </h3>
                     </div>
-                    <div class='item-category'>
+                    <div className='item-category'>
                       <span>6 Locations</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-4 col-md-6'>
+            <div className='col-lg-4 col-md-6'>
               <div
-                class='location-box3 location-box4 wow zoomIn'
+                className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.5s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-3.jpg'
@@ -1149,14 +984,14 @@ const Home = () => {
                     />
                   </Link>
                 </div>
-                <div class='item-content'>
-                  <div class='content-body'>
-                    <div class='item-title'>
+                <div className='item-content'>
+                  <div className='content-body'>
+                    <div className='item-title'>
                       <h3>
                         <Link to='/pilgrimage'>Bangalore</Link>
                       </h3>
                     </div>
-                    <div class='item-category'>
+                    <div className='item-category'>
                       <span>5 Locations</span>
                     </div>
                   </div>
@@ -1164,13 +999,13 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div class='row'>
-            <div class='col-lg-4 col-md-4'>
+          <div className='row'>
+            <div className='col-lg-4 col-md-4'>
               <div
-                class='location-box3 location-box4 wow zoomIn'
+                className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.6s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-4.jpg'
@@ -1180,26 +1015,26 @@ const Home = () => {
                     />
                   </Link>
                 </div>
-                <div class='item-content'>
-                  <div class='content-body'>
-                    <div class='item-title'>
+                <div className='item-content'>
+                  <div className='content-body'>
+                    <div className='item-title'>
                       <h3>
                         <Link to='/pilgrimage'>Punjab</Link>
                       </h3>
                     </div>
-                    <div class='item-category'>
+                    <div className='item-category'>
                       <span>8 Locations</span>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-lg-8 col-md-8'>
+            <div className='col-lg-8 col-md-8'>
               <div
-                class='location-box3 location-box4 wow zoomIn'
+                className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.7s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/location-5.jpg'
@@ -1209,14 +1044,14 @@ const Home = () => {
                     />
                   </Link>
                 </div>
-                <div class='item-content'>
-                  <div class='content-body'>
-                    <div class='item-title'>
+                <div className='item-content'>
+                  <div className='content-body'>
+                    <div className='item-title'>
                       <h3>
                         <Link to='/pilgrimage'>Kolkata</Link>
                       </h3>
                     </div>
-                    <div class='item-category'>
+                    <div className='item-category'>
                       <span>2 Locations</span>
                     </div>
                   </div>
@@ -1226,45 +1061,12 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section
-        class='property-banner-wrap1 parallaxie'
-        data-bg-image='img/banner/banner3.jpg'
-      >
-        <div class='container'>
-          <div class='row align-items-center'>
-            <div class='col-lg-5 col-md-12'>
-              <div class='property-box1 wow slideInUp' data-wow-delay='100'>
-                <div class='item-subtitle'>Let’s Take a Tour</div>
-                <h3 class='item-title'>
-                  Search places Smarter, Quicker & Anywhere
-                </h3>
-                <div class='play-button'>
-                  <div class='item-icon'>
-                    <span class='play-icon style-1'>
-                      <i class='fas fa-play'></i>
-                    </span>
-                    <span class='play-text'>Get Started</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class='col-lg-7 col-md-12'>
-              <div class='property-img wow fadeInUp' data-wow-delay='100'>
-                <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Virtual Reality For All</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> */}
-      {/*  */}
-      <section class='banner-collection4 motion-effects-wrap'>
-        <div class='item-element'>
+      <section className='banner-collection4 motion-effects-wrap'>
+        <div className='item-element'>
           <ul>
             <li>
               <img
-                class='wow fadeInLeft'
+                className='wow fadeInLeft'
                 data-wow-delay='.4s'
                 src='img/figure/shape19.svg'
                 width='388'
@@ -1274,7 +1076,7 @@ const Home = () => {
             </li>
             <li>
               <img
-                class='motion-effects12'
+                className='motion-effects12'
                 src='img/figure/shape20.svg'
                 width='191'
                 height='178'
@@ -1291,11 +1093,11 @@ const Home = () => {
             </li>
           </ul>
         </div>
-        <div class='container'>
-          <div class='row'>
-            <div class='col-lg-3'>
-              <div class='banner-box-2 wow fadeInLeft' data-wow-delay='.5s'>
-                <div class='item-img'>
+        <div className='container'>
+          <div className='row'>
+            <div className='col-lg-3'>
+              <div className='banner-box-2 wow fadeInLeft' data-wow-delay='.5s'>
+                <div className='item-img'>
                   <img
                     src='img/banner/banner5.png'
                     width='309'
@@ -1305,52 +1107,55 @@ const Home = () => {
                 </div>
               </div>
             </div>
-            <div class='col-lg-5'>
-              <div class='banner-content-2 wow fadeInUp' data-wow-delay='.7s'>
-                <div class='item-heading-left'>
-                  <h2 class='section-title'>
+            <div className='col-lg-5'>
+              <div
+                className='banner-content-2 wow fadeInUp'
+                data-wow-delay='.7s'
+              >
+                <div className='item-heading-left'>
+                  <h2 className='section-title'>
                     We’re Providing the Best Virtual Reality Experience
                   </h2>
-                  <p class='item-para'>
+                  <p className='item-para'>
                     Explore places in VR. A smart way to visti any place and
                     experience using virtual reality
                   </p>
                   <p></p>
                 </div>
-                <div class='row'>
-                  <div class='col-lg-6 col-md-6'>
-                    <div class='service-box-1'>
-                      <div class='service-icon'>
-                        <i class='fas fa-phone-alt'></i>
+                <div className='row'>
+                  <div className='col-lg-6 col-md-6'>
+                    <div className='service-box-1'>
+                      <div className='service-icon'>
+                        <i className='fas fa-phone-alt'></i>
                       </div>
-                      <div class='service-content'>
-                        <h3 class='info-title'>Our Hot Line:</h3>
+                      <div className='service-content'>
+                        <h3 className='info-title'>Our Hot Line:</h3>
                         <p>+91 8826024495</p>
                       </div>
                     </div>
                   </div>
-                  <div class='col-lg-6 col-md-6'>
-                    <div class='service-box-1 service-box-2'>
-                      <div class='service-icon'>
-                        <i class='fas fa-phone-alt'></i>
+                  <div className='col-lg-6 col-md-6'>
+                    <div className='service-box-1 service-box-2'>
+                      <div className='service-icon'>
+                        <i className='fas fa-phone-alt'></i>
                       </div>
-                      <div class='service-content'>
-                        <h3 class='info-title'>Mail Us:</h3>
+                      <div className='service-content'>
+                        <h3 className='info-title'>Mail Us:</h3>
                         <p>info@gmail.com</p>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class='banner-button'>
-                  <Link to='/contact' class='banner-btn'>
+                <div className='banner-button'>
+                  <Link to='/contact' className='banner-btn'>
                     Connect With Us
                   </Link>
                 </div>
               </div>
             </div>
-            <div class='col-lg-4'>
+            <div className='col-lg-4'>
               <div
-                class='banner-img-style-2 wow fadeInRight'
+                className='banner-img-style-2 wow fadeInRight'
                 data-wow-delay='.6s'
               >
                 <img
@@ -1364,130 +1169,19 @@ const Home = () => {
           </div>
         </div>
       </section>
-      {/* <section class="testimonial-wrap3">
-				<div class="container">
-					<div class="testimonial-layout3 swiper-container">
-						<div class="swiper-wrapper">
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider1.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider2.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider3.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="swiper-slide">
-								<div class="item-img">
-									<img
-										src="img/slider/slider1.png"
-										width="74"
-										height="74"
-										alt="slider"
-									/>
-								</div>
-								<div class="testimonial-content">
-									<h3 class="item-title">Maria Zokatti</h3>
-									<div class="item-subtitle">SEO Marketing</div>
-									<div class="rtin-content">
-										<span>
-											“ when an unknown printer took a galley of type and
-											scrambled it to make a type specimen bookhas survived not
-											only five centuries, but also the leap into electronic
-											type setting emaining essentially unchanged follower.”
-										</span>
-										<div class="item-icon">
-											<i class="fas fa-quote-left"></i>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						{/* <div class="swiper-button-prev testimonial-btn"></div>
-						<div class="swiper-button-next testimonial-btn"></div> */}
-      {/* </div>
-				</div>
-			</section>  */}
-      <section class='banner-collection3'>
-        <div class='container'>
-          <div class='item-heading-center'>
-            {/* <h2 class='section-title'>Find Your Desire Dream Home Today!</h2> */}
+      <section className='banner-collection3'>
+        <div className='container'>
+          <div className='item-heading-center'>
             <div
-              class='bg-title-wrap'
+              className='bg-title-wrap'
               style={{ display: 'block', position: 'relative', marginTop: 50 }}
             >
-              <span class='background-title solid'>
+              <span className='background-title solid'>
                 Cleanse Your Soul Today!
               </span>
             </div>
-            <div class='banner-button'>
-              <Link to='/contact' class='banner-btn'>
+            <div className='banner-button'>
+              <Link to='/contact' className='banner-btn'>
                 Contact Us
               </Link>
             </div>

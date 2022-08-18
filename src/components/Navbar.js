@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './Navbar.css';
 import { Dropdown } from 'react-bootstrap';
@@ -43,21 +43,44 @@ const Navbar = () => {
     : null;
   let link;
   let link2;
+
+  // Google translate api
+  const googleTranslateElementInit = () => {
+    new window.google.translate.TranslateElement(
+      {
+        pageLanguage: 'en',
+        autoDisplay: false,
+        layout: window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+      },
+      'google_translate_element'
+    );
+  };
+
+  useEffect(() => {
+    var addScript = document.createElement('script');
+    addScript.setAttribute(
+      'src',
+      '//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit'
+    );
+    document.body.appendChild(addScript);
+    window.googleTranslateElementInit = googleTranslateElementInit;
+  }, []);
+
   if (!id) {
     link = (
-      <ul class='action-list'>
-        <li class='listing-button'>
-          <Link to='/login' class='listing-btn'>
-            <span class='item-text'>Login</span>
+      <ul className='action-list'>
+        <li className='listing-button'>
+          <Link to='/login' className='listing-btn'>
+            <span className='item-text'>Login</span>
           </Link>
         </li>
       </ul>
     );
   } else {
-    link = <i class='flaticon-user-1 icon-round'></i>;
+    link = <i className='flaticon-user-1 icon-round'></i>;
 
     link2 = (
-      <ul class='dropdown-menu-col-1'>
+      <ul className='dropdown-menu-col-1'>
         <li>
           <Link to='/profile'>Profile</Link>
         </li>
@@ -88,7 +111,7 @@ const Navbar = () => {
 
   return (
     <div className='nav-head'>
-      {/* <div className='App'>
+      {/* <div classNameName='App'>
         <h1>{t('Welcome to VRTOUR')}</h1>
         <label>{t('choose')}</label>
         <select value={lang} onChange={handleChange}>
@@ -101,30 +124,30 @@ const Navbar = () => {
           })}
         </select>
       </div> */}
-      <header class='rt-header sticky-on'>
+      <header className='rt-header sticky-on'>
         <div
           id='navbar-wrap'
-          class='header-menu menu-layout1 header-menu menu-layout2'
+          className='header-menu menu-layout1 header-menu menu-layout2'
         >
-          <div class='container nav-container'>
-            <div class='row d-flex align-items-center'>
-              <div class='col-xl-2 col-lg-2'>
-                <div class='logo-area'>
-                  <Link to='/' class='temp-logo'>
+          <div className='container nav-container'>
+            <div className='row d-flex align-items-center'>
+              <div className='col-xl-2 col-lg-2'>
+                <div className='logo-area'>
+                  <Link to='/' className='temp-logo'>
                     <img
                       src='img/logo.png'
                       width='157'
                       height='40'
                       alt='logo'
-                      class='img-fluid'
+                      className='img-fluid'
                     />
                   </Link>
                 </div>
               </div>
-              <div class='col-xl-6 col-lg-6 d-flex justify-content-center position-static'>
+              <div className='col-xl-5 col-lg-6 d-flex justify-content-center position-static'>
                 <nav
                   id='dropdown'
-                  class='template-main-menu template-main-menu-3'
+                  className='template-main-menu template-main-menu-3'
                 >
                   <ul>
                     <li>
@@ -147,34 +170,36 @@ const Navbar = () => {
                 </nav>
               </div>
 
+              <div className='col-xl-5 col-lg-2 g-0'>
+                <div className='nav-links-wrapper d-flex align-items-center justify-content-end'>
+                  <div id='google_translate_element'></div>
 
-              <div class='col-xl-2 col-lg-2 g-0 d-flex justify-content-end'>
-                <div class='header-action-layout1'>
-                  <nav
-                    id='dropdown'
-                    class='template-main-menu template-main-menu-1'
-                  >
-                    <ul class='action-list'>
-                      <li class='action-item-style my-account'>
-                        {link}
-                        {link2}
+                  <div className='header-action-layout1'>
+                    <nav
+                      id='dropdown'
+                      className='template-main-menu template-main-menu-1'
+                    >
+                      <ul className='action-list'>
+                        <li className='action-item-style my-account'>
+                          {link}
+                          {link2}
+                        </li>
+                      </ul>
+                    </nav>
+                  </div>
+
+                  <div className='header-action-layout1'>
+                    <ul className='action-list'>
+                      <li className='listing-button'>
+                        <Link to='/donate' className='listing-btn'>
+                          <span>
+                            <i className='fas fa-plus-circle'></i>
+                          </span>
+                          <span className='item-text'>Donate Now!</span>
+                        </Link>
                       </li>
                     </ul>
-                  </nav>
-                </div>
-              </div>
-              <div class='col-xl-2 col-lg-2 g-0 d-flex justify-content-end'>
-                <div class='header-action-layout1'>
-                  <ul class='action-list'>
-                    <li class='listing-button'>
-                      <Link to='/donate' class='listing-btn'>
-                        <span>
-                          <i class='fas fa-plus-circle'></i>
-                        </span>
-                        <span class='item-text'>Donate Now!</span>
-                      </Link>
-                    </li>
-                  </ul>
+                  </div>
                 </div>
               </div>
             </div>
@@ -182,21 +207,21 @@ const Navbar = () => {
         </div>
       </header>
       <div
-        class='rt-header-menu mean-container position-relative'
+        className='rt-header-menu mean-container position-relative'
         id='meanmenu'
       >
-        <div class='mean-bar'>
+        <div className='mean-bar'>
           <Link to='/'>
-            <img src='img/logo.png' alt='logo' class='img-fluid' />
+            <img src='img/logo.png' alt='logo' className='img-fluid' />
           </Link>
-          <div class='mean-bar--right'>
-            <div class='actions user'>
+          <div className='mean-bar--right'>
+            <div className='actions user'>
               <Link to='/login'>
                 <PersonIcon id='login-icon' />
               </Link>
             </div>
 
-            <div class='sidebarBtn'>
+            <div className='sidebarBtn'>
               <SideBar />
             </div>
           </div>

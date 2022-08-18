@@ -25,6 +25,8 @@ import Schedule from './components/ScheduleMeeting/Schedule';
 import RecievedMeet from './components/ScheduleMeeting/recievedMeet';
 import Admin from './components/Admin/Admin';
 import VRView from './components/VRView/VRView';
+import List from './components/List/List';
+import Update from './components/Update/Update';
 
 function App() {
   return (
@@ -36,6 +38,8 @@ function App() {
         <Route exact path={'/site'} element={<SinglePropertyDetails />} />
         <Route exact path={'/admin'} element={<Admin />} />
         <Route exact path={'/vrview'} element={<VRView />} />
+        <Route exact path={'/list'} element={<List />} />
+        <Route exact path={'/update/:id'} element={<Update />} />
 
         <Route exact path={'/contact'} element={<Contact />} />
         <Route exact path={'/agents'} element={<Agents />} />
