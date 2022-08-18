@@ -51,6 +51,7 @@ const Navbar = () => {
         pageLanguage: 'en',
         autoDisplay: false,
         layout: window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
+        layout: window.google.translate.TranslateElement.InlineLayout.VERTICAL
       },
       'google_translate_element'
     );
@@ -102,28 +103,8 @@ const Navbar = () => {
     );
   }
 
-  // function googleTranslateElementInit() {
-  //   new google.translate.TranslateElement(
-  //     { pageLanguage: 'en' },
-  //     'google_translate_element'
-  //   );
-  // }
-
   return (
     <div className='nav-head'>
-      {/* <div classNameName='App'>
-        <h1>{t('Welcome to VRTOUR')}</h1>
-        <label>{t('choose')}</label>
-        <select value={lang} onChange={handleChange}>
-          {languages.map((item) => {
-            return (
-              <option key={item.value} value={item.value}>
-                {item.text}
-              </option>
-            );
-          })}
-        </select>
-      </div> */}
       <header className='rt-header sticky-on'>
         <div
           id='navbar-wrap'
@@ -144,7 +125,7 @@ const Navbar = () => {
                   </Link>
                 </div>
               </div>
-              <div className='col-xl-5 col-lg-6 d-flex justify-content-center position-static'>
+              <div className='col-xl-5 col-lg-5 d-flex justify-content-center position-static'>
                 <nav
                   id='dropdown'
                   className='template-main-menu template-main-menu-3'
@@ -170,10 +151,8 @@ const Navbar = () => {
                 </nav>
               </div>
 
-              <div className='col-xl-5 col-lg-2 g-0'>
+              <div className='col-xl-5 col-lg-5 g-0'>
                 <div className='nav-links-wrapper d-flex align-items-center justify-content-end'>
-                  <div id='google_translate_element'></div>
-
                   <div className='header-action-layout1'>
                     <nav
                       id='dropdown'
@@ -192,7 +171,7 @@ const Navbar = () => {
                     <ul className='action-list'>
                       <li className='listing-button'>
                         <Link to='/donate' className='listing-btn'>
-                          <span>
+                          <span className='item-icon'>
                             <i className='fas fa-plus-circle'></i>
                           </span>
                           <span className='item-text'>Donate Now!</span>
@@ -200,6 +179,8 @@ const Navbar = () => {
                       </li>
                     </ul>
                   </div>
+
+                  <div id='google_translate_element'></div>
                 </div>
               </div>
             </div>

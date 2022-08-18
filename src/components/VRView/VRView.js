@@ -49,7 +49,16 @@ const VRView = () => {
       <Navbar />
 
       <div className='vr-top'>
-        <h4>Start building your app. Happy Coding!</h4>
+
+        <iframe 
+          src="https://sushantpatial.github.io/VR/egjs2.html" 
+          width="500" 
+          height="600"
+          allowFullScreen 
+          allowvr="yes"
+          allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture"
+          title="Iframe Example">
+        </iframe>
 
         <div className='panoviewer-container viewer'>
           <div id='panoSet'>
