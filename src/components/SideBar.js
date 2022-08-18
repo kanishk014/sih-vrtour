@@ -7,8 +7,8 @@ import Divider from '@mui/material/Divider';
 import ListItem from '@mui/material/ListItem';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+import VolunteerActivismIcon from '@mui/icons-material/VolunteerActivism';
+import PersonIcon from '@mui/icons-material/Person';
 import MenuIcon from '@mui/icons-material/Menu';
 import HomeIcon from '@mui/icons-material/Home';
 import InfoIcon from '@mui/icons-material/Info';
@@ -88,6 +88,24 @@ export default function TemporaryDrawer() {
                 <ContactPageIcon />
               </ListItemIcon>
               <ListItemText primary='Contact' />
+            </ListItem>
+          </Link>
+
+          <Link to='/login'>
+            <ListItem button>
+              <ListItemIcon>
+                <PersonIcon />
+              </ListItemIcon>
+              <ListItemText primary='Login' />
+            </ListItem>
+          </Link>
+
+          <Link to='/donate'>
+            <ListItem button>
+              <ListItemIcon>
+                <VolunteerActivismIcon />
+              </ListItemIcon>
+              <ListItemText primary='Donate' />
             </ListItem>
           </Link>
         </List>
