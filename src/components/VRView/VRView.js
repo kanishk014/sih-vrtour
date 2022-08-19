@@ -56,7 +56,7 @@ const VRView = () => {
           height="600"
           allowFullScreen 
           allowvr="yes"
-          allow="vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture"
+          allow="xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture"
           title="Iframe Example">
         </iframe>
 
