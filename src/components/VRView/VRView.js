@@ -60,6 +60,16 @@ const VRView = () => {
           title="Iframe Example">
         </iframe>
 
+        <iframe 
+          src="https://sushantpatial.github.io/VR/egjs.html" 
+          width="500" 
+          height="600"
+          allowFullScreen 
+          allowvr="yes"
+          allow="xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture"
+          title="Iframe Example">
+        </iframe>
+
         <div className='panoviewer-container viewer'>
           <div id='panoSet'>
             <div className='panoviewer container' id='myPanoViewer'></div>
