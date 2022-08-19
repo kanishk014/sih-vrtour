@@ -284,7 +284,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='footer-bottom footer-bottom-style-2'>
+      <div
+        className='footer-bottom footer-bottom-style-2'
+        style={{ 'z-index': 1000, position: 'relative' }}
+      >
         <div className='container'>
           <div className='row justify-content-center'>
             <div className='col-lg-6 col-md-6'>

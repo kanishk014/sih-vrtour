@@ -97,9 +97,21 @@ const SingleProperty = () => {
                     </div>
                     <div class='col-lg-6 col-md-12'>
                       <div class='single-list-price'>
+                        <Link
+                          to={`/booking/${propertyDetails?._id}`}
+                          class='heading-button'
+                        >
+                          <div
+                            class='heading-btn item-btn2'
+                            // onClick={property._id}
+                          >
+                            Book Tickets
+                          </div>
+                        </Link>
                         <div class='heading-button'>
                           <a
                             href={propertyDetails?.websiteUrl}
+                            target='__blank'
                             class='heading-btn item-btn2'
                           >
                             Website
@@ -232,12 +244,6 @@ const SingleProperty = () => {
                       <div class='overview-area listing-area'>
                         <h3 class='item-title'>About This Place</h3>
                         <p>{propertyDetails?.about}</p>
-                        {/* <p>
-                          The traditionally-styled complex was inaugurated on 6
-                          November 2005 with the blessings of HH Pramukh Swami
-                          Maharaj and through the devoted efforts of skilled
-                          artisans and volunteers.
-                        </p> */}
                       </div>
                       <div class='overview-area listing-area'>
                         <h3 class='item-title'>Facts and Figures</h3>
@@ -259,53 +265,6 @@ const SingleProperty = () => {
                               </div>
                             );
                           })}
-
-                          {/* <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>TV Cable
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Air Conditioning
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Barbeque
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Gym
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Swimming Pool
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Laundry
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Microwave
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Lawn
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Sauna
-                          </div>
-                          <div class="col-lg-4">
-                            <ul class="ameniting-list">
-                              <li>
-                                <i class="fas fa-check-circle"></i>Swimming Pool
-                              </li>
-                              <li>
-                                <i class="fas fa-check-circle"></i>Laundry
-                              </li>
-                              <li>
-                                <i class="fas fa-check-circle"></i>Microwave
-                              </li>
-                              <li>
-                                <i class="fas fa-check-circle"></i>Lawn
-                              </li>
-                            </ul>
-                          </div>
-                          <div class='col-lg-4 ameniting-list'>
-                            <i class='fas fa-check-circle'></i>Window
-                          </div> */}
                         </div>
                       </div>
                       <div class='overview-area map-box'>
@@ -326,140 +285,7 @@ const SingleProperty = () => {
                           ></iframe>
                         </div>
                       </div>
-                      {/* <div class="overview-area floor-plan-box">
-												<h3 class="item-title">Floor Plans</h3>
-												<div id="accordion" class="accordion">
-													<div class="card">
-														<div class="card-header">
-															<div
-																class="heading-title"
-																data-bs-toggle="collapse"
-																data-bs-target="#collapseOne"
-																aria-expanded="true"
-																role="button"
-															>
-																<span>First Floor Plan</span>
-																<div class="card-list">
-																	<ul>
-																		<li>
-																			<i class="flaticon-bed"></i>
-																			<span>Beds: 03</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-shower"></i>
-																			<span>Baths: 02</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-two-overlapping-square"></i>
-																			<span>931Sqft</span>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-														<div
-															id="collapseOne"
-															class="collapse show"
-															data-bs-parent="#accordion"
-														>
-															<div class="card-body">
-																<div class="item-img">
-																	<img
-																		src="img/figure/floor_plan.jpg"
-																		alt="shape"
-																	/>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="card">
-														<div class="card-header">
-															<div
-																class="heading-title collapsed"
-																data-bs-toggle="collapse"
-																data-bs-target="#headingtwo"
-																aria-expanded="true"
-																role="button"
-															>
-																<span>Second Floor Plan</span>
-																<div class="card-list">
-																	<ul>
-																		<li>
-																			<i class="flaticon-bed"></i>
-																			<span>Beds: 03</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-shower"></i>
-																			<span>Baths: 02</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-two-overlapping-square"></i>
-																			<span>931Sqft</span>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-														<div
-															id="headingtwo"
-															class="collapse"
-															data-bs-parent="#accordion"
-														>
-															<div class="card-body">
-																<div class="item-img">
-																	<img
-																		src="img/figure/floor_plan.jpg"
-																		alt="shape"
-																	/>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="card">
-														<div class="card-header">
-															<div
-																class="heading-title collapsed"
-																data-bs-toggle="collapse"
-																data-bs-target="#headingthree"
-																aria-expanded="true"
-																role="button"
-															>
-																<span>Third Floor Plan</span>
-																<div class="card-list">
-																	<ul>
-																		<li>
-																			<i class="flaticon-bed"></i>
-																			<span>Beds: 03</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-shower"></i>
-																			<span>Baths: 02</span>
-																		</li>
-																		<li>
-																			<i class="flaticon-two-overlapping-square"></i>
-																			<span>931Sqft</span>
-																		</li>
-																	</ul>
-																</div>
-															</div>
-														</div>
-														<div
-															id="headingthree"
-															class="collapse"
-															data-bs-parent="#accordion"
-														>
-															<div class="card-body">
-																<div class="item-img">
-																	<img
-																		src="img/figure/floor_plan.jpg"
-																		alt="shape"
-																	/>
-																</div>
-															</div>
-														</div>
-													</div>
-												</div>
-											</div> */}
+
                       <div class='overview-area video-box1'>
                         <h3 class='item-title'>Video</h3>
                         <div class='item-img'>
@@ -785,49 +611,6 @@ const SingleProperty = () => {
                                   />
                                 </div>
                               </SwiperSlide>
-                              {/* <SwiperSlide class="swiper-slide width-swiper">
-                                <div class="feature-img1 zoom-image-hover">
-                                  <img
-                                    src="img/blog/product3.jpg"
-                                    alt="feature"
-                                    // width="798"
-                                    // height="420"
-                                  />
-                                </div>
-                              </SwiperSlide>
-
-                              <SwiperSlide class="swiper-slide width-swiper">
-                                <div class="feature-img1 zoom-image-hover">
-                                  <img
-                                    src="img/blog/product4.jpg"
-                                    alt="feature"
-                                    // width="798"
-                                    // height="420"
-                                  />
-                                </div>
-                              </SwiperSlide>
-
-                              <SwiperSlide class="swiper-slide width-swiper">
-                                <div class="feature-img1 zoom-image-hover">
-                                  <img
-                                    src="img/blog/product5.jpg"
-                                    alt="feature"
-                                    // width="798"
-                                    // height="420"
-                                  />
-                                </div>
-                              </SwiperSlide>
-
-                              <SwiperSlide class="swiper-slide width-swiper">
-                                <div class="feature-img1 zoom-image-hover">
-                                  <img
-                                    src="img/blog/product6.jpg"
-                                    alt="feature"
-                                    // width="798"
-                                    // height="420"
-                                  />
-                                </div>
-                              </SwiperSlide> */}
                             </Swiper>
                           </div>
                         </div>
@@ -967,24 +750,6 @@ const SingleProperty = () => {
                         </form>
                       </div>
                     )}
-
-                    {/* <div class="widget widget-post">
-                      <div class="item-img">
-                        <img src="img/blog/widget5.jpg" alt="widget" />
-                        <div class="circle-shape">
-                          <span class="item-shape"></span>
-                        </div>
-                      </div>
-                      <div class="item-content">
-                        <h4 class="item-title">Find Your Dream House</h4>
-                        <div class="item-price">$2,999</div>
-                        <div class="post-button">
-                          <Link to="/singlelisting" class="item-btn">
-                            Shop Now
-                          </Link>
-                        </div>
-                      </div>
-                    </div> */}
                   </div>
                 </div>
               </div>

@@ -116,6 +116,7 @@
     width: 160px;
     display: flex;
     align-items: center;
+    font-size: 0px !important;
   }
   .goog-te-combo {
     width: 160px;

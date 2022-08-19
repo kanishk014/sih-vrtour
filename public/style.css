@@ -2889,6 +2889,7 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
 }
 .heading-button {
   text-align: right;
+  margin-left: 20px;
 }
 @media only screen and (max-width: 575px) {
   .heading-button {
@@ -13803,6 +13804,10 @@ body.slidemenuon .sidebarBtn .bar:nth-child(4) {
   font-family: 'Ubuntu', sans-serif;
   font-weight: 600;
   margin-bottom: 10px;
+  display: flex;
+  flex-direction: row;
+  /* margin-left: 20px; */
+  justify-content: flex-end;
 }
 @media only screen and (max-width: 991px) {
   .single-property .property-heading .single-list-price {

@@ -89,7 +89,7 @@ class List extends React.Component {
                     <Link to={`/update/${property._id}`}>
                       <Button
                         variant='info'
-                        onClick={() => this.props.editProperty(property._id)}
+                        // onClick={() => this.props.editProperty(property._id)}
                       >
                         Edit
                       </Button>

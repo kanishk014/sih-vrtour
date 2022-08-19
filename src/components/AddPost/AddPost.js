@@ -27,7 +27,7 @@ const AddPost = () => {
   const [formErrors, setFormErrors] = useState({});
   const [iImage, setiImage] = useState(null);
   const [iprogress, setIProgress] = useState(0);
-  const [donation, setDonation] = useState('6241b6b33eee31225bec9285');
+  const [donation, setDonation] = useState('');
   const [amount, setAmount] = useState('');
   const id = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))._id
@@ -56,7 +56,7 @@ const AddPost = () => {
         currency: 'INR',
         name: 'VRTOUR',
         description: 'Donation',
-        handleer: function (response) {
+        handler: function (response) {
           alert(response.razorpay_payment_id);
         },
         prefill: {
@@ -77,10 +77,6 @@ const AddPost = () => {
   };
 
   const { loading, error, propertiesData } = fetchPropertyReducer;
-
-  // console.log(propertiesData);
-
-  // console.log(propDetails);
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(fetchProperty());
@@ -98,67 +94,13 @@ const AddPost = () => {
         console.log(res);
         console.log(res.data);
       });
-
-    // const stripe = stripe(
-    //   'pk_test_51J4Kz8SHGufhIZqgIWmxgdrE20A6C7svKlBCUFc4ojVdtQ9YuaUOhgpH7y3Jvtyw8Iv2f8Rbn3y6PBKZBn60EatG00Wk9mBTUk'
-    // );
-
-    // try {
-    //   // 1. Get the checkout session from API
-    //   const session = await axios(`/api/bookings/checkout-session/${donation}/${amount}`);
-
-    //   // 2. Create checkout form + charge credit card
-    //   await stripe.redirectToCheckout({
-    //     sessionId: session.data.session.id,
-    //   });
-    // } catch (err) {
-    //   console.log(err);
-    // }
   };
-  // console.log(propDetails);
-  // const iImageHanlder = () => {
-  //   const storageRef = ref(storage, `property/${iImage.name}`);
-  //   const uploadTask = uploadBytesResumable(storageRef, iImage);
 
-  //   uploadTask.on(
-  //     'state_changed',
-  //     (snapshot) => {
-  //       const prog = Math.round(
-  //         (snapshot.bytesTransferred / snapshot.totalBytes) * 100
-  //       );
-  //       setIProgress(prog);
-  //     },
-  //     (error) => console.log(error),
-  //     () => {
-  //       getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
-  //         // setUserImage(downloadURL)
-  //         setpropDetails((prev) => {
-  //           return { ...prev, propertyImage: downloadURL };
-  //         });
-  //       });
-  //     }
-  //   );
-  // };
   return (
     <div>
       <Navbar />
 
       <div class='breadcrumb-wrap'>
-        {/* <div class='breadcrumb-wrap'>
-          <div class='container'>
-            <nav aria-label='breadcrumb'>
-              <ol class='breadcrumb'>
-                <li class='breadcrumb-item'>
-                  <a href='/'>Home</a>
-                </li>
-                <li class='breadcrumb-item active' aria-current='page'>
-                  Post Property
-                </li>
-              </ol>
-            </nav>
-          </div>
-        </div> */}
-
         <div
           style={{
             position: 'relative',
@@ -228,13 +170,6 @@ const AddPost = () => {
                                 </option>
                               );
                             })}
-                            {/* <option value='1'>Akshardham</option>
-                          <option value='2'>Golden Temple</option>
-                          <option value='3'>Lotus Temple</option>
-                          <option value='4'>Shimla Christ Church</option>
-                          <option value='5'>Soumnath Temple</option>
-                          <option value='6'>Tirupati Balaji</option>
-                          <option value='7'>Vaishno Devi</option> */}
                           </select>
                         </div>
 

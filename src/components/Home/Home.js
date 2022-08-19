@@ -388,7 +388,18 @@ const Home = () => {
           </div>
         </div>
       </section>
-      <div id='google_translate_element'></div>
+      <section className='vr-hero'>
+        <div className='vr-iframe'>
+          <iframe
+            style={{}}
+            src='https://sushantpatial.github.io/VR/hero.html'
+            allowFullScreen
+            allowvr='yes'
+            allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
+            title='Iframe Example'
+          ></iframe>
+        </div>
+      </section>
       <section className='property-wrap1 property-wrap-10'>
         <div className='container'>
           <div className='item-heading-center'>

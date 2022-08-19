@@ -536,7 +536,7 @@ const Properties = () => {
                             );
                           })}
                         </div>
-                        <div class='pagination-style-1'>
+                        {/* <div class='pagination-style-1'>
                           <ul class='pagination'>
                             <li class='page-item'>
                               <Link
@@ -579,20 +579,29 @@ const Properties = () => {
                               </Link>
                             </li>
                           </ul>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class='col-xl-6'>
+              <div
+                class='col-xl-6'
+                style={{
+                  position: 'fixed',
+                  right: '0',
+                  top: '100px',
+                }}
+              >
                 <div class='location-img'>
                   <iframe
                     src='https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5890.790470230743!2d77.27840129630388!3d28.609226178745843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce35b9975b1fb%3A0x69a09f265ef3b22a!2sAkshardham!5e0!3m2!1sen!2sin!4v1648531026898!5m2!1sen!2sin'
-                    width='907'
-                    height='2368'
                     title='map'
-                    style={{ border: '0' }}
+                    style={{
+                      border: '0',
+                      height: 'calc(100vh - 100px)',
+                      width: '50vw',
+                    }}
                     allowFullScreen=''
                     loading='lazy'
                   />
