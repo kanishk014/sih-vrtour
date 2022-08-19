@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-// import './Booking.css';
+import './Booking.css';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
+import ReactToPrint, { useReactToPrint } from 'react-to-print';
 
 const Booking = () => {
+  const componentRef = useRef();
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  });
   //   const [ticketPrice, setTicketPrice] = useState('');
   const [fixedAmount, setFixedAmount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
@@ -107,8 +112,9 @@ const Booking = () => {
   };
 
   return (
-    <div className='add-property'>
+    <div ref={componentRef} className='add-property'>
       <h1>Book Tickets</h1>
+      {/* <div ref={componentRef}></div> */}
       <form action='/admin' method='post' onSubmit={onSubmit}>
         <div className='form-input'>
           <h4>Name:</h4>
@@ -135,7 +141,6 @@ const Booking = () => {
         <div className='form-input'>
           <h4>Mobile Number:</h4>
           <PhoneInput
-            // type='tel'
             placeholder='Enter phone number'
             name='mobileNo'
             required
@@ -169,24 +174,28 @@ const Booking = () => {
         <div className='form-input'>
           <h4>Total Amount: </h4>
           <div className='total-amount'>₹ {totalAmount}</div>
-          {/* <input
-            type='text'
-            name='totalAmount'
-            placeholder='Total payable amount'
-            required
-            value={booking.price}
-          /> */}
         </div>
-        <div className='submit-button'>
-          <button
-            type='submit'
-            onChange={(e) => {
-              setTotalAmount(e.target.value);
-            }}
-            onClick={handleSubmit}
-          >
-            Book Ticket
-          </button>
+        {/* </form> */}
+        <div className='print'>
+          <div className='submit-button'>
+            <button
+              type='submit'
+              onChange={(e) => {
+                setTotalAmount(e.target.value);
+              }}
+              onClick={handleSubmit}
+            >
+              Book Ticket
+            </button>
+          </div>
+          <div className='submit-button'>
+            <button
+              // type='submit'
+              onClick={handlePrint}
+            >
+              Print PDF
+            </button>
+          </div>
         </div>
       </form>
     </div>
