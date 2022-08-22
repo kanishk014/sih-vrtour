@@ -28,10 +28,12 @@ import VRView from './components/VRView/VRView';
 import List from './components/List/ListList';
 import Update from './components/Update/Update';
 import ListList from './components/List/List';
+import ScrollTop from './components/ScrollTop';
 
 function App() {
   return (
     <Router>
+      <ScrollTop />
       <Routes>
         <Route exact path={'/'} element={<Home />} />
         <Route exact path={'/about'} element={<About />} />
