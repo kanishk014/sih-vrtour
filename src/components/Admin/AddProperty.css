@@ -59,6 +59,16 @@
     /* border-color: gray; */
 }
 
+@media screen and (max-width: 900px) {   
+    .add-property .form-input{
+        width: 100%;
+    }
+
+    .add-property .form-input > h4{
+        font-size: 20px;
+    }
+}
+
 @media screen and (max-width: 760px) {
     .add-property .form-input {    
         width: 100%
