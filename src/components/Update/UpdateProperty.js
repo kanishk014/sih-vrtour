@@ -57,7 +57,7 @@ const UpdateProperty = () => {
       [event.target.name]: event.target.value,
     });
   };
-  // https://vrtour-sih.herokuapp.com/api/property/update/:propertyid
+
   const onSubmit = async (e) => {
     e.preventDefault();
 
@@ -67,7 +67,7 @@ const UpdateProperty = () => {
     let trimmedPropertyImage = property.propertyImage.slice(22);
 
     await axios
-      .patch(`http://43.204.24.76:4000/api/property/update/${id}`, {
+      .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
         title: property.title,
         propertyImage: trimmedPropertyImage,
         price: property.price,

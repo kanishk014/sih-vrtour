@@ -17,6 +17,7 @@
     "axios": "^0.26.1",
     "bootstrap": "^5.2.0",
     "firebase": "^9.6.9",
+    "gsap": "^3.11.0",
     "hamburger-react": "^2.5.0",
     "i18next": "^21.9.1",
     "i18next-browser-languagedetector": "^6.1.5",

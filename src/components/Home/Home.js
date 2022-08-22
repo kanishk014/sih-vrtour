@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import ScrollButton from '../scrollToTop';
 import Chatbotbtn from '../../chatbot/Chatbotbtn';
 import './home.css';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 const Home = () => {
   const [scrollState, setScrollState] = useState(false);
@@ -20,6 +22,66 @@ const Home = () => {
   });
   const [isclick, setIsClick] = useState(false);
   // console.log(isclick);
+
+  gsap.registerPlugin(ScrollTrigger);
+  // REVEAL //
+  useEffect(() => {
+    gsap.utils.toArray('.revealUp').forEach(function (elem) {
+      ScrollTrigger.create({
+        trigger: elem,
+        start: 'top 60%',
+        end: 'bottom 0%',
+        onEnter: function () {
+          gsap.fromTo(
+            elem,
+            { y: 100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: 'back',
+              overwrite: 'auto',
+            }
+          );
+          document.getElementById('rt-header').classList.add('navbar-rollup');
+        },
+        onLeave: function () {
+          gsap.fromTo(
+            elem,
+            { autoAlpha: 1 },
+            { autoAlpha: 0, overwrite: 'auto' }
+          );
+          document
+            .getElementById('rt-header')
+            .classList.remove('navbar-rollup');
+        },
+        onEnterBack: function () {
+          gsap.fromTo(
+            elem,
+            { y: -100, autoAlpha: 0 },
+            {
+              duration: 1.25,
+              y: 0,
+              autoAlpha: 1,
+              ease: 'back',
+              overwrite: 'auto',
+            }
+          );
+          document.getElementById('rt-header').classList.add('navbar-rollup');
+        },
+        onLeaveBack: function () {
+          gsap.fromTo(
+            elem,
+            { autoAlpha: 1 },
+            { autoAlpha: 0, overwrite: 'auto' }
+          );
+          document
+            .getElementById('rt-header')
+            .classList.remove('navbar-rollup');
+        },
+      });
+    });
+  }, []);
 
   return (
     <div style={{ width: '100%' }}>
@@ -389,6 +451,11 @@ const Home = () => {
         </div>
       </section>
       <section className='vr-hero'>
+        <div className='vr-text'>
+          <div class='section'>
+            <h1 class='revealUp'>Experience Virtual Reality</h1>
+          </div>
+        </div>
         <div className='vr-iframe'>
           <iframe
             style={{}}

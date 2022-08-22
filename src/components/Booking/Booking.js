@@ -1,10 +1,11 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import './Booking.css';
 import 'react-phone-number-input/style.css';
 import PhoneInput from 'react-phone-number-input';
-import ReactToPrint, { useReactToPrint } from 'react-to-print';
+import { useReactToPrint } from 'react-to-print';
 
 const Booking = () => {
   const componentRef = useRef();
@@ -14,14 +15,25 @@ const Booking = () => {
   //   const [ticketPrice, setTicketPrice] = useState('');
   const [fixedAmount, setFixedAmount] = useState(0);
   const [totalAmount, setTotalAmount] = useState(0);
+  const [name, setName] = useState('');
   const [phone, setPhone] = useState();
-  const [nationality, setNationality] = useState('none');
+  const [nationality, setNationality] = useState('1');
   const [booking, setBooking] = useState({
     name: '',
     date: '',
-    mobileNo: '',
     noOfPersons: Number,
-    totalAmount: Number,
+  });
+
+  const [printPdf, setPrintPdf] = useState(false);
+
+  const userToken = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo')).token
+    : null;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!userToken) {
+      window.location.replace('/login');
+    }
   });
 
   const { id } = useParams();
@@ -33,6 +45,7 @@ const Booking = () => {
       )
       .then((res) => {
         setFixedAmount(res.data.price);
+        setName(res.data.title);
       })
       .catch((error) => {
         console.log(error);
@@ -52,8 +65,8 @@ const Booking = () => {
       currency: 'INR',
       name: 'VRTOUR',
       description: 'Ticket Price',
-      handler: function (response) {
-        alert(response.razorpay_payment_id);
+      handler: function () {
+        bookTicketCall();
       },
       prefill: {
         name: 'VRTOUR Tester',
@@ -61,7 +74,7 @@ const Booking = () => {
         contact: '9999108799',
       },
       notes: {
-        address: 'Razorpay Corporate Office',
+        address: 'VR Tour Office',
       },
       theme: {
         color: '#f58f3c',
@@ -87,117 +100,130 @@ const Booking = () => {
     setNationality(event.target.value);
   };
 
-  const onSubmit = async (e) => {
-    e.preventDefault();
-
-    await axios
-      .post('http://43.204.24.76:4000/api/ticketBooking/bookTicket', {
-        // userId: booking.userId,
-        name: booking.name,
-        date: booking.date,
-        mobileNo: booking.mobileNo,
-        // monumentId: booking.monumentId,
-        noOfPersons: booking.noOfPersons,
-        nationality: nationality,
-        totalAmount: booking.totalAmount,
-      })
+  const bookTicketCall = () => {
+    axios
+      .post(
+        'https://vrtour-sih.herokuapp.com/api/ticketBooking/bookTicket',
+        {
+          name: booking.name,
+          date: booking.date,
+          mobileNo: phone,
+          monumentId: id,
+          noOfPersons: parseInt(booking.noOfPersons),
+          nationality: parseInt(nationality),
+          totalAmount: totalAmount,
+        },
+        {
+          headers: {
+            authorization: userToken,
+          },
+        }
+      )
       .then((res) => {
-        alert('Booking sucessfully!');
-        console.log(res);
+        alert('Booking sucessful!');
+        setPrintPdf(true);
       })
       .catch((err) => {
         alert('Can not book right now. Try again later');
-        console.log(err);
       });
   };
 
   return (
-    <div ref={componentRef} className='add-property'>
-      <h1>Book Tickets</h1>
-      {/* <div ref={componentRef}></div> */}
-      <form action='/admin' method='post' onSubmit={onSubmit}>
+    <div>
+      <div ref={componentRef} className='add-property'>
+        <h1>Book Tickets</h1>
+        {/* <div ref={componentRef}></div> */}
         <div className='form-input'>
-          <h4>Name:</h4>
-          <input
-            type='text'
-            name='name'
-            placeholder='Enter name'
-            required
-            value={booking.name}
-            onChange={handleChange}
-          />
+          <h4>Monument Name: {name}</h4>
         </div>
-        <div className='form-input'>
-          <h4>Date: </h4>
-          <input
-            type='date'
-            name='date'
-            placeholder='Enter date of visiting'
-            required
-            value={booking.date}
-            onChange={handleChange}
-          />
-        </div>
-        <div className='form-input'>
-          <h4>Mobile Number:</h4>
-          <PhoneInput
-            placeholder='Enter phone number'
-            name='mobileNo'
-            required
-            value={phone}
-            onChange={setPhone}
-          />
-        </div>
-        <div className='form-input'>
-          <h4>Number of Person:</h4>
-          <input
-            type='number'
-            name='noOfPersons'
-            placeholder='Number of person visiting'
-            min='0'
-            required
-            value={booking.noOfPersons}
-            onChange={handleChange}
-            onInput={personChange}
-          />
-        </div>
-        <div className='form-input'>
-          <h4>Nationality:</h4>
-          <select value={nationality} onChange={selectChange}>
-            <option value='none' selected disabled hidden>
-              Select nationality
-            </option>
-            <option value='Indian'>Indian</option>
-            <option value='Foreigner'>Foreigner</option>
-          </select>
-        </div>
-        <div className='form-input'>
-          <h4>Total Amount: </h4>
-          <div className='total-amount'>₹ {totalAmount}</div>
-        </div>
-        {/* </form> */}
-        <div className='print'>
-          <div className='submit-button'>
-            <button
-              type='submit'
-              onChange={(e) => {
-                setTotalAmount(e.target.value);
-              }}
-              onClick={handleSubmit}
-            >
-              Book Ticket
-            </button>
+        <form action='/admin' method='post' onSubmit={handleSubmit}>
+          <div className='form-input'>
+            <h4>Name:</h4>
+            <input
+              type='text'
+              name='name'
+              placeholder='Enter name'
+              required
+              value={booking.name}
+              onChange={handleChange}
+            />
           </div>
-          <div className='submit-button'>
-            <button
-              // type='submit'
-              onClick={handlePrint}
-            >
-              Print PDF
-            </button>
+          <div className='form-input'>
+            <h4>Date: </h4>
+            <input
+              type='date'
+              name='date'
+              placeholder='Enter date of visiting'
+              required
+              value={booking.date}
+              onChange={handleChange}
+            />
           </div>
-        </div>
-      </form>
+          <div className='form-input'>
+            <h4>Mobile Number:</h4>
+            <PhoneInput
+              placeholder='Enter phone number'
+              name='mobileNo'
+              required
+              value={phone}
+              onChange={setPhone}
+            />
+          </div>
+          <div className='form-input'>
+            <h4>Number of Person:</h4>
+            <input
+              type='number'
+              name='noOfPersons'
+              placeholder='Number of person visiting'
+              min='0'
+              required
+              value={booking.noOfPersons}
+              onChange={handleChange}
+              onInput={personChange}
+            />
+          </div>
+          <div className='form-input'>
+            <h4>Nationality:</h4>
+            <select value={nationality} onChange={selectChange}>
+              <option value='none' selected disabled hidden>
+                Select nationality
+              </option>
+              <option value='1'>Indian</option>
+              <option value='2'>Foreigner</option>
+            </select>
+          </div>
+          <div className='form-input'>
+            <h4>Total Amount: </h4>
+            <div className='total-amount'>₹ {totalAmount}</div>
+          </div>
+          {/* </form> */}
+          <div className='print'>
+            <div className='submit-button'>
+              <button
+                type='submit'
+                onChange={(e) => {
+                  setTotalAmount(e.target.value);
+                }}
+                // onClick={handleSubmit}
+              >
+                Book Ticket
+              </button>
+            </div>
+            {printPdf ? (
+              <div className='submit-button'>
+                <button
+                  // type='submit'
+                  onClick={handlePrint}
+                >
+                  Print PDF
+                </button>
+              </div>
+            ) : (
+              ''
+            )}
+          </div>
+        </form>
+      </div>
     </div>
   );
 };

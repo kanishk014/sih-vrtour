@@ -100,9 +100,11 @@ const SingleProperty = () => {
                         <Link
                           to={`/booking/${propertyDetails?._id}`}
                           class='heading-button'
+                          target='_blank'
                         >
                           <div
                             class='heading-btn item-btn2'
+                            // target='_blank'
                             // onClick={property._id}
                           >
                             Book Tickets

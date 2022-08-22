@@ -42,27 +42,22 @@ function Update() {
             <a href='' className='menu-toggle'>
               <i className='fas fa-bars'></i>
             </a>
-            <a href='' className='easion-logo'>
+            <a href='/admin' className='easion-logo'>
               <i className='fas fa-sun'></i> <span>Admin</span>
             </a>
           </header>
           <nav className='dash-nav-list'>
-            <a href='' className='dash-nav-item'>
-              <i className='fas fa-home'></i> Dashboard{' '}
+            <a href='/admin' className='dash-nav-item'>
+              <i className='fas fa-home'></i> Add Pilgrimage
             </a>
             <div className='dash-nav-dropdown'>
-              <a href='' className='dash-nav-item dash-nav-dropdown-toggle'>
-                <i className='fas fa-chart-bar'></i> Charts{' '}
+              <a href='/list' className='dash-nav-item '>
+                <i className='fas fa-chart-bar'></i> List
               </a>
-              <div className='dash-nav-dropdown-menu'>
-                <a href='chartjs.html' className='dash-nav-dropdown-item'>
-                  Chart.js
-                </a>
-              </div>
             </div>
-            <div className='dash-nav-dropdown '>
+            {/* <div className='dash-nav-dropdown '>
               <a href='' className='dash-nav-item dash-nav-dropdown-toggle'>
-                <i className='fas fa-cube'></i> Components{' '}
+                <i className='fas fa-cube'></i> Update{' '}
               </a>
               <div className='dash-nav-dropdown-menu'>
                 <a href='cards.html' className='dash-nav-dropdown-item'>
@@ -109,8 +104,8 @@ function Update() {
                   User Interface
                 </a>
               </div>
-            </div>
-            <div className='dash-nav-dropdown'>
+            </div> */}
+            {/* <div className='dash-nav-dropdown'>
               <a href='' className='dash-nav-item dash-nav-dropdown-toggle'>
                 <i className='fas fa-file'></i> Layouts{' '}
               </a>
@@ -128,9 +123,12 @@ function Update() {
                   Sign up
                 </a>
               </div>
-            </div>
-            <div className='dash-nav-dropdown'>
-              <a href='' className='dash-nav-item dash-nav-dropdown-toggle'>
+            </div> */}
+            {/* <div className='dash-nav-dropdown'>
+              <a
+                href='/about'
+                className='dash-nav-item dash-nav-dropdown-toggle'
+              >
                 <i className='fas fa-info'></i> About{' '}
               </a>
               <div className='dash-nav-dropdown-menu'>
@@ -152,7 +150,7 @@ function Update() {
                   Mudimedia Software
                 </a>
               </div>
-            </div>
+            </div> */}
           </nav>
         </div>
         <div className='dash-app'>

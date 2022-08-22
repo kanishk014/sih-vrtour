@@ -24,15 +24,15 @@ const Navbar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
-  const [lang, setLang] = useState('bn');
+  // const [lang, setLang] = useState('bn');
 
-  const handleChange = (e) => {
-    setLang(e.target.value);
-    let loc = 'http://localhost:3000/';
-    window.location.replace(loc + '?lng=' + e.target.value);
-  };
+  // const handleChange = (e) => {
+  //   setLang(e.target.value);
+  //   let loc = 'http://localhost:3000/';
+  //   window.location.replace(loc + '?lng=' + e.target.value);
+  // };
 
   const logoutHandle = () => {
     dispatch(logout());
@@ -51,7 +51,7 @@ const Navbar = () => {
         pageLanguage: 'en',
         autoDisplay: false,
         layout: window.google.translate.TranslateElement.FloatPosition.TOP_LEFT,
-        layout: window.google.translate.TranslateElement.InlineLayout.VERTICAL
+        layout: window.google.translate.TranslateElement.InlineLayout.VERTICAL,
       },
       'google_translate_element'
     );
@@ -105,7 +105,11 @@ const Navbar = () => {
 
   return (
     <div className='nav-head'>
-      <header className='rt-header sticky-on'>
+      <header
+        id='rt-header'
+        className='rt-header sticky-on'
+        style={{ transition: '0.3s ease' }}
+      >
         <div
           id='navbar-wrap'
           className='header-menu menu-layout1 header-menu menu-layout2'
@@ -138,7 +142,7 @@ const Navbar = () => {
                       <Link to='/about'>About</Link>
                     </li>
                     <li>
-                      <a href='/pilgrimage'>Pilgrimages</a>
+                      <Link to='/pilgrimage'>Pilgrimages</Link>
                     </li>
 
                     <li>

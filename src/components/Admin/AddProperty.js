@@ -63,7 +63,7 @@ const AddProperty = () => {
     // console.log(trimmedPropertyImage);
 
     await axios
-      .post('http://43.204.24.76:4000/api/admin/addProperty', {
+      .post('https://vrtour-sih.herokuapp.com/api/admin/addProperty', {
         title: property.title,
         propertyImage: trimmedPropertyImage,
         price: property.price,

@@ -1,0 +1,16 @@
+.list{
+    margin: 10px;
+}
+
+.list > h2 {
+    margin-left: 30px;
+    font-weight: 700;
+    font-size: 30px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+.list-table-row {
+    margin-left: 30px;
+}
+

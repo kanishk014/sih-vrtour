@@ -3,7 +3,6 @@ import Footer from '../Footer';
 import Navbar from '../Navbar';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { addProperty } from '../../store/actions/propertiesAction';
 import { storage } from '../firebase/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
@@ -32,11 +31,10 @@ const AddPost = () => {
   const id = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo'))._id
     : null;
-  const navigate = useNavigate();
   useEffect(() => {
-    // if (!id) {
-    //   navigate('/login');
-    // }
+    if (!id) {
+      window.location.replace('/login');
+    }
   });
 
   const fetchPropertyReducer = useSelector(
