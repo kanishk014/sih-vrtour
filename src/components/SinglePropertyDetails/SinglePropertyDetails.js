@@ -1,16 +1,151 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import Navbar from '../Navbar';
 import Footer from '../Footer';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Autoplay, FreeMode } from 'swiper';
-import './SinglePropertyDetails?.css';
+import './SinglePropertyDetails.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { fetchPropertyDetails } from '../../store/actions/propertiesAction';
 import { fetchUserData } from '../../store/actions/userActions';
 import ScrollButton from '../scrollToTop';
+import VrpanoIcon from '@mui/icons-material/Vrpano';
+import ThreeDRotationIcon from '@mui/icons-material/ThreeDRotation';
+import Nav from 'react-bootstrap/Nav';
+import Tab from 'react-bootstrap/Tab';
+import Button from 'react-bootstrap/Button';
+import Modal from 'react-bootstrap/Modal';
+import 'react-phone-number-input/style.css';
+import PhoneInput from 'react-phone-number-input';
+import { useReactToPrint } from 'react-to-print';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+
 const SingleProperty = () => {
+  const componentRef = useRef();
+  const handlePrintPDF = useReactToPrint({
+    content: () => componentRef.current,
+  });
+  //   const [ticketPrice, setTicketPrice] = useState('');
+  const [fixedAmount, setFixedAmount] = useState(0);
+  const [totalAmount, setTotalAmount] = useState(0);
+  const [name, setName] = useState('');
+  const [phone, setPhone] = useState();
+  const [nationality, setNationality] = useState('1');
+  const [booking, setBooking] = useState({
+    name: '',
+    date: '',
+    noOfPersons: Number,
+  });
+
+  const [printPdf, setPrintPdf] = useState(false);
+
+  const userToken = localStorage.getItem('userInfo')
+    ? JSON.parse(localStorage.getItem('userInfo')).token
+    : null;
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!userToken) {
+      window.location.replace('/login');
+    }
+  });
+
+  // const { id } = useParams();
+
+  useEffect(function () {
+    axios
+      .get(
+        `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+      )
+      .then((res) => {
+        setFixedAmount(res.data.price);
+        setName(res.data.title);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, []);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // if (totalAmount === '') {
+    //   alert('Please enter amount');
+    // } else {
+    // alert(amount);
+    var options = {
+      key: 'rzp_test_3PxjsVZPtFxNvT',
+      key_secret: ' 0yEihUuQkxQrslsr4661GMj4',
+      amount: totalAmount * 100,
+      currency: 'INR',
+      name: 'VRTOUR',
+      description: 'Ticket Price',
+      handler: function () {
+        bookTicketCall();
+      },
+      prefill: {
+        name: 'VRTOUR Tester',
+        email: 'vrtour@tester.com',
+        contact: '9999108799',
+      },
+      notes: {
+        address: 'VR Tour Office',
+      },
+      theme: {
+        color: '#f58f3c',
+      },
+    };
+    var pay = new window.Razorpay(options);
+    pay.open();
+    // }
+  };
+
+  const handleChange = (event) => {
+    setBooking({
+      ...booking,
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  const personChange = (event) => {
+    setTotalAmount(fixedAmount * event.target.value);
+  };
+
+  const selectChange = (event) => {
+    setNationality(event.target.value);
+  };
+
+  const bookTicketCall = () => {
+    axios
+      .post(
+        'https://vrtour-sih.herokuapp.com/api/ticketBooking/bookTicket',
+        {
+          name: booking.name,
+          date: booking.date,
+          mobileNo: phone,
+          monumentId: id,
+          noOfPersons: parseInt(booking.noOfPersons),
+          nationality: parseInt(nationality),
+          totalAmount: totalAmount,
+        },
+        {
+          headers: {
+            authorization: userToken,
+          },
+        }
+      )
+      .then((res) => {
+        alert('Booking sucessful!');
+        setPrintPdf(true);
+      })
+      .catch((err) => {
+        alert('Can not book right now. Try again later');
+      });
+  };
   const [scrollState, setScrollState] = useState(false);
+  // const [showModal, setShowModal] = useState(false);
+  // const openModal = () => {
+  //   setShowModal((prev) => !prev);
+  // };
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
       var scroll = window.pageYOffset;
@@ -39,6 +174,11 @@ const SingleProperty = () => {
     }
   }, [success, dispatch]);
 
+  // Modal
+  const [show, setShow] = useState(false);
+  const modalClose = () => setShow(false);
+  const modalShow = () => setShow(true);
+
   return (
     <div>
       <Navbar />
@@ -47,17 +187,17 @@ const SingleProperty = () => {
       <!--=   Breadcrumb     Start            =-->
       <!--=====================================--> */}
 
-      <div class='breadcrumb-wrap'>
-        <div class='container'>
+      <div className='breadcrumb-wrap'>
+        <div className='container'>
           <nav aria-label='breadcrumb'>
-            <ol class='breadcrumb'>
-              <li class='breadcrumb-item'>
+            <ol className='breadcrumb'>
+              <li className='breadcrumb-item'>
                 <Link to='/'>Home</Link>
               </li>
-              <li class='breadcrumb-item'>
+              <li className='breadcrumb-item'>
                 <Link to='/singlelisting'>Comercial Property</Link>
               </li>
-              <li class='breadcrumb-item active' aria-current='page'>
+              <li className='breadcrumb-item active' aria-current='page'>
                 All Listing
               </li>
             </ol>
@@ -68,10 +208,10 @@ const SingleProperty = () => {
       <!--=   Single Listing     Start        =-->
       <!--=====================================--> */}
 
-      <section class='single-listing-wrap1'>
+      <section className='single-listing-wrap1'>
         {loading ? (
           <div
-            class='container-fluid'
+            className='container-fluid'
             style={{
               display: 'flex',
               justifyContent: 'center',
@@ -83,38 +223,41 @@ const SingleProperty = () => {
             <img src='img/preloader.gif' alt='load' />
           </div>
         ) : (
-          <div class='container'>
-            <div class='single-property'>
-              <div class='content-wrapper'>
-                <div class='property-heading'>
-                  <div class='row'>
-                    <div class='col-lg-6 col-md-12'>
-                      <div class='single-list-cate'>
-                        <div class='item-categoery'>
+          <div className='container'>
+            <div className='single-property'>
+              <div className='content-wrapper'>
+                <div className='property-heading'>
+                  <div className='row'>
+                    <div className='col-lg-6 col-md-12'>
+                      <div className='single-list-cate'>
+                        <div className='item-categoery'>
                           {propertyDetails?.type}
                         </div>
                       </div>
                     </div>
-                    <div class='col-lg-6 col-md-12'>
-                      <div class='single-list-price'>
-                        <Link
-                          to={`/booking/${propertyDetails?._id}`}
-                          class='heading-button'
-                          target='_blank'
-                        >
+                    <div className='col-lg-6 col-md-12'>
+                      <div className='single-list-price'>
+                        <div onClick={modalShow} className='heading-button'>
                           <div
-                            class='heading-btn item-btn2'
-                            // target='_blank'
-                            // onClick={property._id}
+                            className='heading-btn item-btn2'
+                            style={{ cursor: 'pointer' }}
                           >
                             Book Tickets
                           </div>
-                        </Link>
-                        <div class='heading-button'>
+                        </div>
+                        {/* <Container>
+                          <Button onClick={openModal}>Book Ticket</Button>
+                          <Modal
+                            showModal={showModal}
+                            setShowModal={setShowModal}
+                          />
+                          <GloablStyle />
+                        </Container> */}
+                        <div className='heading-button'>
                           <a
                             href={propertyDetails?.websiteUrl}
                             target='__blank'
-                            class='heading-btn item-btn2'
+                            className='heading-btn item-btn2'
                           >
                             Website
                           </a>
@@ -122,28 +265,152 @@ const SingleProperty = () => {
                       </div>
                     </div>
                   </div>
-                  <div class='row align-items-center'>
-                    <div class='col-lg-8 col-md-12'>
-                      <div class='single-verified-area'>
-                        <div class='item-title'>
-                          <h3>
-                            <Link to='/singlelisting'>
-                              {propertyDetails?.title}
-                            </Link>
-                          </h3>
+
+                  {/* <Button variant='primary' onClick={modalShow}>
+                    Launch demo modal
+                  </Button> */}
+
+                  <Modal
+                    show={show}
+                    onHide={modalClose}
+                    keyboard={false}
+                    aria-labelledby='contained-modal-title-vcenter'
+                    centered
+                    size='lg'
+                  >
+                    <Modal.Header closeButton>
+                      <Modal.Title>{name}</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+                      <div>
+                        <div ref={componentRef} className='add-property'>
+                          <h1>Book Tickets</h1>
+                          <form
+                            method='post'
+                            // onSubmit={handleSubmit}
+                          >
+                            <div className='form-input'>
+                              <h4>Name:</h4>
+                              <input
+                                type='text'
+                                name='name'
+                                placeholder='Enter name'
+                                required
+                                value={booking.name}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div className='form-input'>
+                              <h4>Date: </h4>
+                              <input
+                                type='date'
+                                name='date'
+                                placeholder='Enter date of visiting'
+                                required
+                                value={booking.date}
+                                onChange={handleChange}
+                              />
+                            </div>
+                            <div className='form-input'>
+                              <h4>Mobile Number:</h4>
+                              <PhoneInput
+                                placeholder='Enter phone number'
+                                name='mobileNo'
+                                required
+                                value={phone}
+                                onChange={setPhone}
+                              />
+                            </div>
+                            <div className='form-input'>
+                              <h4>Number of Person:</h4>
+                              <input
+                                type='number'
+                                name='noOfPersons'
+                                placeholder='Number of person visiting'
+                                min='0'
+                                required
+                                value={booking.noOfPersons}
+                                onChange={handleChange}
+                                onInput={personChange}
+                              />
+                            </div>
+                            <div className='form-input'>
+                              <h4>Nationality:</h4>
+                              <select
+                                value={nationality}
+                                onChange={selectChange}
+                              >
+                                <option value='none' selected disabled hidden>
+                                  Select nationality
+                                </option>
+                                <option value='1'>Indian</option>
+                                <option value='2'>Foreigner</option>
+                              </select>
+                            </div>
+                            <div className='form-input'>
+                              <h4>Total Amount: </h4>
+                              <div className='total-amount'>
+                                ₹ {totalAmount}
+                              </div>
+                            </div>
+                            {/* </form> */}
+                            <div className='print'>
+                              <div className='submit-button'>
+                                <button
+                                  type='submit'
+                                  onChange={(e) => {
+                                    setTotalAmount(e.target.value);
+                                  }}
+                                  onClick={handleSubmit}
+                                >
+                                  Book Ticket
+                                </button>
+                              </div>
+                              {printPdf ? (
+                                <div className='submit-button'>
+                                  <button
+                                    type='button'
+                                    onClick={handlePrintPDF}
+                                  >
+                                    Print PDF
+                                  </button>
+                                </div>
+                              ) : (
+                                ''
+                              )}
+                            </div>
+                          </form>
                         </div>
                       </div>
-                      <div class='single-item-address'>
+                    </Modal.Body>
+                    {/* <Modal.Footer>
+                      <Button variant='secondary' onClick={handleClose}>
+                        Close
+                      </Button>
+                      <Button variant='primary' onClick={handleClose}>
+                        Save Changes
+                      </Button>
+                    </Modal.Footer> */}
+                  </Modal>
+
+                  <div className='row align-items-center'>
+                    <div className='col-lg-8 col-md-12'>
+                      <div className='single-verified-area'>
+                        <div className='item-title'>
+                          <h3>{propertyDetails?.title}</h3>
+                        </div>
+                      </div>
+                      <div className='single-item-address'>
                         <ul>
                           <li>
-                            <i class='fas fa-map-marker-alt'></i>
+                            <i className='fas fa-map-marker-alt'></i>
                             {propertyDetails?.address}
                           </li>
                           <li>
-                            <i class='fas fa-clock'></i>7 months ago /
+                            <i className='fas fa-clock'></i>7 months ago /
                           </li>
                           <li>
-                            <i class='fas fa-eye'></i>Views: 1,230
+                            <i className='fas fa-eye'></i>Views: 1,230
                           </li>
                         </ul>
                       </div>
@@ -170,55 +437,96 @@ const SingleProperty = () => {
                   </div>
                 </div> */}
 
+                {/* <Tabs
+                  defaultActiveKey='360-img'
+                  id='uncontrolled-tab-example'
+                  className='mb-3'
+                >
+                  <Tab eventKey='360-img' title='360-img'>
+                    
+                  </Tab>
+                  <Tab eventKey='vr-video' title='vr-video'>
+                    
+                  </Tab>
+                </Tabs> */}
+
+                <Tab.Container id='left-tabs-example' defaultActiveKey='first'>
+                  <Nav variant='pills' className='flex-column'>
+                    <Nav.Item>
+                      <Nav.Link eventKey='first'>
+                        <VrpanoIcon /> 360° Image
+                      </Nav.Link>
+                    </Nav.Item>
+                    <Nav.Item>
+                      <Nav.Link eventKey='second'>
+                        <ThreeDRotationIcon /> VR Video
+                      </Nav.Link>
+                    </Nav.Item>
+                  </Nav>
+                  <Tab.Content>
+                    <Tab.Pane eventKey='first'>
+                      <div className='row'>
+                        <div className='col-lg-12'>
+                          <div id='panorama'>
+                            <iframe
+                              src={
+                                propertyDetails?.feel360
+                                  ? propertyDetails.feel360
+                                  : 'https://sushantpatial.github.io/VR/egjs2.html'
+                              }
+                              width='100%'
+                              height='600'
+                              allowFullScreen
+                              allowvr='yes'
+                              allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
+                              title='Iframe Image'
+                            ></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </Tab.Pane>
+                    <Tab.Pane eventKey='second'>
+                      <div className='row'>
+                        <div className='col-lg-12'>
+                          <div id='panorama'>
+                            <iframe
+                              src={
+                                propertyDetails?.vrVideo
+                                  ? propertyDetails.vrVideo
+                                  : 'https://sushantpatial.github.io/VR/egjs.html'
+                              }
+                              width='100%'
+                              height='600'
+                              allowFullScreen
+                              allowvr='yes'
+                              allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
+                              title='Iframe Video'
+                            ></iframe>
+                          </div>
+                        </div>
+                      </div>
+                    </Tab.Pane>
+                  </Tab.Content>
+                </Tab.Container>
+
+                {/* <div className='col-lg-12'>
+                    <div id='panorama'>
+                      
+                    </div>
+                  </div>
+                </div> */}
+
                 <div className='row'>
-                  <div className='col-lg-12'>
-                    <div id='panorama'>
-                      <iframe
-                        src={
-                          propertyDetails?.feel360
-                            ? propertyDetails.feel360
-                            : 'https://sushantpatial.github.io/VR/egjs2.html'
-                        }
-                        width='100%'
-                        height='600'
-                        allowFullScreen
-                        allowvr='yes'
-                        allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
-                        title='Iframe Image'
-                      ></iframe>
-                    </div>
-                  </div>
-
-                  <div className='col-lg-12'>
-                    <div id='panorama'>
-                      <iframe
-                        src={
-                          propertyDetails?.vrVideo
-                            ? propertyDetails.vrVideo
-                            : 'https://sushantpatial.github.io/VR/egjs.html'
-                        }
-                        width='100%'
-                        height='600'
-                        allowFullScreen
-                        allowvr='yes'
-                        allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
-                        title='Iframe Video'
-                      ></iframe>
-                    </div>
-                  </div>
-                </div>
-
-                <div class='row'>
-                  <div class='col-lg-8'>
-                    <div class='single-listing-box1'>
-                      <div class='overview-area single-details-box table-responsive'>
-                        <h3 class='item-title'>Overview</h3>
-                        <table class='table-box1'>
+                  <div className='col-lg-8'>
+                    <div className='single-listing-box1'>
+                      <div className='overview-area single-details-box table-responsive'>
+                        <h3 className='item-title'>Overview</h3>
+                        <table className='table-box1'>
                           <tbody>
                             <tr>
-                              <td class='item-bold'>Id No</td>
+                              <td className='item-bold'>Id No</td>
                               <td> {propertyDetails?._id?.slice(1, 5)}</td>
-                              <td class='item-bold'>Ticket Price</td>
+                              <td className='item-bold'>Ticket Price</td>
                               {propertyDetails?.price == 0 ? (
                                 <td>Free</td>
                               ) : (
@@ -226,9 +534,9 @@ const SingleProperty = () => {
                               )}
                             </tr>
                             <tr>
-                              <td class='item-bold'>Type</td>
+                              <td className='item-bold'>Type</td>
                               <td>{propertyDetails?.type}</td>
-                              <td class='item-bold'>Parking</td>
+                              <td className='item-bold'>Parking</td>
                               <td>
                                 {propertyDetails?.parkingSpaces > 0
                                   ? 'Yes'
@@ -236,21 +544,21 @@ const SingleProperty = () => {
                               </td>
                             </tr>
                             <tr>
-                              <td class='item-bold'>Timings</td>
+                              <td className='item-bold'>Timings</td>
                               <td>{propertyDetails?.timings}</td>
-                              <td class='item-bold'>Aarti Time</td>
+                              <td className='item-bold'>Aarti Time</td>
                               <td>{propertyDetails?.aartiTime}</td>
                             </tr>
                             <tr>
-                              <td class='item-bold'>Tour Time</td>
+                              <td className='item-bold'>Tour Time</td>
                               <td>{propertyDetails?.tourTime}</td>
-                              <td class='item-bold'>Land Area</td>
+                              <td className='item-bold'>Land Area</td>
                               <td>{propertyDetails?.landArea} Acres</td>
                             </tr>
                             <tr>
-                              <td class='item-bold'>Size</td>
+                              <td className='item-bold'>Size</td>
                               <td>{propertyDetails?.sqft} sqft</td>
-                              <td class='item-bold'>Year Build</td>
+                              <td className='item-bold'>Year Build</td>
                               <td>
                                 {propertyDetails?.builtYear
                                   ? propertyDetails?.builtYear
@@ -260,35 +568,35 @@ const SingleProperty = () => {
                           </tbody>
                         </table>
                       </div>
-                      <div class='overview-area listing-area'>
-                        <h3 class='item-title'>About This Place</h3>
+                      <div className='overview-area listing-area'>
+                        <h3 className='item-title'>About This Place</h3>
                         <p>{propertyDetails?.about}</p>
                       </div>
-                      <div class='overview-area listing-area'>
-                        <h3 class='item-title'>Facts and Figures</h3>
+                      <div className='overview-area listing-area'>
+                        <h3 className='item-title'>Facts and Figures</h3>
                         <p>{propertyDetails?.factsAndFigures}</p>
                       </div>
-                      <div class='overview-area listing-area'>
-                        <h3 class='item-title'>Why is it famous?</h3>
+                      <div className='overview-area listing-area'>
+                        <h3 className='item-title'>Why is it famous?</h3>
                         <p>{propertyDetails?.famous}</p>
                       </div>
 
-                      <div class='overview-area ameniting-box'>
-                        <h3 class='item-title'>Features {'&'} Activites</h3>
-                        <div class='row'>
+                      <div className='overview-area ameniting-box'>
+                        <h3 className='item-title'>Features {'&'} Activites</h3>
+                        <div className='row'>
                           {propertyDetails?.activities.map((item, i) => {
                             return (
-                              <div class='col-lg-4 ameniting-list' key={i}>
-                                <i class='fas fa-check-circle'></i>
+                              <div className='col-lg-4 ameniting-list' key={i}>
+                                <i className='fas fa-check-circle'></i>
                                 {item}
                               </div>
                             );
                           })}
                         </div>
                       </div>
-                      <div class='overview-area map-box'>
-                        <h3 class='item-title'>Map Location</h3>
-                        <div class='item-map'>
+                      <div className='overview-area map-box'>
+                        <h3 className='item-title'>Map Location</h3>
+                        <div className='item-map'>
                           <iframe
                             src={
                               propertyDetails?.mapLocation
@@ -305,42 +613,42 @@ const SingleProperty = () => {
                         </div>
                       </div>
 
-                      <div class='overview-area video-box1'>
-                        <h3 class='item-title'>Video</h3>
-                        <div class='item-img'>
+                      <div className='overview-area video-box1'>
+                        <h3 className='item-title'>Video</h3>
+                        <div className='item-img'>
                           <img
                             src={propertyDetails?.propertyImage}
                             alt='map'
                             width='731'
                             height='349'
                           />
-                          <div class='play-button'>
-                            <div class='item-icon'>
+                          <div className='play-button'>
+                            <div className='item-icon'>
                               <a
                                 href={propertyDetails?.video}
-                                class='play-btn play-btn-big'
+                                className='play-btn play-btn-big'
                               >
-                                <span class='play-icon style-2'>
-                                  <i class='fas fa-play'></i>
+                                <span className='play-icon style-2'>
+                                  <i className='fas fa-play'></i>
                                 </span>
                               </a>
                             </div>
                           </div>
                         </div>
                       </div>
-                      <div class='overview-area nearby-area'>
-                        <h3 class='item-title'>Kalamridha Nearby Places</h3>
-                        <div class='nearby-box'>
-                          <div class='media d-flex'>
-                            <div class='flex-shrink-0'>
-                              <div class='item-icon'>
-                                <i class='fas fa-heartbeat'></i>
+                      <div className='overview-area nearby-area'>
+                        <h3 className='item-title'>Kalamridha Nearby Places</h3>
+                        <div className='nearby-box'>
+                          <div className='media d-flex'>
+                            <div className='flex-shrink-0'>
+                              <div className='item-icon'>
+                                <i className='fas fa-heartbeat'></i>
                               </div>
                             </div>
-                            <div class='media-body flex-grow-1 ms-3'>
-                              <h4 class='small-title'>Health & Medical</h4>
-                              <div class='row'>
-                                <div class='col-lg-8'>
+                            <div className='media-body flex-grow-1 ms-3'>
+                              <h4 className='small-title'>Health & Medical</h4>
+                              <div className='row'>
+                                <div className='col-lg-8'>
                                   <ul>
                                     <li>
                                       Born Knowing Birth and Lactation Support
@@ -354,83 +662,89 @@ const SingleProperty = () => {
                                     </li>
                                   </ul>
                                 </div>
-                                <div class='col-lg-4'>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                <div className='col-lg-4'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class='nearby-box nearby-box-2'>
-                          <div class='media d-flex'>
-                            <div class='flex-shrink-0'>
-                              <div class='item-icon'>
-                                <i class='fas fa-utensils'></i>
+                        <div className='nearby-box nearby-box-2'>
+                          <div className='media d-flex'>
+                            <div className='flex-shrink-0'>
+                              <div className='item-icon'>
+                                <i className='fas fa-utensils'></i>
                               </div>
                             </div>
-                            <div class='media-body flex-grow-1 ms-3'>
-                              <h4 class='small-title'>Restaurants</h4>
-                              <div class='row'>
-                                <div class='col-lg-8'>
+                            <div className='media-body flex-grow-1 ms-3'>
+                              <h4 className='small-title'>Restaurants</h4>
+                              <div className='row'>
+                                <div className='col-lg-8'>
                                   <ul>
                                     <li>
                                       Born Knowing Birth and Lactation Support
@@ -444,83 +758,89 @@ const SingleProperty = () => {
                                     </li>
                                   </ul>
                                 </div>
-                                <div class='col-lg-4'>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                <div className='col-lg-4'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                        <div class='nearby-box nearby-box-3'>
-                          <div class='media d-flex'>
-                            <div class='flex-shrink-0'>
-                              <div class='item-icon'>
-                                <i class='fas fa-graduation-cap'></i>
+                        <div className='nearby-box nearby-box-3'>
+                          <div className='media d-flex'>
+                            <div className='flex-shrink-0'>
+                              <div className='item-icon'>
+                                <i className='fas fa-graduation-cap'></i>
                               </div>
                             </div>
-                            <div class='media-body flex-grow-1 ms-3'>
-                              <h4 class='small-title'>Education</h4>
-                              <div class='row'>
-                                <div class='col-lg-8'>
+                            <div className='media-body flex-grow-1 ms-3'>
+                              <h4 className='small-title'>Education</h4>
+                              <div className='row'>
+                                <div className='col-lg-8'>
                                   <ul>
                                     <li>
                                       Born Knowing Birth and Lactation Support
@@ -534,66 +854,72 @@ const SingleProperty = () => {
                                     </li>
                                   </ul>
                                 </div>
-                                <div class='col-lg-4'>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                <div className='col-lg-4'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
-                                  <div class='rating-area'>
-                                    <ul class='item-rating'>
+                                  <div className='rating-area'>
+                                    <ul className='item-rating'>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                       <li>
-                                        <i class='fas fa-star'></i>
+                                        <i className='fas fa-star'></i>
                                       </li>
                                     </ul>
-                                    <div class='item-number'>(05 Reviews)</div>
+                                    <div className='item-number'>
+                                      (05 Reviews)
+                                    </div>
                                   </div>
                                 </div>
                               </div>
@@ -601,13 +927,16 @@ const SingleProperty = () => {
                           </div>
                         </div>
                       </div>
-                      <div class='product-video' style={{ overflow: 'hidden' }}>
-                        <h3 class='item-title'>Gallery</h3>
+                      <div
+                        className='product-video'
+                        style={{ overflow: 'hidden' }}
+                      >
+                        <h3 className='item-title'>Gallery</h3>
                         <div
-                          class='featured-thumb-slider-area wow fadeInUp'
+                          className='featured-thumb-slider-area wow fadeInUp'
                           data-wow-delay='.4s'
                         >
-                          <div class='feature-box3 swiper-container'>
+                          <div className='feature-box3 swiper-container'>
                             <Swiper
                               autoplay={{
                                 delay: 3000,
@@ -620,8 +949,8 @@ const SingleProperty = () => {
                               modules={[Autoplay]}
                               className='mySwiper'
                             >
-                              <SwiperSlide class='swiper-slide width-swiper '>
-                                <div class='feature-img1 zoom-image-hover'>
+                              <SwiperSlide className='swiper-slide width-swiper '>
+                                <div className='feature-img1 zoom-image-hover'>
                                   <img
                                     src={propertyDetails?.propertyImage}
                                     alt='feature'
@@ -637,10 +966,10 @@ const SingleProperty = () => {
                     </div>
                   </div>
 
-                  <div class='col-lg-4 widget-break-lg sidebar-widget'>
+                  <div className='col-lg-4 widget-break-lg sidebar-widget'>
                     {userLoading ? (
                       <div
-                        class='container-fluid'
+                        className='container-fluid'
                         style={{
                           display: 'flex',
                           justifyContent: 'center',
@@ -652,14 +981,14 @@ const SingleProperty = () => {
                         <img src='img/preloader.gif' alt='load' />
                       </div>
                     ) : (
-                      <div class='widget widget-contact-box'>
-                        <h3 class='widget-subtitle'>Contact Tour Guide</h3>
-                        <div class='media d-flex'>
+                      <div className='widget widget-contact-box'>
+                        <h3 className='widget-subtitle'>Contact Tour Guide</h3>
+                        <div className='media d-flex'>
                           <div
-                            class='flex-shrink-0'
+                            className='flex-shrink-0'
                             style={{ display: 'flex', alignItems: 'center' }}
                           >
-                            <div class='item-logo'>
+                            <div className='item-logo'>
                               <img
                                 src='img/logo.png'
                                 alt='logo'
@@ -669,87 +998,87 @@ const SingleProperty = () => {
                               />
                             </div>
                           </div>
-                          <div class='media-body flex-grow-1 ms-3'>
-                            <h4 class='item-title'>VRTOUR</h4>
-                            <div class='item-phn'>
+                          <div className='media-body flex-grow-1 ms-3'>
+                            <h4 className='item-title'>VRTOUR</h4>
+                            <div className='item-phn'>
                               +91{' '}
                               {userData?.phoneno
                                 ? userData?.phoneno
                                 : 1234567890}
                             </div>
-                            <div class='item-mail'>
+                            <div className='item-mail'>
                               {userData?.email
                                 ? userData?.email
                                 : 'info@vrtour.com'}
                             </div>
-                            <div class='item-rating'>
+                            <div className='item-rating'>
                               <ul>
                                 <li>
-                                  <i class='fas fa-star'></i>
+                                  <i className='fas fa-star'></i>
                                 </li>
                                 <li>
-                                  <i class='fas fa-star'></i>
+                                  <i className='fas fa-star'></i>
                                 </li>
                                 <li>
-                                  <i class='fas fa-star'></i>
+                                  <i className='fas fa-star'></i>
                                 </li>
                                 <li>
-                                  <i class='fas fa-star'></i>
+                                  <i className='fas fa-star'></i>
                                 </li>
                                 <li>
-                                  <i class='fas fa-star'></i>
+                                  <i className='fas fa-star'></i>
                                 </li>
-                                <li class='rating-count'>(Reviews 15)</li>
+                                <li className='rating-count'>(Reviews 15)</li>
                               </ul>
                             </div>
                           </div>
                         </div>
-                        <ul class='wid-contact-button'>
+                        <ul className='wid-contact-button'>
                           <li>
                             <Link
                               to={`/schedulemeeting?id=${propertyDetails?.userId}`}
                             >
-                              <i class='fas fa-comment'></i>Schedule Meeting
+                              <i className='fas fa-comment'></i>Schedule Meeting
                             </Link>
                           </li>
                         </ul>
-                        <form class='contact-box rt-contact-form'>
-                          <div class='row'>
-                            <div class='form-group col-lg-12'>
+                        <form className='contact-box rt-contact-form'>
+                          <div className='row'>
+                            <div className='form-group col-lg-12'>
                               <input
                                 type='text'
-                                class='form-control'
+                                className='form-control'
                                 name='fname'
                                 placeholder='Your Full Name'
                                 data-error='First Name is required'
                                 required
                               />
                             </div>
-                            <div class='form-group col-lg-12'>
+                            <div className='form-group col-lg-12'>
                               <input
                                 type='text'
-                                class='form-control'
+                                className='form-control'
                                 name='phone'
                                 placeholder='Phone'
                                 data-error='Phone is required'
                                 required
                               />
                             </div>
-                            <div class='form-group col-lg-12'>
+                            <div className='form-group col-lg-12'>
                               <input
                                 type='text'
-                                class='form-control'
+                                className='form-control'
                                 name='phone'
                                 placeholder='E-mail'
                                 data-error='Phone is required'
                                 required
                               />
                             </div>
-                            <div class='form-group col-lg-12'>
+                            <div className='form-group col-lg-12'>
                               <textarea
                                 name='comment'
                                 id='message'
-                                class='form-text'
+                                className='form-text'
                                 placeholder='Message'
                                 cols='30'
                                 rows='4'
@@ -757,15 +1086,15 @@ const SingleProperty = () => {
                                 required
                               ></textarea>
                             </div>
-                            <div class='form-group col-lg-12'>
-                              <div class='advanced-button'>
-                                <button type='submit' class='item-btn'>
-                                  Send Message <i class='fas fa-search'></i>
+                            <div className='form-group col-lg-12'>
+                              <div className='advanced-button'>
+                                <button type='submit' className='item-btn'>
+                                  Send Message <i className='fas fa-search'></i>
                                 </button>
                               </div>
                             </div>
                           </div>
-                          <div class='form-response'></div>
+                          <div className='form-response'></div>
                         </form>
                       </div>
                     )}
@@ -780,32 +1109,32 @@ const SingleProperty = () => {
       <!--=   Property     Start              =-->
       <!--=====================================--> */}
 
-      <section class='property-wrap1'>
-        <div class='container'>
-          <div class='row align-items-center'>
-            <div class='col-lg-6 col-md-7 col-sm-7'>
-              <div class='item-heading-left'>
-                <h2 class='section-title'>Latest Destinations</h2>
-                <div class='bg-title-wrap' style={{ display: 'block' }}>
-                  <span class='background-title solid'>Destinations</span>
+      <section className='property-wrap1'>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col-lg-6 col-md-7 col-sm-7'>
+              <div className='item-heading-left'>
+                <h2 className='section-title'>Latest Destinations</h2>
+                <div className='bg-title-wrap' style={{ display: 'block' }}>
+                  <span className='background-title solid'>Destinations</span>
                 </div>
               </div>
             </div>
-            <div class='col-lg-6 col-md-5 col-sm-5'>
-              <div class='heading-button'>
-                <Link to='/pilgrimage' class='heading-btn item-btn2'>
+            <div className='col-lg-6 col-md-5 col-sm-5'>
+              <div className='heading-button'>
+                <Link to='/pilgrimage' className='heading-btn item-btn2'>
                   All Sites
                 </Link>
               </div>
             </div>
           </div>
-          <div class='row justify-content-center'>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+          <div className='row justify-content-center'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.3s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog4.jpg'
@@ -814,11 +1143,11 @@ const SingleProperty = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>
+                  <div className='rent-price'>
+                    <div className='item-price'>
                       ₹250
                       <span>
                         <i>/</i>person
@@ -826,27 +1155,27 @@ const SingleProperty = () => {
                     </div>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Temple</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Akshardham Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.2s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog5.jpg'
@@ -855,34 +1184,34 @@ const SingleProperty = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Temple</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Lotus Temple</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
             </div>
-            <div class='col-xl-4 col-lg-6 col-md-6'>
+            <div className='col-xl-4 col-lg-6 col-md-6'>
               <div
-                class='property-box2 wow animated fadeInUp'
+                className='property-box2 wow animated fadeInUp'
                 data-wow-delay='.1s'
               >
-                <div class='item-img'>
+                <div className='item-img'>
                   <Link to='/pilgrimage'>
                     <img
                       src='img/blog/blog6.jpg'
@@ -891,24 +1220,24 @@ const SingleProperty = () => {
                       height='340'
                     />
                   </Link>
-                  <div class='item-category-box1'>
-                    <div class='item-category'>Visit Now</div>
+                  <div className='item-category-box1'>
+                    <div className='item-category'>Visit Now</div>
                   </div>
-                  <div class='rent-price'>
-                    <div class='item-price'>Free</div>
+                  <div className='rent-price'>
+                    <div className='item-price'>Free</div>
                   </div>
                 </div>
-                <div class='item-category10'>
+                <div className='item-category10'>
                   <Link to='/pilgrimage'>Mandir</Link>
                 </div>
-                <div class='item-content'>
-                  <div class='verified-area'>
-                    <h3 class='item-title'>
+                <div className='item-content'>
+                  <div className='verified-area'>
+                    <h3 className='item-title'>
                       <Link to='/pilgrimage'>Hanuman Mandir</Link>
                     </h3>
                   </div>
-                  <div class='location-area'>
-                    <i class='flaticon-maps-and-flags'></i>New Delhi, India
+                  <div className='location-area'>
+                    <i className='flaticon-maps-and-flags'></i>New Delhi, India
                   </div>
                 </div>
               </div>
@@ -920,8 +1249,8 @@ const SingleProperty = () => {
       <!--=   Newsletter     Start            =-->
       <!--=====================================--> */}
 
-      <section class='newsletter-wrap1'>
-        <div class='shape-img1'>
+      <section className='newsletter-wrap1'>
+        <div className='shape-img1'>
           <img
             src='img/figure/shape13.png'
             alt='figure'
@@ -929,26 +1258,26 @@ const SingleProperty = () => {
             height='130'
           />
         </div>
-        <div class='container'>
-          <div class='row align-items-center'>
-            <div class='col-lg-5'>
-              <div class='newsletter-layout1'>
-                <div class='item-heading'>
-                  <h2 class='item-title'>Sign up for newsletter</h2>
-                  <h3 class='item-subtitle'>Get latest news and update</h3>
+        <div className='container'>
+          <div className='row align-items-center'>
+            <div className='col-lg-5'>
+              <div className='newsletter-layout1'>
+                <div className='item-heading'>
+                  <h2 className='item-title'>Sign up for newsletter</h2>
+                  <h3 className='item-subtitle'>Get latest news and update</h3>
                 </div>
               </div>
             </div>
-            <div class='col-lg-7'>
-              <div class='newsletter-form'>
-                <div class='input-group'>
+            <div className='col-lg-7'>
+              <div className='newsletter-form'>
+                <div className='input-group'>
                   <input
                     type='text'
-                    class='form-control'
+                    className='form-control'
                     placeholder='Enter e-mail addess'
                   />
-                  <div class='input-group-append'>
-                    <button class='btn btn-outline-secondary' type='button'>
+                  <div className='input-group-append'>
+                    <button className='btn btn-outline-secondary' type='button'>
                       Subscribe
                     </button>
                   </div>

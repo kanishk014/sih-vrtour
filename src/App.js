@@ -27,7 +27,6 @@ import Admin from './components/Admin/Admin';
 import VRView from './components/VRView/VRView';
 import List from './components/List/ListList';
 import Update from './components/Update/Update';
-import Booking from './components/Booking/Booking';
 import ListList from './components/List/List';
 
 function App() {
@@ -42,7 +41,7 @@ function App() {
         <Route exact path={'/vrview'} element={<VRView />} />
         <Route exact path={'/list'} element={<ListList />} />
         <Route exact path={'/update/:id'} element={<Update />} />
-        <Route exact path={'booking/:id'} element={<Booking />} />
+        {/* <Route exact path={'booking/:id'} element={<Booking />} /> */}
 
         <Route exact path={'/contact'} element={<Contact />} />
         <Route exact path={'/agents'} element={<Agents />} />
