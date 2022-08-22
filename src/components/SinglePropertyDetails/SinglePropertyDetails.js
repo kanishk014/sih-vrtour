@@ -151,7 +151,7 @@ const SingleProperty = () => {
                   </div>
                 </div>
 
-                <div className='row'>
+                {/* <div className='row'>
                   <div className='col-lg-12'>
                     <div id='panorama'>
                       <iframe
@@ -168,26 +168,43 @@ const SingleProperty = () => {
                       ></iframe>
                     </div>
                   </div>
-                </div>
+                </div> */}
 
                 <div className='row'>
                   <div className='col-lg-12'>
-                    <iframe
-                      src='https://sushantpatial.github.io/VR/egjs2.html'
-                      width='745'
-                      height='600'
-                      title='map'
-                      allowFullScreen
-                      style={{ borderStyle: 'none', width: '100%' }}
-                    ></iframe>
-                    <iframe
-                      src='https://sushantpatial.github.io/VR/egjs.html'
-                      width='745'
-                      height='600'
-                      title='map'
-                      allowFullScreen
-                      style={{ borderStyle: 'none', width: '100%' }}
-                    ></iframe>
+                    <div id='panorama'>
+                      <iframe
+                        src={
+                          propertyDetails?.feel360
+                            ? propertyDetails.feel360
+                            : 'https://sushantpatial.github.io/VR/egjs2.html'
+                        }
+                        width='100%'
+                        height='600'
+                        allowFullScreen
+                        allowvr='yes'
+                        allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
+                        title='Iframe Image'
+                      ></iframe>
+                    </div>
+                  </div>
+
+                  <div className='col-lg-12'>
+                    <div id='panorama'>
+                      <iframe
+                        src={
+                          propertyDetails?.vrVideo
+                            ? propertyDetails.vrVideo
+                            : 'https://sushantpatial.github.io/VR/egjs.html'
+                        }
+                        width='100%'
+                        height='600'
+                        allowFullScreen
+                        allowvr='yes'
+                        allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
+                        title='Iframe Video'
+                      ></iframe>
+                    </div>
                   </div>
                 </div>
 

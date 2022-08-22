@@ -24,12 +24,27 @@ const UpdateProperty = () => {
     famous: '',
     activities: '',
     feel360: '',
+    vrVideo: '',
     mapLocation: '',
     latitude: '',
     longitude: '',
     video: '',
     websiteUrl: '',
   });
+
+  const convertBase64 = (file) => {
+    return new Promise((resolve, reject) => {
+      const fileReader = new FileReader();
+      fileReader.readAsDataURL(file);
+
+      fileReader.onload = () => {
+        resolve(fileReader.result);
+      };
+      fileReader.onerror = (error) => {
+        reject(error);
+      };
+    });
+  };
 
   const { id } = useParams();
 
@@ -61,8 +76,10 @@ const UpdateProperty = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
 
-    var activitiesArray = property.activities.toString().trim();
-    activitiesArray.split(/\s*,\s*/);
+    var activitiesArray = property.activities
+      .toString()
+      .trim()
+      .split(/\s*,\s*/);
 
     let trimmedPropertyImage = property.propertyImage.slice(22);
 
@@ -85,6 +102,7 @@ const UpdateProperty = () => {
         famous: property.famous,
         activities: activitiesArray,
         feel360: property.feel360,
+        vrVideo: property.vrVideo,
         mapLocation: property.mapLocation,
         longitude: property.longitude,
         latitude: property.latitude,
@@ -92,11 +110,11 @@ const UpdateProperty = () => {
         websiteUrl: property.websiteUrl,
       })
       .then((res) => {
-        alert('Property updated sucessfully!');
+        alert('Pilgrimage updated sucessfully!');
         console.log(res);
       })
       .catch((err) => {
-        alert('Can not update property right now. Try again later');
+        alert('Can not update pilgrimage right now. Try again later');
         console.log(err);
       });
   };
@@ -276,6 +294,16 @@ const UpdateProperty = () => {
           />
         </div>
         <div className='form-input'>
+          <h4>VR Video:</h4>
+          <input
+            type='text'
+            name='vrVideo'
+            required
+            value={property.vrVideo}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='form-input'>
           <h4>Map Location:</h4>
           <input
             type='text'
@@ -327,7 +355,7 @@ const UpdateProperty = () => {
         </div>
 
         <div className='submit-button'>
-          <button type='submit'>Save</button>
+          <button type='submit'>Save Pilgrimage</button>
         </div>
       </form>
     </div>

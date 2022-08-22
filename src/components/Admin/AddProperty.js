@@ -23,6 +23,7 @@ const AddProperty = () => {
     famous: '',
     activities: '',
     feel360: '',
+    vrVideo: '',
     mapLocation: '',
     latitude: '',
     longitude: '',
@@ -81,6 +82,7 @@ const AddProperty = () => {
         famous: property.famous,
         activities: activitiesArray,
         feel360: property.feel360,
+        vrVideo: property.vrVideo,
         mapLocation: property.mapLocation,
         longitude: property.longitude,
         latitude: property.latitude,
@@ -88,11 +90,11 @@ const AddProperty = () => {
         websiteUrl: property.websiteUrl,
       })
       .then((res) => {
-        alert('Property added sucessfully!');
+        alert('Pilgrimage added sucessfully!');
         console.log(res);
       })
       .catch((err) => {
-        alert('Can not add property right now. Try again later');
+        alert('Can not add pilgrimage right now. Try again later');
         console.log(err);
       });
   };
@@ -263,12 +265,22 @@ const AddProperty = () => {
           />
         </div>
         <div className='form-input'>
-          <h4>Feel 360:</h4>
+          <h4>360 Image:</h4>
           <input
             type='text'
             name='feel360'
             required
             value={property.feel360}
+            onChange={handleChange}
+          />
+        </div>
+        <div className='form-input'>
+          <h4>VR Video:</h4>
+          <input
+            type='text'
+            name='vrVideo'
+            required
+            value={property.vrVideo}
             onChange={handleChange}
           />
         </div>
@@ -324,7 +336,7 @@ const AddProperty = () => {
         </div>
 
         <div className='submit-button'>
-          <button type='submit'>Add Monument</button>
+          <button type='submit'>Add Pilgrimage</button>
         </div>
       </form>
     </div>
