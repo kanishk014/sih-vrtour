@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
+import { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -12,7 +12,7 @@ export default function ScrollTop() {
 
     console.log(pathname);
 
-    if (pathname == "/") {
+    if (pathname === '/') {
       gsap.utils.toArray('.revealUp').forEach(function (elem) {
         ScrollTrigger.create({
           trigger: elem,
@@ -68,8 +68,8 @@ export default function ScrollTop() {
           },
         });
       });
-    } else {
-        document.getElementById('rt-header').style = "margin-top: 0px !important";
+    } else if (document.getElementById('rt-header')) {
+      document.getElementById('rt-header').style = 'margin-top: 0px !important';
     }
   }, [pathname]);
 

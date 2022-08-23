@@ -32,19 +32,7 @@ const UpdateProperty = () => {
     websiteUrl: '',
   });
 
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
+  const [updatedPhoto, setUpdatedPhoto] = useState(false);
 
   const { id } = useParams();
 
@@ -81,43 +69,80 @@ const UpdateProperty = () => {
       .trim()
       .split(/\s*,\s*/);
 
-    let trimmedPropertyImage = property.propertyImage.slice(22);
+    if (updatedPhoto) {
+      let trimmedPropertyImage = property.propertyImage.slice(22);
 
-    await axios
-      .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
-        title: property.title,
-        propertyImage: trimmedPropertyImage,
-        price: property.price,
-        sqft: property.sqft,
-        landArea: property.landArea,
-        type: property.type,
-        builtYear: property.builtYear,
-        parkingSpaces: property.parkingSpaces,
-        address: property.address,
-        timings: property.timings,
-        aartiTime: property.aartiTime,
-        tourTime: property.tourTime,
-        about: property.about,
-        factsAndFigures: property.factsAndFigures,
-        famous: property.famous,
-        activities: activitiesArray,
-        feel360: property.feel360,
-        vrVideo: property.vrVideo,
-        mapLocation: property.mapLocation,
-        longitude: property.longitude,
-        latitude: property.latitude,
-        video: property.video,
-        websiteUrl: property.websiteUrl,
-      })
-      .then((res) => {
-        alert('Pilgrimage updated sucessfully!');
-        console.log(res);
-      })
-      .catch((err) => {
-        alert('Can not update pilgrimage right now. Try again later');
-        console.log(err);
-      });
+      await axios
+        .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
+          title: property.title,
+          propertyImage: trimmedPropertyImage,
+          price: property.price,
+          sqft: property.sqft,
+          landArea: property.landArea,
+          type: property.type,
+          builtYear: property.builtYear,
+          parkingSpaces: property.parkingSpaces,
+          address: property.address,
+          timings: property.timings,
+          aartiTime: property.aartiTime,
+          tourTime: property.tourTime,
+          about: property.about,
+          factsAndFigures: property.factsAndFigures,
+          famous: property.famous,
+          activities: activitiesArray,
+          feel360: property.feel360,
+          vrVideo: property.vrVideo,
+          mapLocation: property.mapLocation,
+          longitude: property.longitude,
+          latitude: property.latitude,
+          video: property.video,
+          websiteUrl: property.websiteUrl,
+        })
+        .then((res) => {
+          alert('Pilgrimage updated sucessfully!');
+          console.log(res);
+        })
+        .catch((err) => {
+          alert('Can not update pilgrimage right now. Try again later');
+          console.log(err);
+        });
+    } else {
+      await axios
+        .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
+          title: property.title,
+          price: property.price,
+          sqft: property.sqft,
+          landArea: property.landArea,
+          type: property.type,
+          builtYear: property.builtYear,
+          parkingSpaces: property.parkingSpaces,
+          address: property.address,
+          timings: property.timings,
+          aartiTime: property.aartiTime,
+          tourTime: property.tourTime,
+          about: property.about,
+          factsAndFigures: property.factsAndFigures,
+          famous: property.famous,
+          activities: activitiesArray,
+          feel360: property.feel360,
+          vrVideo: property.vrVideo,
+          mapLocation: property.mapLocation,
+          longitude: property.longitude,
+          latitude: property.latitude,
+          video: property.video,
+          websiteUrl: property.websiteUrl,
+        })
+        .then((res) => {
+          alert('Pilgrimage updated sucessfully!');
+          console.log(res);
+        })
+        .catch((err) => {
+          alert('Can not update pilgrimage right now. Try again later');
+          console.log(err);
+        });
+    }
   };
+
   return (
     <div className='update-property'>
       <h1>Update Destination</h1>
@@ -137,9 +162,10 @@ const UpdateProperty = () => {
           <FileBase64
             type='file'
             multiple={false}
-            onDone={({ base64 }) =>
-              setProperty({ ...property, propertyImage: base64 })
-            }
+            onDone={({ base64 }) => {
+              setUpdatedPhoto(true);
+              setProperty({ ...property, propertyImage: base64 });
+            }}
           />
           {/* <img src={propertyImage} /> */}
         </div>
@@ -318,7 +344,6 @@ const UpdateProperty = () => {
           <input
             type='text'
             name='latitude'
-            required
             value={property.latitude}
             onChange={handleChange}
           />
@@ -328,7 +353,6 @@ const UpdateProperty = () => {
           <input
             type='text'
             name='longitude'
-            required
             value={property.longitude}
             onChange={handleChange}
           />

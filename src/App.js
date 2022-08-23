@@ -25,7 +25,7 @@ import Schedule from './components/ScheduleMeeting/Schedule';
 import RecievedMeet from './components/ScheduleMeeting/recievedMeet';
 import Admin from './components/Admin/Admin';
 import VRView from './components/VRView/VRView';
-import List from './components/List/ListList';
+// import List from './components/List/ListList';
 import Update from './components/Update/Update';
 import ListList from './components/List/List';
 import ScrollTop from './components/ScrollTop';

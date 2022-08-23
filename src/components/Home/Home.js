@@ -26,10 +26,7 @@ const Home = () => {
   gsap.registerPlugin(ScrollTrigger);
   // REVEAL //
   useEffect(() => {
-
-
-    console.log(window.location.href)
-    
+    console.log(window.location.href);
   }, []);
 
   return (
@@ -1126,10 +1123,11 @@ const Home = () => {
               <div className='banner-box-2 wow fadeInLeft' data-wow-delay='.5s'>
                 <div className='item-img'>
                   <img
-                    src='img/banner/banner5.png'
+                    src='img/banner/modiji.png'
                     width='309'
                     height='523'
                     alt='banner'
+                    style={{ 'margin-bottom': '-180px' }}
                   />
                 </div>
               </div>

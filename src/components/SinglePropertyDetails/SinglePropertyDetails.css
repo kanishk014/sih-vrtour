@@ -45,3 +45,10 @@
   background-color: #F58F3C !important;
   outline: 1px solid #F58F3C !important;
 }
+
+.print > h1 {
+  font: bold 100% sans-serif; 
+  letter-spacing: 0.5em; 
+  text-align: center; 
+  text-transform: uppercase;
+}

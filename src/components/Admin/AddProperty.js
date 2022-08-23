@@ -31,20 +31,6 @@ const AddProperty = () => {
     websiteUrl: '',
   });
 
-  const convertBase64 = (file) => {
-    return new Promise((resolve, reject) => {
-      const fileReader = new FileReader();
-      fileReader.readAsDataURL(file);
-
-      fileReader.onload = () => {
-        resolve(fileReader.result);
-      };
-      fileReader.onerror = (error) => {
-        reject(error);
-      };
-    });
-  };
-
   const handleChange = (event) => {
     setProperty({
       ...property,
@@ -61,7 +47,6 @@ const AddProperty = () => {
       .split(/\s*,\s*/);
 
     let trimmedPropertyImage = property.propertyImage.slice(22);
-    // console.log(trimmedPropertyImage);
 
     await axios
       .post('https://vrtour-sih.herokuapp.com/api/admin/addProperty', {
@@ -118,9 +103,9 @@ const AddProperty = () => {
           <FileBase64
             type='file'
             multiple={false}
-            onDone={({ base64 }) =>
-              setProperty({ ...property, propertyImage: base64 })
-            }
+            onDone={({ base64 }) => {
+              setProperty({ ...property, propertyImage: base64 });
+            }}
           />
           {/* <img src={propertyImage} /> */}
         </div>
@@ -299,7 +284,6 @@ const AddProperty = () => {
           <input
             type='text'
             name='latitude'
-            required
             value={property.latitude}
             onChange={handleChange}
           />
@@ -309,7 +293,6 @@ const AddProperty = () => {
           <input
             type='text'
             name='longitude'
-            required
             value={property.longitude}
             onChange={handleChange}
           />

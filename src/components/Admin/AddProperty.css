@@ -50,6 +50,11 @@
     box-shadow: 0 0 5px #33333355;
     outline: none;
 }
+.add-property .submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .add-property .submit-button button {
     margin-top: 30px;
     width: 200px;
@@ -59,18 +64,23 @@
     /* border-color: gray; */
 }
 
-@media screen and (max-width: 900px) {   
+@media screen and (max-width: 991px) {   
     .add-property .form-input{
         width: 100%;
     }
-
+    .modal {
+        padding-left: 0px !important;
+    }
     .add-property .form-input > h4{
         font-size: 20px;
     }
 }
 
-@media screen and (max-width: 760px) {
+@media screen and (max-width: 767px) {
     .add-property .form-input {    
         width: 100%
+    }
+    .modal .add-property {
+        padding: 0 !important;
     }
 }

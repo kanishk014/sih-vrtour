@@ -51,6 +51,11 @@
     box-shadow: 0 0 5px #33333355;
     outline: none;
 }
+.update-property .submit-button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .update-property .submit-button button {
     margin-top: 30px;
     width: 200px;
