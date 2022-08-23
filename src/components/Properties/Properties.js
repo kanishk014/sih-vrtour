@@ -33,7 +33,7 @@ const Properties = () => {
   console.log(window.location.search);
 
   const { loading, error, propertiesData } = fetchPropertyReducer;
-  console.log(propertiesData);
+  
 
   useEffect(() => {
     dispatch(fetchProperty());
@@ -427,7 +427,7 @@ const Properties = () => {
                     <div class='col-lg-12 col-md-12'>
                       <div class='item-shorting-box'>
                         <div class='shorting-title'>
-                          <h4 class='item-title'>Showing 1–6 of 12 results</h4>
+                          <h4 class='item-title'>Showing {propertiesData?.length} results</h4>
                         </div>
                         <div class='grid-button'>
                           <ul class='nav nav-tabs' role='tablist'>
