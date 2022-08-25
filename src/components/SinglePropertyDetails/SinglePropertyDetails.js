@@ -43,12 +43,12 @@ const SingleProperty = () => {
   const userToken = localStorage.getItem('userInfo')
     ? JSON.parse(localStorage.getItem('userInfo')).token
     : null;
-  const navigate = useNavigate();
-  useEffect(() => {
-    if (!userToken) {
-      window.location.replace('/login');
-    }
-  });
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   if (!userToken) {
+  //     window.location.replace('/login');
+  //   }
+  // });
 
   // const { id } = useParams();
 
@@ -72,31 +72,36 @@ const SingleProperty = () => {
     //   alert('Please enter amount');
     // } else {
     // alert(amount);
-    var options = {
-      key: 'rzp_test_3PxjsVZPtFxNvT',
-      key_secret: ' 0yEihUuQkxQrslsr4661GMj4',
-      amount: totalAmount * 100,
-      currency: 'INR',
-      name: 'VRTOUR',
-      description: 'Ticket Price',
-      handler: function () {
-        bookTicketCall();
-      },
-      prefill: {
-        name: 'VRTOUR Tester',
-        email: 'vrtour@tester.com',
-        contact: '9999108799',
-      },
-      notes: {
-        address: 'VR Tour Office',
-      },
-      theme: {
-        color: '#f58f3c',
-      },
-    };
-    var pay = new window.Razorpay(options);
-    pay.open();
-    // }
+    // useEffect(() => {
+    if (!userToken) {
+      window.location.replace('/login');
+    } else {
+      // });
+      var options = {
+        key: 'rzp_test_3PxjsVZPtFxNvT',
+        key_secret: ' 0yEihUuQkxQrslsr4661GMj4',
+        amount: totalAmount * 100,
+        currency: 'INR',
+        name: 'VRTOUR',
+        description: 'Ticket Price',
+        handler: function () {
+          bookTicketCall();
+        },
+        prefill: {
+          name: 'VRTOUR Tester',
+          email: 'vrtour@tester.com',
+          contact: '9999108799',
+        },
+        notes: {
+          address: 'VRTOUR Office',
+        },
+        theme: {
+          color: '#f58f3c',
+        },
+      };
+      var pay = new window.Razorpay(options);
+      pay.open();
+    }
   };
 
   const handleChange = (event) => {

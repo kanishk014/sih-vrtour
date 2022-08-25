@@ -63,7 +63,7 @@ const AddPost = () => {
           contact: '9999108799',
         },
         notes: {
-          address: 'Razorpay Corporate Office',
+          address: 'VRTOUR Office',
         },
         theme: {
           color: '#f58f3c',
