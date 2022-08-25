@@ -52,3 +52,98 @@
   text-align: center; 
   text-transform: uppercase;
 }
+
+#panorama iframe {
+  height: 750px;
+}
+
+@media screen and (max-width: 1269px){
+  #panorama iframe {
+    height: 680px;
+  }
+}
+
+@media screen and (max-width: 1199px){
+  #panorama iframe {
+    height: 570px;
+  }
+}
+
+@media screen and (max-width: 991px){
+  #panorama iframe {
+    height: 430px;
+  }
+}
+
+@media screen and (max-width: 767px){
+  #panorama iframe {
+    height: 320px;
+  }
+}
+
+@media screen and (max-width: 575px){
+  #panorama iframe {
+    height: 335px;
+  }
+}
+
+@media screen and (max-width: 545px){
+  #panorama iframe {
+    height: 315px;
+  }
+}
+
+@media screen and (max-width: 515px){
+  #panorama iframe {
+    height: 295px;
+  }
+}
+
+@media screen and (max-width: 485px){
+  #panorama iframe {
+    height: 275px;
+  }
+}
+
+@media screen and (max-width: 445px){
+  #panorama iframe {
+    height: 275px;
+  }
+}
+
+@media screen and (max-width: 400px){
+  #panorama iframe {
+    height: 235px;
+  }
+}
+@media screen and (max-width: 370px){
+  #panorama iframe {
+    height: 215px;
+  }
+  .nav.nav-pills .nav-item {
+    margin: 10px 5px 0 5px;
+  }
+  .nav.nav-pills .nav-item a {
+    padding: 8px 10px;
+    font-size: 14px;
+  }
+  .nav.nav-pills .nav-item a svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+@media screen and (max-width: 340px){
+  #panorama iframe {
+    height: 195px;
+  }
+}
+@media screen and (max-width: 310px){
+  #panorama iframe {
+    height: 175px;
+  }
+}
+@media screen and (max-width: 280px){
+  #panorama iframe {
+    height: 155px;
+  }
+}

@@ -477,10 +477,9 @@ const SingleProperty = () => {
                               src={
                                 propertyDetails?.feel360
                                   ? propertyDetails.feel360
-                                  : 'https://sushantpatial.github.io/VR/egjs2.html'
+                                  : 'https://sushantpatial.github.io/VR/tajmahal-360.html'
                               }
                               width='100%'
-                              height='600'
                               allowFullScreen
                               allowvr='yes'
                               allow='xr-spatial-tracking; vr; xr; accelerometer; magnetometer; gyroscope; webvr; webxr; encrypted-media; picture-in-picture'
@@ -498,7 +497,7 @@ const SingleProperty = () => {
                               src={
                                 propertyDetails?.vrVideo
                                   ? propertyDetails.vrVideo
-                                  : 'https://sushantpatial.github.io/VR/egjs.html'
+                                  : 'https://sushantpatial.github.io/VR/tajmahal-vr.html'
                               }
                               width='100%'
                               height='600'
@@ -551,7 +550,7 @@ const SingleProperty = () => {
                             <tr>
                               <td className='item-bold'>Timings</td>
                               <td>{propertyDetails?.timings}</td>
-                              <td className='item-bold'>Aarti Time</td>
+                              <td className='item-bold'>Prayer Time</td>
                               <td>{propertyDetails?.aartiTime}</td>
                             </tr>
                             <tr>
@@ -630,6 +629,7 @@ const SingleProperty = () => {
                           <div className='play-button'>
                             <div className='item-icon'>
                               <a
+                                target='_blank'
                                 href={propertyDetails?.video}
                                 className='play-btn play-btn-big'
                               >
@@ -835,7 +835,7 @@ const SingleProperty = () => {
                             </div>
                           </div>
                         </div>
-                        <div className='nearby-box nearby-box-3'>
+                        {/* <div className='nearby-box nearby-box-3'>
                           <div className='media d-flex'>
                             <div className='flex-shrink-0'>
                               <div className='item-icon'>
@@ -930,7 +930,7 @@ const SingleProperty = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                       <div
                         className='product-video'

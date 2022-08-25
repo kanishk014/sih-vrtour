@@ -314,7 +314,7 @@ const UpdateProperty = () => {
           <input
             type='text'
             name='feel360'
-            required
+            // required
             value={property.feel360}
             onChange={handleChange}
           />
@@ -324,7 +324,7 @@ const UpdateProperty = () => {
           <input
             type='text'
             name='vrVideo'
-            required
+            // required
             value={property.vrVideo}
             onChange={handleChange}
           />
