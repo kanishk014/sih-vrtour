@@ -247,7 +247,7 @@ const SingleProperty = () => {
                             className='heading-btn item-btn2'
                             style={{ cursor: 'pointer' }}
                           >
-                            Book Tickets
+                            Book Ticket
                           </div>
                         </div>
                         {/* <Container>
