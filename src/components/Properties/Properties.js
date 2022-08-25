@@ -28,12 +28,13 @@ const Properties = () => {
   const [category, setCategory] = useState(
     window.location.search.split('=')[1]
   );
-  const [mapUrl, setMapUrl] = useState('https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5890.790470230743!2d77.27840129630388!3d28.609226178745843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce35b9975b1fb%3A0x69a09f265ef3b22a!2sAkshardham!5e0!3m2!1sen!2sin!4v1648531026898!5m2!1sen!2sin');
+  const [mapUrl, setMapUrl] = useState(
+    'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d5890.790470230743!2d77.27840129630388!3d28.609226178745843!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce35b9975b1fb%3A0x69a09f265ef3b22a!2sAkshardham!5e0!3m2!1sen!2sin!4v1648531026898!5m2!1sen!2sin'
+  );
   const navigate = useNavigate();
   console.log(window.location.search);
 
   const { loading, error, propertiesData } = fetchPropertyReducer;
-  
 
   useEffect(() => {
     dispatch(fetchProperty());
@@ -427,7 +428,9 @@ const Properties = () => {
                     <div class='col-lg-12 col-md-12'>
                       <div class='item-shorting-box'>
                         <div class='shorting-title'>
-                          <h4 class='item-title'>Showing {propertiesData?.length} results</h4>
+                          <h4 class='item-title'>
+                            Showing {propertiesData?.length} results
+                          </h4>
                         </div>
                         <div class='grid-button'>
                           <ul class='nav nav-tabs' role='tablist'>
@@ -467,7 +470,10 @@ const Properties = () => {
                             return (
                               <div
                                 class='col-xl-6 col-lg-6 col-md-6'
-                                key={currEle._id} onMouseEnter = {() => setMapUrl(currEle.mapLocation)}
+                                key={currEle._id}
+                                onMouseEnter={() =>
+                                  setMapUrl(currEle.mapLocation)
+                                }
                               >
                                 <div
                                   class='property-box2 wow animated fadeInUp'
@@ -490,6 +496,7 @@ const Properties = () => {
                                       alt='blog'
                                       style={{
                                         height: '300px',
+                                        width: '100%',
                                       }}
                                     />
 

@@ -1123,7 +1123,7 @@ const Home = () => {
               <div className='banner-box-2 wow fadeInLeft' data-wow-delay='.5s'>
                 <div className='item-img'>
                   <img
-                    src='img/banner/modiji.png'
+                    src='img/banner/banner5.png'
                     width='309'
                     height='523'
                     alt='banner'
