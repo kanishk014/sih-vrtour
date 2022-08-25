@@ -56,7 +56,10 @@ class List extends React.Component {
           this.setState({ error });
         }
       );
-    window.location.reload();
+
+    setTimeout(function () {
+      window.location.reload(false);
+    }, 2000);
   }
 
   render() {
