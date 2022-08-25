@@ -5,16 +5,13 @@ class MessageParser {
   }
 
   parse(message) {
-    if(message.toLowerCase().includes('property')) {
-      this.actionProvider.handleProperty();
-    }
-    else if(message.toLowerCase().includes('contact')){
+    if (message.toLowerCase().includes('pilgrimage')) {
+      this.actionProvider.handlePilgrimage();
+    } else if (message.toLowerCase().includes('contact')) {
       this.actionProvider.handleContact();
-    }
-    else if(message.toLowerCase().includes('thanks')){
+    } else if (message.toLowerCase().includes('thanks')) {
       this.actionProvider.handleThanks();
-    }
-    else{
+    } else {
       this.actionProvider.anything();
     }
   }

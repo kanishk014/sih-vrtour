@@ -66,6 +66,18 @@
   margin-top: -100px;
 }
 
+.km-iframe-dimension-with-popup {
+  height: 548px !important;
+  width: 338px !important; 
+}
+
+.mck-box .show, .mck-box .vis, .mck-msg-preview.vis, .mck-sidebox-launcher .vis, .mck-sidebox-launcher.vis {
+  display: none !important;
+}
+.vis {
+  display: none !important;
+}
+
 @media screen and (max-width: 600px) {
   .revealUp {
     font-size: 40px;

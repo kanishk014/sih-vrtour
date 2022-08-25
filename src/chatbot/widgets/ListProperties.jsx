@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-const ListProperties = () => {
+const ListPilgrimages = () => {
   return (
     <div>
-      <a href="http://localhost:3000/properties?category=buy">Properties</a> 
+      <a href='https://vrtourpilgrimage.netlify.app/pilgrimage'>Pilgrimages</a>
     </div>
-  )
-}
+  );
+};
 
-export default ListProperties
+export default ListPilgrimages;

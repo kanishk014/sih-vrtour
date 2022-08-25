@@ -7,6 +7,7 @@ import Chatbotbtn from '../../chatbot/Chatbotbtn';
 import './home.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import KommunicateChat from '../../chat';
 
 const Home = () => {
   const [scrollState, setScrollState] = useState(false);
@@ -31,6 +32,7 @@ const Home = () => {
 
   return (
     <div style={{ width: '100%' }}>
+      <KommunicateChat />
       <Navbar />
       <section className='main-banner-wrap1 main-banner-wrap6 motion-effects-wrap adj-height'>
         <div className='shape-element'>
@@ -1212,11 +1214,9 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </section>{' '}
+      </section>
       <ScrollButton scrollState={scrollState} />
-      <div>
-        <Chatbotbtn />
-      </div>
+      <div>{/* <KommunicateChat /> */}</div>
       <Footer />
     </div>
   );
