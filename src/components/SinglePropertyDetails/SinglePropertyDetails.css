@@ -4,10 +4,14 @@
   margin: 0;
 }
 
-.single-list-price{
+.single-list-price {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+}
+.single-list-price .heading-button .heading-btn {
+  width: 130px;
+  font-size: 13px;
 }
 
 .modal {
@@ -171,4 +175,7 @@
 
 .md-calendar-booking .mbsc-timegrid-container {
   top: 30px;
+}
+.mbsc-calendar-label-text {
+  text-align: center;
 }

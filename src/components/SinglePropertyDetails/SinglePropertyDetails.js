@@ -22,6 +22,7 @@ import { useNavigate } from 'react-router-dom';
 import '@mobiscroll/react/dist/css/mobiscroll.min.css';
 import { Datepicker, Page, getJson, setOptions } from '@mobiscroll/react';
 import axios from 'axios';
+import $ from 'jquery';
 
 setOptions({
   theme: 'ios',
@@ -425,7 +426,7 @@ const SingleProperty = () => {
                         <div ref={componentRef} className='add-property'>
                           {/* integrating calender to book slots */}
                           <Page className='md-calendar-booking'>
-                            <div className='mbsc-form-group'>
+                            {/* <div className='mbsc-form-group'>
                               <div className='mbsc-form-group-title'>
                                 Single date & appointment booking
                               </div>
@@ -439,19 +440,23 @@ const SingleProperty = () => {
                                 pages='auto'
                                 onPageLoading={onPageLoadingSingle}
                               />
-                            </div>
+                            </div> */}
                             <div className='mbsc-form-group'>
+                              {/* <button onClick={opencalendar()}>
+                                Open Calendar
+                              </button> */}
                               <div className='mbsc-form-group-title'>
-                                Select date & time
+                                Select date
                               </div>
                               <Datepicker
                                 display='inline'
                                 controls={['calendar']}
+                                inputComponent='input'
+                                inputProps={{
+                                  placeholder: 'Please Select...',
+                                }}
                                 min={min}
                                 max={max}
-                                minTime='08:00'
-                                maxTime='19:59'
-                                stepMinute={60}
                                 width={null}
                                 labels={datetimeLabels}
                                 invalid={datetimeInvalid}
@@ -529,7 +534,6 @@ const SingleProperty = () => {
                                 ₹ {totalAmount}
                               </div>
                             </div>
-                            {/* </form> */}
                             <div className='print'>
                               <div className='submit-button'>
                                 <button
@@ -558,79 +562,6 @@ const SingleProperty = () => {
                           </form>
                         </div>
                       </div>
-
-                      {/* print */}
-                      {/* <div
-                        ref={componentRef}
-                        className='add-property'
-                        style={{ display: 'none' }}
-                      >
-                        <h1>Book Tickets</h1>
-                        <form
-                          method='post'
-                          // onSubmit={handleSubmit}
-                        >
-                          <div className='form-input'>
-                            <h4>Name:</h4>
-                            <input
-                              type='text'
-                              name='name'
-                              placeholder='Enter name'
-                              required
-                              value={booking.name}
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div className='form-input'>
-                            <h4>Date: </h4>
-                            <input
-                              type='date'
-                              name='date'
-                              placeholder='Enter date of visiting'
-                              required
-                              value={booking.date}
-                              onChange={handleChange}
-                            />
-                          </div>
-                          <div className='form-input'>
-                            <h4>Mobile Number:</h4>
-                            <PhoneInput
-                              placeholder='Enter phone number'
-                              name='mobileNo'
-                              required
-                              value={phone}
-                              onChange={setPhone}
-                            />
-                          </div>
-                          <div className='form-input'>
-                            <h4>Number of Person:</h4>
-                            <input
-                              type='number'
-                              name='noOfPersons'
-                              placeholder='Number of person visiting'
-                              min='0'
-                              required
-                              value={booking.noOfPersons}
-                              onChange={handleChange}
-                              onInput={personChange}
-                            />
-                          </div>
-                          <div className='form-input'>
-                            <h4>Nationality:</h4>
-                            <select value={nationality} onChange={selectChange}>
-                              <option value='none' selected disabled hidden>
-                                Select nationality
-                              </option>
-                              <option value='1'>Indian</option>
-                              <option value='2'>Foreigner</option>
-                            </select>
-                          </div>
-                          <div className='form-input'>
-                            <h4>Total Amount: </h4>
-                            <div className='total-amount'>₹ {totalAmount}</div>
-                          </div>
-                        </form>
-                      </div> */}
                     </Modal.Body>
                   </Modal>
 
@@ -1277,7 +1208,7 @@ const SingleProperty = () => {
                         <ul className='wid-contact-button'>
                           <li>
                             <Link
-                              to={`/schedulemeeting?id=${propertyDetails?.userId}`}
+                              to={`/schedulemeeting?id=${propertyDetails?._id}`}
                             >
                               <i className='fas fa-comment'></i>Schedule Meeting
                             </Link>

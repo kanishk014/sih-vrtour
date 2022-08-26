@@ -1,0 +1,19 @@
+.banner-search-wrap-2 {
+    width: 100%;
+}
+#near-by {
+    color: #f58f3c;
+    margin-left: 20px;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px #E8E8E8 solid;
+}
+.near-by-active {
+    background-color: #f58f3c;
+    color: #fff !important;
+}

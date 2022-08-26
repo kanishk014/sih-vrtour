@@ -8,6 +8,10 @@ import './home.css';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import KommunicateChat from '../../chat';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import axios from 'axios';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Home = () => {
   const [scrollState, setScrollState] = useState(false);
@@ -29,6 +33,34 @@ const Home = () => {
   useEffect(() => {
     console.log(window.location.href);
   }, []);
+
+  // Fetching properties
+  const [properties, setProperties] = useState([]);
+  useEffect(function () {
+    const apiUrl = 'https://vrtour-sih.herokuapp.com/api/property/get';
+
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setProperties(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const [searchText, setSearchText] = useState('');
+  const [listHidden, setListHidden] = useState(true);
+
+  // Search filter
+  function searchChange(e) {
+    setSearchText(e.target.value);
+    setListHidden(false);
+    if (e.target.value === '' || e.target.value.replace(/\s/g, '') == '') {
+      setListHidden(true);
+    }
+  }
 
   return (
     <div style={{ width: '100%' }}>
@@ -117,20 +149,44 @@ const Home = () => {
                 </div>
 
                 <div className='banner-search-wrap'>
-                  <div className='rld-main-search'>
-                    <div className='row'>
+                  <div className='main-search'>
+                    <input
+                      type='text'
+                      name='search'
+                      className='searchbar'
+                      onChange={searchChange}
+                      value={searchText}
+                      placeholder='Enter Keyword here...'
+                    ></input>
+                    <button>
+                      <span className='search-text'>SEARCH</span>
+                      <SearchIcon />
+                    </button>
+                  </div>
+                  <List className='search-list' hidden={listHidden}>
+                    {properties
+                      .filter((productsFound) => {
+                        return productsFound.title
+                          .toLowerCase()
+                          .includes(searchText.toLowerCase());
+                      })
+                      .slice(0, 5)
+                      .map((property, index) => {
+                        return (
+                          <ListItem key={index} className='list-item'>
+                            <Link to={`/site?id=${property._id}`}>
+                              {property.title}
+                            </Link>
+                          </ListItem>
+                        );
+                      })}
+                  </List>
+                  {/* <div className='row'>
                       <div className='col-sm-12'>
                         <div className='box'>
                           <div className='box-top'>
                             <div className='rld-single-input item'>
-                              <input
-                                style={{
-                                  width: 'fit-content',
-                                  padding: '0 20px',
-                                }}
-                                type='text'
-                                placeholder='Enter Keyword here...'
-                              />
+                              
                             </div>
                             <div className='rld-single-select ml-22'>
                               <select
@@ -353,7 +409,7 @@ const Home = () => {
                                     </li>
                                   </ul>
                                 </div>
-                              </div>
+                              </div> 
                               <div
                                 className='filter-button'
                                 style={{ justifyContent: 'center' }}
@@ -366,21 +422,18 @@ const Home = () => {
                                   <i className='fas fa-redo-alt'></i>
                                 </Link>
                               </div>
-                            </div>
+                            </div> 
                           </div>
                         </div>
                       </div>
-                    </div>
-                  </div>
+                    </div> */}
                   <p className='item-para wow fadeInUp' data-wow-delay='.4s'>
                     Put your
                     <span className='banner-p'>
                       {' '}
                       heart, mind, and soul
                     </span>{' '}
-                    into even your
-                    <br></br>
-                    smallest acts.
+                    into even your smallest acts.
                     {/* <span className='banner-p'> </span> */}
                     <span className='item-shape'>
                       <img

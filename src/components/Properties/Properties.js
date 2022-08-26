@@ -2,12 +2,63 @@ import React, { useEffect, useState } from 'react';
 import Footer from '../Footer';
 import Navbar from '../Navbar';
 import Data from '../../Apis/propertiesApi';
+import WifiTetheringIcon from '@mui/icons-material/WifiTethering';
 import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProperty } from '../../store/actions/propertiesAction';
 import ScrollButton from '../scrollToTop';
+// import { distance } from './useLocationDistance.js';
+import './Properties.css';
+import axios from 'axios';
 
 const Properties = () => {
+  const [locationPosition, setLocationPosition] = useState('');
+  const [locationToggle, setLocationToggle] = useState(false);
+  const [getLocationProperty, setGetLocationProperty] = useState();
+  let locationIsSet = false;
+  // const [latLong, setLatLong] = useState();
+  // const [id, setId] = useState(window.location.search.split('=')[1]);
+
+  function toggleLocation() {
+    if (locationToggle) {
+      setLocationToggle(false);
+      document.getElementById('near-by').classList.remove('near-by-active');
+    } else {
+      if (!locationIsSet) {
+        if (!navigator.geolocation) {
+          alert('Geolocation is not supported by your browser');
+        } else {
+          navigator.geolocation.getCurrentPosition(function (position) {
+            axios
+              .post(
+                `https://vrtour-sih.herokuapp.com/api/property/getNearbyPlaces`,
+                {
+                  latitude: position.coords.latitude,
+                  longitude: position.coords.longitude,
+                }
+              )
+              .then((response) => {
+                setGetLocationProperty(response.data.data);
+              });
+
+            setLocationToggle(true);
+            document.getElementById('near-by').classList.add('near-by-active');
+          });
+
+          // navigator.geolocation.getCurrentPosition((position) => {
+          //   setLocationPosition({
+          //     defaultLatitude: position.coords.latitude,
+          //     defaultLongitude: position.coords.longitude,
+          //   });
+
+          // });
+        }
+        locationIsSet = true;
+      }
+    }
+  }
+  // team name (team id) - problem statement
+
   const [scrollState, setScrollState] = useState(false);
   useEffect(() => {
     window.addEventListener('scroll', (e) => {
@@ -192,6 +243,9 @@ const Properties = () => {
                           <Link to='/pilgrimage' class='filter-btn1 search-btn'>
                             Search<i class='fas fa-search'></i>
                           </Link>
+                          <div id='near-by' onClick={toggleLocation}>
+                            <WifiTetheringIcon />
+                          </div>
                         </div>
                         <div
                           class={`explore__form-checkbox-list explore__form-checkbox-list2 full-filter ${
@@ -428,9 +482,18 @@ const Properties = () => {
                     <div class='col-lg-12 col-md-12'>
                       <div class='item-shorting-box'>
                         <div class='shorting-title'>
-                          <h4 class='item-title'>
+                          {/* <h4 class='item-title'>
                             Showing {propertiesData?.length} results
-                          </h4>
+                          </h4> */}
+                          {!locationToggle ? (
+                            <h4 class='item-title'>
+                              Showing {propertiesData?.length} results
+                            </h4>
+                          ) : (
+                            <h4 class='item-title'>
+                              Showing {getLocationProperty?.length} results
+                            </h4>
+                          )}
                         </div>
                         <div class='grid-button'>
                           <ul class='nav nav-tabs' role='tablist'>
@@ -465,85 +528,168 @@ const Properties = () => {
                         id='mylisting'
                         role='tabpanel'
                       >
-                        <div class='row justify-content-center'>
-                          {propertiesData?.map((currEle) => {
-                            return (
-                              <div
-                                class='col-xl-6 col-lg-6 col-md-6'
-                                key={currEle._id}
-                                onMouseEnter={() =>
-                                  setMapUrl(currEle.mapLocation)
-                                }
-                              >
+                        {!locationToggle ? (
+                          <div class='row justify-content-center'>
+                            {propertiesData?.map((currEle) => {
+                              return (
                                 <div
-                                  class='property-box2 wow animated fadeInUp'
-                                  data-wow-delay='.3s'
-                                  onClick={() => {
-                                    navigate(`/site?id=${currEle._id}`);
-                                  }}
-                                  style={{ cursor: 'pointer' }}
+                                  class='col-xl-6 col-lg-6 col-md-6'
+                                  key={currEle._id}
+                                  onMouseEnter={() =>
+                                    setMapUrl(currEle.mapLocation)
+                                  }
                                 >
                                   <div
-                                    class='item-img'
-                                    style={{
-                                      height: '300px',
-                                      width: '100%',
-                                      overflow: 'hidden',
+                                    class='property-box2 wow animated fadeInUp'
+                                    data-wow-delay='.3s'
+                                    onClick={() => {
+                                      navigate(`/site?id=${currEle._id}`);
                                     }}
+                                    style={{ cursor: 'pointer' }}
                                   >
-                                    <img
-                                      src={currEle.propertyImage}
-                                      alt='blog'
+                                    <div
+                                      class='item-img'
                                       style={{
                                         height: '300px',
                                         width: '100%',
+                                        overflow: 'hidden',
                                       }}
-                                    />
+                                    >
+                                      <img
+                                        src={currEle.propertyImage}
+                                        alt='blog'
+                                        style={{
+                                          height: '300px',
+                                          width: '100%',
+                                        }}
+                                      />
 
-                                    {/* <div class='item-category-box1'>
+                                      {/* <div class='item-category-box1'>
                                       <div class='item-category'>
                                         {currEle.type}
                                       </div>
                                     </div> */}
-                                    <div class='rent-price'>
-                                      <div class='item-price'>
-                                        {currEle.price == 0 ? (
-                                          <>
-                                            Free
-                                            <span>
-                                              <i>/</i>person
-                                            </span>
-                                          </>
-                                        ) : (
-                                          <>
-                                            ₹ {currEle.price}
-                                            <span>
-                                              <i>/</i>person
-                                            </span>
-                                          </>
-                                        )}
+                                      <div class='rent-price'>
+                                        <div class='item-price'>
+                                          {currEle.price == 0 ? (
+                                            <>
+                                              Free
+                                              <span>
+                                                <i>/</i>person
+                                              </span>
+                                            </>
+                                          ) : (
+                                            <>
+                                              ₹ {currEle.price}
+                                              <span>
+                                                <i>/</i>person
+                                              </span>
+                                            </>
+                                          )}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/* <div class='item-category10'>
+                                    {currEle.type}
+                                  </div> */}
+                                    <div class='item-content'>
+                                      <div class='verified-area'>
+                                        <h3 class='item-title'>
+                                          {currEle.title}
+                                        </h3>
+                                      </div>
+                                      <div class='location-area'>
+                                        <i class='flaticon-maps-and-flags'></i>
+                                        {currEle.address}
                                       </div>
                                     </div>
                                   </div>
-                                  {/* <div class='item-category10'>
+                                </div>
+                              );
+                            })}
+                          </div>
+                        ) : (
+                          <div class='row justify-content-center'>
+                            {getLocationProperty?.map((currEle) => {
+                              return (
+                                <div
+                                  class='col-xl-6 col-lg-6 col-md-6'
+                                  key={currEle._id}
+                                  onMouseEnter={() =>
+                                    setMapUrl(currEle.mapLocation)
+                                  }
+                                >
+                                  <div
+                                    class='property-box2 wow animated fadeInUp'
+                                    data-wow-delay='.3s'
+                                    onClick={() => {
+                                      navigate(`/site?id=${currEle._id}`);
+                                    }}
+                                    style={{ cursor: 'pointer' }}
+                                  >
+                                    <div
+                                      class='item-img'
+                                      style={{
+                                        height: '300px',
+                                        width: '100%',
+                                        overflow: 'hidden',
+                                      }}
+                                    >
+                                      <img
+                                        src={currEle.propertyImage}
+                                        alt='blog'
+                                        style={{
+                                          height: '300px',
+                                          width: '100%',
+                                        }}
+                                      />
+
+                                      {/* <div class='item-category-box1'>
+                                      <div class='item-category'>
+                                        {currEle.type}
+                                      </div>
+                                    </div> */}
+                                      <div class='rent-price'>
+                                        <div class='item-price'>
+                                          {currEle.price == 0 ? (
+                                            <>
+                                              Free
+                                              <span>
+                                                <i>/</i>person
+                                              </span>
+                                            </>
+                                          ) : (
+                                            <>
+                                              ₹ {currEle.price}
+                                              <span>
+                                                <i>/</i>person
+                                              </span>
+                                            </>
+                                          )}
+                                        </div>
+                                      </div>
+                                    </div>
+                                    {/* <div class='item-category10'>
                                     {currEle.type}
                                   </div> */}
-                                  <div class='item-content'>
-                                    <div class='verified-area'>
-                                      <h3 class='item-title'>
-                                        {currEle.title}
-                                      </h3>
-                                    </div>
-                                    <div class='location-area'>
-                                      <i class='flaticon-maps-and-flags'></i>
-                                      {currEle.address}
+                                    <div class='item-content'>
+                                      <div class='verified-area'>
+                                        <h3 class='item-title'>
+                                          {currEle.title}
+                                        </h3>
+                                      </div>
+                                      <div class='location-area'>
+                                        <i class='flaticon-maps-and-flags'></i>
+                                        {currEle.address}
+                                      </div>
                                     </div>
                                   </div>
                                 </div>
-                              </div>
-                            );
-                          })}
-                        </div>
+                              );
+                            })}
+                          </div>
+                        )}
+
                         {/* <div class='pagination-style-1'>
                           <ul class='pagination'>
                             <li class='page-item'>
