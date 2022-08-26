@@ -995,28 +995,30 @@ const Home = () => {
                 className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.3s'
               >
-                <div className='item-img'>
-                  <Link to='/pilgrimage'>
-                    <img
-                      src='img/blog/location-1.jpg'
-                      alt='location'
-                      width='424'
-                      height='280'
-                    />
-                  </Link>
-                </div>
-                <div className='item-content'>
-                  <div className='content-body'>
-                    <div className='item-title'>
-                      <h3>
-                        <Link to='/pilgrimage'>Delhi</Link>
-                      </h3>
-                    </div>
-                    <div className='item-category'>
-                      <span>3 Locations</span>
+                <Link to='/pilgrimage'>
+                  <div className='item-img'>
+                    <Link to='/pilgrimage'>
+                      <img
+                        src='img/blog/location-1.jpg'
+                        alt='location'
+                        width='424'
+                        height='280'
+                      />
+                    </Link>
+                  </div>
+                  <div className='item-content'>
+                    <div className='content-body'>
+                      <div className='item-title'>
+                        <h3>
+                          <Link to='/pilgrimage'>Delhi</Link>
+                        </h3>
+                      </div>
+                      <div className='item-category'>
+                        <span>3 Locations</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className='col-lg-4 col-md-6'>
@@ -1024,28 +1026,30 @@ const Home = () => {
                 className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.4s'
               >
-                <div className='item-img'>
-                  <Link to='/pilgrimage'>
-                    <img
-                      src='img/blog/location-2.jpg'
-                      alt='location'
-                      width='424'
-                      height='280'
-                    />
-                  </Link>
-                </div>
-                <div className='item-content'>
-                  <div className='content-body'>
-                    <div className='item-title'>
-                      <h3>
-                        <Link to='/pilgrimage'>Mumbai</Link>
-                      </h3>
-                    </div>
-                    <div className='item-category'>
-                      <span>6 Locations</span>
+                <Link to='/pilgrimage'>
+                  <div className='item-img'>
+                    <Link to='/pilgrimage'>
+                      <img
+                        src='img/blog/location-2.jpg'
+                        alt='location'
+                        width='424'
+                        height='280'
+                      />
+                    </Link>
+                  </div>
+                  <div className='item-content'>
+                    <div className='content-body'>
+                      <div className='item-title'>
+                        <h3>
+                          <Link to='/pilgrimage'>Mumbai</Link>
+                        </h3>
+                      </div>
+                      <div className='item-category'>
+                        <span>6 Locations</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className='col-lg-4 col-md-6'>
@@ -1053,28 +1057,30 @@ const Home = () => {
                 className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.5s'
               >
-                <div className='item-img'>
-                  <Link to='/pilgrimage'>
-                    <img
-                      src='img/blog/location-3.jpg'
-                      alt='location'
-                      width='424'
-                      height='280'
-                    />
-                  </Link>
-                </div>
-                <div className='item-content'>
-                  <div className='content-body'>
-                    <div className='item-title'>
-                      <h3>
-                        <Link to='/pilgrimage'>Bangalore</Link>
-                      </h3>
-                    </div>
-                    <div className='item-category'>
-                      <span>5 Locations</span>
+                <Link to='/pilgrimage'>
+                  <div className='item-img'>
+                    <Link to='/pilgrimage'>
+                      <img
+                        src='img/blog/location-3.jpg'
+                        alt='location'
+                        width='424'
+                        height='280'
+                      />
+                    </Link>
+                  </div>
+                  <div className='item-content'>
+                    <div className='content-body'>
+                      <div className='item-title'>
+                        <h3>
+                          <Link to='/pilgrimage'>Bangalore</Link>
+                        </h3>
+                      </div>
+                      <div className='item-category'>
+                        <span>5 Locations</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
@@ -1084,28 +1090,30 @@ const Home = () => {
                 className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.6s'
               >
-                <div className='item-img'>
-                  <Link to='/pilgrimage'>
-                    <img
-                      src='img/blog/location-4.jpg'
-                      alt='location'
-                      width='424'
-                      height='280'
-                    />
-                  </Link>
-                </div>
-                <div className='item-content'>
-                  <div className='content-body'>
-                    <div className='item-title'>
-                      <h3>
-                        <Link to='/pilgrimage'>Punjab</Link>
-                      </h3>
-                    </div>
-                    <div className='item-category'>
-                      <span>8 Locations</span>
+                <Link to='/pilgrimage'>
+                  <div className='item-img'>
+                    <Link to='/pilgrimage'>
+                      <img
+                        src='img/blog/location-4.jpg'
+                        alt='location'
+                        width='424'
+                        height='280'
+                      />
+                    </Link>
+                  </div>
+                  <div className='item-content'>
+                    <div className='content-body'>
+                      <div className='item-title'>
+                        <h3>
+                          <Link to='/pilgrimage'>Punjab</Link>
+                        </h3>
+                      </div>
+                      <div className='item-category'>
+                        <span>8 Locations</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
             <div className='col-lg-8 col-md-8'>
@@ -1113,28 +1121,30 @@ const Home = () => {
                 className='location-box3 location-box4 wow zoomIn'
                 data-wow-delay='.7s'
               >
-                <div className='item-img'>
-                  <Link to='/pilgrimage'>
-                    <img
-                      src='img/blog/location-5.jpg'
-                      alt='location'
-                      width='846'
-                      height='280'
-                    />
-                  </Link>
-                </div>
-                <div className='item-content'>
-                  <div className='content-body'>
-                    <div className='item-title'>
-                      <h3>
-                        <Link to='/pilgrimage'>Kolkata</Link>
-                      </h3>
-                    </div>
-                    <div className='item-category'>
-                      <span>2 Locations</span>
+                <Link to='/pilgrimage'>
+                  <div className='item-img'>
+                    <Link to='/pilgrimage'>
+                      <img
+                        src='img/blog/location-5.jpg'
+                        alt='location'
+                        width='846'
+                        height='280'
+                      />
+                    </Link>
+                  </div>
+                  <div className='item-content'>
+                    <div className='content-body'>
+                      <div className='item-title'>
+                        <h3>
+                          <Link to='/pilgrimage'>Kolkata</Link>
+                        </h3>
+                      </div>
+                      <div className='item-category'>
+                        <span>2 Locations</span>
+                      </div>
                     </div>
                   </div>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
