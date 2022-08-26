@@ -91,9 +91,9 @@ const Navbar = () => {
         <li>
           <Link to='/schedule'>Scheduled Meetings</Link>
         </li>
-        <li>
+        {/* <li>
           <Link to='/scheduledmeetings'>Tours Scheduled</Link>
-        </li>
+        </li> */}
         <li>
           <Link to='/' onClick={logoutHandle}>
             Log Out

@@ -26,9 +26,25 @@ const Schedule = () => {
 
   useEffect(() => {
     dispatch(fetchMeetingCreated(cId));
-
-    console.log(meetCreateData);
   }, [dispatch]);
+
+  // function getPropertyData(id) {
+  //   return new Promise(async (resolve, reject) => {
+  //     const result = await axios.get(
+  //       `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+  //     );
+
+  //     if (result) {
+  //       resolve(result);
+  //     } else {
+  //       reject('Something went wrong');
+  //     }
+  //   });
+  // }
+
+  // setTimeout(function () {
+  //   console.log(meetCreateData[0]);
+  // }, 2000);
 
   return (
     <div>
@@ -64,15 +80,19 @@ const Schedule = () => {
                 <Message variant={'danger'}>{error}</Message>
               ) : (
                 meetCreateData?.map((item) => {
+                  // setPropertyDetails(getPropertyData(item.recieverId));
+                  // let propertyData = await getPropertyData(item.recieverId);
+                  // console.log('prper: ', propertyData.data);
+
                   return (
                     <div
                       class='property-box2 wow animated fadeInUp'
                       data-wow-delay='.3s'
                     >
                       <div class='item-img' style={{ width: 'fitContent' }}>
-                        <Link to='/singleproperty'>
+                        <Link to='/site?id=6303ac4513f90b1bbe815ff8'>
                           <img
-                            src='img/blog/blog4.jpg'
+                            src='https://vrtour-sih.herokuapp.com/api/property/getImage/Taj-pilgrimage-1661405356197'
                             alt='blog'
                             width='510'
                             height='340'
@@ -118,14 +138,14 @@ const Schedule = () => {
                       <div class='item-content' style={{ width: 'fitContent' }}>
                         <div class='verified-area'>
                           <h3 class='item-title'>
-                            <Link to='/singleproperty'>
-                              Family House For Buy
+                            <Link to='/site?id=6303ac4513f90b1bbe815ff8'>
+                              Taj Mahal
                             </Link>
                           </h3>
                         </div>
                         <div class='location-area'>
-                          <i class='flaticon-maps-and-flags'></i>Downey,
-                          California
+                          <i class='flaticon-maps-and-flags'></i>Dharmapuri,
+                          Forest Colony, Tajganj, Agra, Uttar Pradesh 282001
                         </div>
                         <div class='item-categoery3'>
                           <ul>

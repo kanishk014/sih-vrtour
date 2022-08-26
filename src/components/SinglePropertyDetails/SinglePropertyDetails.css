@@ -18,6 +18,11 @@
   z-index: 1000000 !important;
   
 }
+.single-list-price .heading-button .heading-btn {
+  width: 130px;
+  font-size: 13px;
+  text-align: center;
+}
 /* .modal .modal-content {
  
 } */

@@ -10,6 +10,10 @@ import ScrollButton from '../scrollToTop';
 // import { distance } from './useLocationDistance.js';
 import './Properties.css';
 import axios from 'axios';
+import { Tooltip } from '@material-ui/core';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import SearchIcon from '@mui/icons-material/Search';
 
 const Properties = () => {
   const [locationPosition, setLocationPosition] = useState('');
@@ -90,6 +94,35 @@ const Properties = () => {
   useEffect(() => {
     dispatch(fetchProperty());
   }, [dispatch]);
+
+  // Fetching properties
+  const [properties, setProperties] = useState([]);
+  useEffect(function () {
+    const apiUrl = 'https://vrtour-sih.herokuapp.com/api/property/get';
+
+    axios
+      .get(apiUrl)
+      .then((res) => {
+        setProperties(res.data);
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  const [searchText, setSearchText] = useState('');
+  const [listHidden, setListHidden] = useState(true);
+
+  // Search filter
+  function searchChange(e) {
+    setSearchText(e.target.value);
+    setListHidden(false);
+    if (e.target.value === '' || e.target.value.replace(/\s/g, '') == '') {
+      setListHidden(true);
+    }
+  }
+
   return (
     <div>
       <Navbar />
@@ -127,12 +160,41 @@ const Properties = () => {
             <div class='row'>
               <div class='col-xl-6'>
                 <form action='' class='map-form' style={{ marginTop: '30px' }}>
-                  <input
-                    type='text'
-                    class='form-control'
-                    placeholder='What are you looking for?'
-                  />
-                  <div
+                  <div className='banner-search-wrap banner-search-wrap-2'>
+                    <div className='main-search'>
+                      <input
+                        type='text'
+                        name='search'
+                        className='searchbar'
+                        onChange={searchChange}
+                        value={searchText}
+                        placeholder='Enter Keyword here...'
+                      ></input>
+                      {/* <button>
+                        <span className='search-text'>SEARCH</span>
+                        <SearchIcon />
+                      </button> */}
+                    </div>
+                    <List className='search-list' hidden={listHidden}>
+                      {properties
+                        .filter((productsFound) => {
+                          return productsFound.title
+                            .toLowerCase()
+                            .includes(searchText.toLowerCase());
+                        })
+                        .slice(0, 5)
+                        .map((property, index) => {
+                          return (
+                            <ListItem key={index} className='list-item'>
+                              <Link to={`/site?id=${property._id}`}>
+                                {property.title}
+                              </Link>
+                            </ListItem>
+                          );
+                        })}
+                    </List>
+                  </div>
+                  {/* <div
                     class='row'
                     style={{
                       display: 'flex',
@@ -213,7 +275,7 @@ const Properties = () => {
                         </select>
                       </div>
                     </div>
-                  </div>
+                  </div> */}
                 </form>
                 <div class='banner-search-wrap banner-search-wrap-2'>
                   <div class='rld-main-search rld-main-search2'>
@@ -225,26 +287,18 @@ const Properties = () => {
                           justifyContent: 'space-between',
                           alignItems: 'center',
                           justifyContent: 'center',
-                          marginTop: '-30px',
+                          marginTop: '20px',
                         }}
                       >
                         <div class='filter-button'>
-                          <div
-                            class='dropdown-filter'
-                            onClick={() => {
-                              setIsClick(!isClick);
-                            }}
-                            style={{ marginRight: '20px' }}
-                          >
-                            <span>
-                              <i class='fas fa-sliders-h'></i>
-                            </span>
-                          </div>
                           <Link to='/pilgrimage' class='filter-btn1 search-btn'>
                             Search<i class='fas fa-search'></i>
                           </Link>
                           <div id='near-by' onClick={toggleLocation}>
-                            <WifiTetheringIcon />
+                            <Tooltip title='Nearby Places'>
+                              <WifiTetheringIcon />
+                            </Tooltip>
+                            {/* <div className='icon'>Nearby Places</div> */}
                           </div>
                         </div>
                         <div

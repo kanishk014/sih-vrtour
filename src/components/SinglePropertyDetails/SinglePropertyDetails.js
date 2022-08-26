@@ -377,14 +377,18 @@ const SingleProperty = () => {
                     </div>
                     <div className='col-lg-6 col-md-12'>
                       <div className='single-list-price'>
-                        <div onClick={modalShow} className='heading-button'>
-                          <div
-                            className='heading-btn item-btn2'
-                            style={{ cursor: 'pointer' }}
-                          >
-                            Book Ticket
+                        {propertyDetails?.price != 0 ? (
+                          <div onClick={modalShow} className='heading-button'>
+                            <div
+                              className='heading-btn item-btn2'
+                              style={{ cursor: 'pointer' }}
+                            >
+                              Book Ticket
+                            </div>
                           </div>
-                        </div>
+                        ) : (
+                          <div></div>
+                        )}
                         {/* <Container>
                           <Button onClick={openModal}>Book Ticket</Button>
                           <Modal
