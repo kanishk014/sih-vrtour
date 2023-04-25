@@ -63,7 +63,7 @@ const SingleProperty = () => {
   useEffect(function () {
     axios
       .get(
-        `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+        `https://sih-vrtour-server.vercel.app/api/property/getpropertydetails/${id}`
       )
       .then((res) => {
         setFixedAmount(res.data.price);
@@ -257,7 +257,7 @@ const SingleProperty = () => {
   const bookTicketCall = () => {
     axios
       .post(
-        'https://vrtour-sih.herokuapp.com/api/ticketBooking/bookTicket',
+        'https://sih-vrtour-server.vercel.app/api/ticketBooking/bookTicket',
         {
           name: booking.name,
           date: booking.date,

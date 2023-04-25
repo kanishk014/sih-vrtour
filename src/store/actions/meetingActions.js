@@ -13,7 +13,7 @@ import {
   MEET_REQUEST,
   MEET_SUCCESS,
 } from '../constants/constants';
-const API_URL = 'https://vrtour-sih.herokuapp.com';
+const API_URL = 'https://sih-vrtour-server.vercel.app';
 
 export const addMeeting = (details) => async (dispatch, getState) => {
   console.log('action');

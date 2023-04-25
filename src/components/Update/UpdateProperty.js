@@ -43,7 +43,7 @@ const UpdateProperty = () => {
   const getProperty = () => {
     axios
       .get(
-        `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+        `https://sih-vrtour-server.vercel.app/api/property/getpropertydetails/${id}`
       )
       .then((res) => {
         setProperty(res.data);
@@ -73,7 +73,7 @@ const UpdateProperty = () => {
       let trimmedPropertyImage = property.propertyImage.slice(22);
 
       await axios
-        .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
+        .patch(`https://sih-vrtour-server.vercel.app/api/property/update/${id}`, {
           title: property.title,
           propertyImage: trimmedPropertyImage,
           price: property.price,
@@ -108,7 +108,7 @@ const UpdateProperty = () => {
         });
     } else {
       await axios
-        .patch(`https://vrtour-sih.herokuapp.com/api/property/update/${id}`, {
+        .patch(`https://sih-vrtour-server.vercel.app/api/property/update/${id}`, {
           title: property.title,
           price: property.price,
           sqft: property.sqft,

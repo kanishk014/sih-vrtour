@@ -37,7 +37,7 @@ const Home = () => {
   // Fetching properties
   const [properties, setProperties] = useState([]);
   useEffect(function () {
-    const apiUrl = 'https://vrtour-sih.herokuapp.com/api/property/get';
+    const apiUrl = 'https://sih-vrtour-server.vercel.app/api/property/get';
 
     axios
       .get(apiUrl)

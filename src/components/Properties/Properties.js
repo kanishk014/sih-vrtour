@@ -35,7 +35,7 @@ const Properties = () => {
           navigator.geolocation.getCurrentPosition(function (position) {
             axios
               .post(
-                `https://vrtour-sih.herokuapp.com/api/property/getNearbyPlaces`,
+                `https://sih-vrtour-server.vercel.app/api/property/getNearbyPlaces`,
                 {
                   latitude: position.coords.latitude,
                   longitude: position.coords.longitude,
@@ -98,7 +98,7 @@ const Properties = () => {
   // Fetching properties
   const [properties, setProperties] = useState([]);
   useEffect(function () {
-    const apiUrl = 'https://vrtour-sih.herokuapp.com/api/property/get';
+    const apiUrl = 'https://sih-vrtour-server.vercel.app/api/property/get';
 
     axios
       .get(apiUrl)

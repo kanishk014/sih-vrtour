@@ -15,7 +15,7 @@ class List extends React.Component {
 
   componentDidMount() {
     const API = process.env.API;
-    const apiUrl = 'https://vrtour-sih.herokuapp.com/api/property/get';
+    const apiUrl = 'https://sih-vrtour-server.vercel.app/api/property/get';
 
     fetch(apiUrl)
       .then((res) => res.json())
@@ -34,7 +34,7 @@ class List extends React.Component {
   deleteProperty(propertyId) {
     const { property } = this.state;
 
-    const apiUrl = `https://vrtour-sih.herokuapp.com/api/property/delete/${propertyId}`;
+    const apiUrl = `https://sih-vrtour-server.vercel.app/api/property/delete/${propertyId}`;
     const formData = new FormData();
     formData.append('propertyId', propertyId);
 
@@ -122,7 +122,7 @@ class List extends React.Component {
 
 export default List;
 
-// https://vrtour-sih.herokuapp.com/api/property/update/:propertyid
-// https://vrtour-sih.herokuapp.com/api/property/delete/:propertyid
-// https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/:id
-// https://vrtour-sih.herokuapp.com/api/property/get
+// https://sih-vrtour-server.vercel.app/api/property/update/:propertyid
+// https://sih-vrtour-server.vercel.app/api/property/delete/:propertyid
+// https://sih-vrtour-server.vercel.app/api/property/getpropertydetails/:id
+// https://sih-vrtour-server.vercel.app/api/property/get

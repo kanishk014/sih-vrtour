@@ -17,7 +17,7 @@ import {
   USER_REGISTER_SUCCESS,
 } from '../constants/constants';
 import axios from 'axios';
-const API_URL = 'https://vrtour-sih.herokuapp.com';
+const API_URL = 'https://sih-vrtour-server.vercel.app';
 export const userRgister = (details) => async (dispatch) => {
   console.log(details);
   try {

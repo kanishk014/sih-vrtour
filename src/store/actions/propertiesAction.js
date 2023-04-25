@@ -19,7 +19,7 @@ import {
   GET_PROPDETAILS_SUCCESS,
   GET_PROPDETAILS_FAIL,
 } from '../constants/constants';
-const API_URL = 'https://vrtour-sih.herokuapp.com';
+const API_URL = 'https://sih-vrtour-server.vercel.app';
 
 export const addProperty = (details) => async (dispatch, getState) => {
   console.log('action');

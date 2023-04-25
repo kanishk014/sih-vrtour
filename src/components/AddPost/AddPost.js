@@ -84,7 +84,7 @@ const AddPost = () => {
     e.preventDefault();
 
     await axios
-      .post('https://vrtour-sih.herokuapp.com/api/bookings/checkout-session', {
+      .post('https://sih-vrtour-server.vercel.app/api/bookings/checkout-session', {
         id: donation,
         amount: amount,
       })

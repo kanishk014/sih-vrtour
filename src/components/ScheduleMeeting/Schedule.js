@@ -31,7 +31,7 @@ const Schedule = () => {
   // function getPropertyData(id) {
   //   return new Promise(async (resolve, reject) => {
   //     const result = await axios.get(
-  //       `https://vrtour-sih.herokuapp.com/api/property/getpropertydetails/${id}`
+  //       `https://sih-vrtour-server.vercel.app/api/property/getpropertydetails/${id}`
   //     );
 
   //     if (result) {
@@ -92,7 +92,7 @@ const Schedule = () => {
                       <div class='item-img' style={{ width: 'fitContent' }}>
                         <Link to='/site?id=6303ac4513f90b1bbe815ff8'>
                           <img
-                            src='https://vrtour-sih.herokuapp.com/api/property/getImage/Taj-pilgrimage-1661405356197'
+                            src='https://sih-vrtour-server.vercel.app/api/property/getImage/Taj-pilgrimage-1661405356197'
                             alt='blog'
                             width='510'
                             height='340'

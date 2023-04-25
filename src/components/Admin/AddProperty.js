@@ -49,7 +49,7 @@ const AddProperty = () => {
     let trimmedPropertyImage = property.propertyImage.slice(22);
 
     await axios
-      .post('https://vrtour-sih.herokuapp.com/api/admin/addProperty', {
+      .post('https://sih-vrtour-server.vercel.app/api/admin/addProperty', {
         title: property.title,
         propertyImage: trimmedPropertyImage,
         price: property.price,
