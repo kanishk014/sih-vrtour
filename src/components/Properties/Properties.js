@@ -604,16 +604,16 @@ const Properties = () => {
                                     <div
                                       class='item-img'
                                       style={{
-                                        height: '300px',
+                                        height: '200px',
                                         width: '100%',
                                         overflow: 'hidden',
                                       }}
                                     >
                                       <img
                                         src={currEle.propertyImage}
-                                        alt='blog'
+                                        alt='img'
                                         style={{
-                                          height: '300px',
+                                          height: '200px',
                                           width: '100%',
                                         }}
                                       />
@@ -691,7 +691,7 @@ const Properties = () => {
                                     >
                                       <img
                                         src={currEle.propertyImage}
-                                        alt='blog'
+                                        alt='img'
                                         style={{
                                           height: '300px',
                                           width: '100%',

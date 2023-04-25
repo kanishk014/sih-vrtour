@@ -55,7 +55,8 @@ const AddPost = () => {
         name: 'VRTOUR',
         description: 'Donation',
         handler: function (response) {
-          alert(response.razorpay_payment_id);
+          if (response.razorpay_payment_id)
+            alert("Payment Successful");
         },
         prefill: {
           name: 'VRTOUR Tester',
